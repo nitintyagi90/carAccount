@@ -32,13 +32,19 @@
                         </ul>
                     </li>
 
-
-                    <li><a class="waves-effect waves-light"><i class="fa fa-shopping-cart"></i>Purchase <span class="fa fa-chevron-right"></span></a>
+                    <li>
+                        <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Purchase <span
+                                    class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
-                            <li> <a class="waves-effect waves-light" href="purchase-entry.php">Purchase Entry</a></li>
-                            <li> <a class="waves-effect waves-light" href="purchase_car.php">Purchase Car</a></li>
+                            <?php if(in_array('createPurchase', $user_permission)){ ?>
+                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('purchase/create');?>">Purchase Entry</a></li>
+                            <?php }
+                            if(in_array('updatePurchase', $user_permission) || in_array('viewPurchase', $user_permission) || in_array('deletePurchase', $user_permission)){ ?>
+                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('purchase/manage');?>">Purchase Car</a></li>
+                            <?php }?>
                         </ul>
                     </li>
+
                     <li><a class="waves-effect waves-light"><i class="fa fa-recycle"></i>Refurbishment <span
                                     class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">

@@ -15,7 +15,6 @@ class Users extends Admin_Controller
 	}
 	public function manage()
 	{
-
 		if(!in_array('viewUser', $this->permission)) {
             redirect('dashboard', 'refresh');
         }

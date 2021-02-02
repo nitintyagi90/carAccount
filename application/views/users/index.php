@@ -39,7 +39,10 @@
                                 <th>Company Name</th>
                                 <th>Email Id</th>
                                 <th>Group</th>
+                                <?php if(in_array('updateUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
                                 <th>Action</th>
+                                <?php endif; ?>
+
                             </tr>
                             </thead>
                             <tbody>
