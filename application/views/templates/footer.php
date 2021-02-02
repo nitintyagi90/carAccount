@@ -2,7 +2,7 @@
     All rights reserved.
 </footer>
 </div>
-</div>
+</div> 
  
 <script src="<?php echo base_url('assets/');?>global/plugins/jquery/dist/jquery.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
