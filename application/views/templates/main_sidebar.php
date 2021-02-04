@@ -69,6 +69,15 @@
                             <li> <a class="waves-effect waves-light" href="#">Sale Payment</a></li>
                             <li> <a class="waves-effect waves-light" href="on_hole.php">On Hold</a></li>
                             <li> <a class="waves-effect waves-light" href="rc_security.php">RC Security</a></li>
+                            <li> <a class="waves-effect waves-light" href="rto.php">R.T.O</a></li>
+                            <li> <a class="waves-effect waves-light" href="insurance.php">Insurance</a></li>
+                            <li> <a class="waves-effect waves-light" href="warranty.php">Warranty</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="waves-effect waves-light"><i class="fa fa-gears"></i>App Setting <span
+                                    class="fa fa-chevron-right"></span></a>
+                        <ul class="nav child_menu">
+                            <li> <a class="waves-effect waves-light" href="add_manufacturer.php">Manufacturers</a></li>
                         </ul>
                     </li>
                 </ul>

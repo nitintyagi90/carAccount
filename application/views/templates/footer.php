@@ -2,6 +2,7 @@
     All rights reserved.
 </footer>
 </div>
+<script src="<?php echo base_url('assets/');?>global/plugins/jquery/dist/jquery.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/Waves/dist/waves.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/screenfull.js/dist/screenfull.min.js"></script>
