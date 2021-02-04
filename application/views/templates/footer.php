@@ -4,7 +4,6 @@
 </div>
 </div>
 
-<script src="<?php echo base_url('assets/');?>global/plugins/jquery/dist/jquery.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/Waves/dist/waves.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/screenfull.js/dist/screenfull.min.js"></script>
@@ -25,6 +24,8 @@
 <script src="<?php echo base_url('assets/');?>global/plugins/datatables/media/js/dataTables.bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/js/datatable.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jtsage-datebox-bootstrap4@5.3.3/jtsage-datebox.min.js" type="text/javascript"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('.js-example-basic-single').select2();

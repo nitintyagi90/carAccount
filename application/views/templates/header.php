@@ -14,4 +14,8 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>global/css/components.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>global/css/select2.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>layouts/layouts_left_menu/left_menu_layout.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/');?>css/daterangepicker.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/');?>css/jquery-date-picker.css">
+    <script src="<?php echo base_url('assets/');?>global/plugins/jquery/dist/jquery.min.js"></script>
+
 </head>

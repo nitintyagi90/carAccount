@@ -31,7 +31,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Dealer Name</p>
-                            <input type="text" name="username" disabled="" class="form-style" autocomplete="off" />
+                            <input class="form-style" name="db1" type="text" data-role="datebox" data-datebox-mode="datebox" id="db2">
+
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -601,3 +602,11 @@
     </div>
 
 </div>
+<script>
+    $('#db2').datebox({
+        mode: "calbox",
+        maxDays: 10,
+        minDays: 10
+    });
+
+</script>
