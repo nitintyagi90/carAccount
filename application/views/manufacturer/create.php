@@ -150,10 +150,6 @@
                                     <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                                 </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Add</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
             </form>
         </div>

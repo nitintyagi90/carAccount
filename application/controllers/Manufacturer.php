@@ -128,6 +128,30 @@ class Manufacturer extends Admin_Controller
 
         }
     }
+    public function delete_utility($id){
+        if(!in_array('updateSetting', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+        if($id) {
+            if($this->input->post('confirm')) {
+                $query_brand = $this->db->get_where('car_utility', array('id' =>$id));
+                $result_brand = $query_brand->row();
+                if(!empty($result_brand)){
+                    $this->db->where('id', $id);
+                    $delete = $this->db->delete('car_utility');
+                    $this->session->set_flashdata('success', 'Successfully removed');
+                    redirect('manufacturer/car_utility', 'refresh');
+                }else{
+                    $this->data['id'] = $id;
+                    $this->render_template('manufacturer/delete_utility', $this->data);
+                }
+            }else {
+                $this->data['id'] = $id;
+                $this->render_template('manufacturer/delete_utility', $this->data);
+            }
+
+        }
+    }
 
     public function deletesubmodel($id){
         if(!in_array('updateSetting', $this->permission)) {
@@ -205,22 +229,52 @@ class Manufacturer extends Admin_Controller
         }
         $groups_data = $this->model_groups->getGroupData();
 
-        $query_submodels = $this->db->get('submodel');
-        $result_submodel = $query_submodels->result();
-        $this->data['submodel'] = $result_submodel;
+        $this->db->select('*');
+        $query = $this->db->get('car_utility');
+        $rslt =  $query->result();
 
-        $query = $this->db->get_where('brandmodels');
-        $this->db->order_by('name', 'ASC');
-        $result = $query->result();
-        $query_brand = $this->db->get_where('brandmodels', array('type' =>'brand'));
-        $this->db->order_by('name', 'ASC');
-        $result_brand = $query_brand->result();
+        $this->data['color'] = $rslt;
+
 
         $this->data['groups_data'] = $groups_data;
-        $this->data['models'] = $result;
-        $this->data['brand'] = $result_brand;
 
         $this->render_template('manufacturer/car_utility', $this->data);
     }
+
+    public function color_create(){
+        if(!in_array('updateSetting', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+        $name =  $this->input->post('utility_name');
+        $type =  $this->input->post('type');
+
+
+        if(empty($name)){
+            $this->session->set_flashdata('errors', 'Please Enter New Color!');
+            redirect('manufacturer/car_utility', 'refresh');
+        }
+        $myArray = explode(',', $name);
+        if(count($myArray) !== 0){
+            foreach ($myArray as $k => $v){
+                $data = array('name' => $v,'type'=>$type);
+                $create = $this->db->insert('car_utility', $data);
+            }
+            $this->session->set_flashdata('success', 'Date stored successfully!');
+            redirect('manufacturer/car_utility', 'refresh');
+        }else{
+            $data = array('name' => $name,'type'=>$type);
+            $create = $this->db->insert('car_utility', $data);
+            if($create == true) {
+                $this->session->set_flashdata('success', 'Date stored successfully!');
+                redirect('manufacturer/car_utility/', 'refresh');
+
+            }else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('manufacturer/car_utility', 'refresh');
+            }
+        }
+
+    }
+
 
 }
