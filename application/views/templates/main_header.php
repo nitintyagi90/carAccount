@@ -1,3 +1,8 @@
+<?php
+$query = $this->db->get_where('users', array('user_id' => $this->session->userdata['id']));
+$result = $query->row();
+?>
+
 <body class="nav-medium">
 
 <div class="container body">
@@ -50,29 +55,54 @@
                     <div class="topbar-right">
                         <div class="nav navbar-nav navbar-right">
                             <div class="pull-left">
-                                <h4 class="owner-name">Raman Motors</h4>
+                                <h4 class="owner-name">
+                                    <?php
+                                    if(!empty($result)){
+                                        echo $result->user_name;
+                                    }
+                                    ?>
+                                </h4>
                             </div>
                             <div class="dropdown user-profile right-icon">
                                 <a href="javascript:" class="dropdown-toggle waves-effect waves-light"
                                    data-toggle="dropdown"
                                    aria-expanded="false">
-                                    <img src="<?php echo base_url('assets/');?>global/images/user10.jpg" alt="user">
+                                    <?php if($result->user_profile!==null){?>
+                                        <img src="<?php echo $result->user_profile ?>" alt="user">
+                                    <?php }else{ ?>
+                                        <img src="<?php echo base_url('assets/');?>global/images/user10.jpg" alt="user">
+
+                                    <?php } ?>
+
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:" class="waves-effect waves-light">
-                                            <i class="fa fa-user" aria-hidden="true"></i>Profile</a>
-                                    </li>
-                                    <li><a href="javascript:" class="waves-effect waves-light">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
-                                    </li>
-                                    <li><a href="javascript:" class="waves-effect waves-light">
-                                            <i class="fa fa-lock" aria-hidden="true"></i>Lock screen</a>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo base_url('auth/logout') ?>" class="waves-effect waves-light">
-                                            <i class="fa fa-power-off text-danger" aria-hidden="true"></i> Logout</a>
-                                    </li>
-                                </ul>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                                <a href="<?php echo base_url('users/profile/');?>" class="waves-effect waves-light">
+
+                                                    <i class="fa fa-user" aria-hidden="true"></i>Profile
+                                                </a>
+
+                                        </li>
+                                        <li>
+
+
+                                                <a href="<?php echo base_url('users/setting/');?>" class="waves-effect waves-light">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>Settings
+                                                </a>
+
+
+                                        </li>
+
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="<?php echo base_url('auth/logout') ?>" class="waves-effect waves-light">
+                                                <i class="fa fa-power-off text-danger" aria-hidden="true"></i> Logout</a>
+                                        </li>
+                                    </ul>
+
+
+
+
                             </div>
 
                         </div>

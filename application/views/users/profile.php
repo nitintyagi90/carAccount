@@ -1,79 +1,52 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Profile</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Profile</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+
+<div class="container-fluid right_color">
+    <div class="page-main-header">
+        <!-- Page Title -->
+        <h2 class="page-name-title">Profile</h2>
+        <!--  Breadcrumb -->
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Profile</li>
+        </ol>
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-md-12 col-xs-12">
-
-          <div class="card">
-		  <div class="card-header">
-                <h3 class="card-title">&nbsp;</h3>
-
-                <div class="card-tools">
-                  <a href="<?php echo base_url('users/setting');?>" class="btn btn-block btn-primary">Edit Profile</a>
-                </div>
-              </div>
-		 
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table class="table table-bordered table-condensed table-hovered">
-                <tr>
-                  <th>Username</th>
-                  <td><?php echo $user_data['username']; ?></td>
-                </tr>
-                <tr>
-                  <th>Email</th>
-                  <td><?php echo $user_data['email']; ?></td>
-                </tr>
-
-                <tr>
-                  <th>Phone</th>
-                  <td><?php echo $user_data['phone']; ?></td>
-                </tr>
-                <tr>
-                  <th>Group</th>
-                  <td><span class="label label-info"><?php echo $user_group['group_name']; ?></span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="section-body">
+            <a href="<?php echo base_url('users/setting');?>" class="btn btn-block btn-primary">Edit Profile</a>
         </div>
-        <!-- col-md-12 -->
-      </div>
-      <!-- /.row -->
-      
+    </div>
+        <div class="contain-inner-section">
+            <?php if($this->session->flashdata('errors')){ ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo validation_errors(); ?>
+                </div>
+            <?php } ?>
+            <div class="card-body">
+                <table class="table table-bordered table-condensed table-hovered">
+                    <tr>
+                        <th>Username</th>
+                        <td><?php echo $user_data['user_name']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><?php echo $user_data['user_email']; ?></td>
+                    </tr>
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+                    <tr>
+                        <th>Phone</th>
+                        <td><?php echo $user_data['user_mobile']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Group</th>
+                        <td><span class="label label-info"><?php echo $user_group['group_name']; ?></span></td>
+                    </tr>
+                </table>
+            </div>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#profileMainNav").addClass('active');
-    });
-  </script>
+        </div>
+    </div>
 
+</div>

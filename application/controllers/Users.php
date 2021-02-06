@@ -196,90 +196,127 @@ class Users extends Admin_Controller
         $this->render_template('users/profile', $this->data);
 	}
 
-	public function setting()
-	{
-		if(!in_array('updateSetting', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-        
+	public function setting(){
 		$id = $this->session->userdata('id');
-
 		if($id) {
-			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
-			$this->form_validation->set_rules('email', 'Email', 'trim|required');
+            $this->form_validation->set_rules('username', 'user_name', 'trim|required');
+            $this->form_validation->set_rules('phone', 'user_mobile', 'trim|required');
 
-
-			if ($this->form_validation->run() == TRUE) {
-	            // true case
+            if ($this->form_validation->run() == TRUE) {
 		        if(empty($this->input->post('password')) && empty($this->input->post('cpassword'))) {
-		        	$data = array(
-		        		'username' => $this->input->post('username'),
-		        		'email' => $this->input->post('email'),
-		        		'phone' => $this->input->post('phone'),
-		        	);
 
-		        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
-		        	if($update == true) {
-		        		$this->session->set_flashdata('success', 'Successfully updated');
-		        		redirect('users/setting/', 'refresh');
-		        	}
-		        	else {
-		        		$this->session->set_flashdata('errors', 'Error occurred!!');
-		        		redirect('users/setting/', 'refresh');
-		        	}
-		        }
-		        else {
-		        	//$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
-					//$this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|required|matches[password]');
+                    if (!empty($_FILES['user_profile']['name'])) {
+                        $config['upload_path']          = './upload/user_profile';
+                        $config['allowed_types']        = 'gif|jpg|png';
+                        $this->load->library('upload', $config);
+                        if (!$this->upload->do_upload('user_profile')) {
+                            $error = array('error' => $this->upload->display_errors());
+                            $this->session->set_flashdata('message_name', $error['error']);
+                            redirect('users/setting/', 'refresh');
+                        }else{
+                            $fileName = $this->upload->data('file_name');
+                            $filePath = base_url().'upload/user_profile/'.$fileName;
+                            $data = array(
+                                'user_name' => $this->input->post('username'),
+                                'user_email' => $this->input->post('email'),
+                                'user_mobile' => $this->input->post('phone'),
+                                'user_profile'=>$filePath
+                            );
+                            $update = $this->model_users->edit($data, $id, $this->input->post('groups'));
+                            if($update == true) {
+                                $this->session->set_flashdata('success', 'Successfully updated');
+                                redirect('users/setting/', 'refresh');
+                            }else {
+                                $this->session->set_flashdata('errors', 'Error occurred!!');
+                                redirect('users/setting/', 'refresh');
+                            }
 
-					if($this->form_validation->run() == TRUE) {
+                        }
+                    }else{
+                        $data = array(
+                            'user_name' => $this->input->post('username'),
+                            'user_email' => $this->input->post('email'),
+                            'user_mobile' => $this->input->post('phone'),
+                        );
+                        $update = $this->model_users->edit($data, $id, $this->input->post('groups'));
+                        if($update == true) {
+                            $this->session->set_flashdata('success', 'Successfully updated');
+                            redirect('users/setting/', 'refresh');
+                        }else {
+                            $this->session->set_flashdata('errors', 'Error occurred!!');
+                            redirect('users/setting/', 'refresh');
+                        }
+                    }
+		        }else {
+                    $this->form_validation->set_rules('password', 'user_password', 'trim|required');
+                    $this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|required|matches[password]');
+                    if($this->form_validation->run() == TRUE) {
+                        if (!empty($_FILES['user_profile']['name'])) {
+                            $config['upload_path']          = './upload/user_profile';
+                            $config['allowed_types']        = 'gif|jpg|png';
+                            $this->load->library('upload', $config);
+                            if (!$this->upload->do_upload('user_profile')) {
+                                $error = array('error' => $this->upload->display_errors());
+                                $this->session->set_flashdata('message_name', $error['error']);
+                                redirect('users/setting/', 'refresh');
+                            }else{
+                                $fileName = $this->upload->data('file_name');
+                                $filePath = base_url().'upload/user_profile/'.$fileName;
+                                $password = $this->password_hash($this->input->post('password'));
+                                $data = array(
+                                    'user_name' => $this->input->post('username'),
+                                    'user_password' => $password,
+                                    'user_email' => $this->input->post('email'),
+                                    'user_mobile' => $this->input->post('phone'),
+                                    'user_profile'=>$filePath
+                                );
 
-						$password = $this->password_hash($this->input->post('password'));
+                                $update = $this->model_users->edit($data, $id, $this->input->post('groups'));
+                                if($update == true) {
+                                    $this->session->set_flashdata('success', 'Successfully updated');
+                                    redirect('users/setting/', 'refresh');
+                                }else {
+                                    $this->session->set_flashdata('errors', 'Error occurred!!');
+                                    redirect('users/setting/', 'refresh');
+                                }
 
-						$data = array(
-			        		'username' => $this->input->post('username'),
-			        		'password' => $password,
-			        		'email' => $this->input->post('email'),
-			        		'phone' => $this->input->post('phone'),
-			        	);
+                            }
+                        }else{
+                            $password = $this->password_hash($this->input->post('password'));
+                            $data = array(
+                                'user_name' => $this->input->post('username'),
+                                'user_password' => $password,
+                                'user_email' => $this->input->post('email'),
+                                'user_mobile' => $this->input->post('phone'),
+                            );
 
-			        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
-			        	if($update == true) {
-			        		$this->session->set_flashdata('success', 'Successfully updated');
-			        		redirect('users/setting/', 'refresh');
-			        	}
-			        	else {
-			        		$this->session->set_flashdata('errors', 'Error occurred!!');
-			        		redirect('users/setting/', 'refresh');
-			        	}
-					}
-			        else {
-			            // false case
+                            $update = $this->model_users->edit($data, $id, $this->input->post('groups'));
+                            if($update == true) {
+                                $this->session->set_flashdata('success', 'Successfully updated');
+                                redirect('users/setting/', 'refresh');
+                            }else {
+                                $this->session->set_flashdata('errors', 'Error occurred!!');
+                                redirect('users/setting/', 'refresh');
+                            }
+                        }
+					}else {
 			        	$user_data = $this->model_users->getUserData($id);
 			        	$groups = $this->model_users->getUserGroup($id);
-
 			        	$this->data['user_data'] = $user_data;
 			        	$this->data['user_group'] = $groups;
-
 			            $group_data = $this->model_groups->getGroupData();
 			        	$this->data['group_data'] = $group_data;
-
 						$this->render_template('users/setting', $this->data);	
 			        }	
 
 		        }
-	        }
-	        else {
-	            // false case
+	        }else {
 	        	$user_data = $this->model_users->getUserData($id);
 	        	$groups = $this->model_users->getUserGroup($id);
-
 	        	$this->data['user_data'] = $user_data;
 	        	$this->data['user_group'] = $groups;
-
 	            $group_data = $this->model_groups->getGroupData();
 	        	$this->data['group_data'] = $group_data;
-
 				$this->render_template('users/setting', $this->data);	
 	        }	
 		}
