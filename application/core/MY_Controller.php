@@ -13,7 +13,7 @@ class Admin_Controller extends MY_Controller
 	
 	var $permission = array();
 
-	public function __construct() 
+	public function __construct()
 	{
 		parent::__construct();
 

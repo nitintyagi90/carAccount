@@ -98,6 +98,12 @@
                             <td><div class="custom-control custom-switch"><input type="checkbox" name="permission[]" class="custom-control-input" id="customSwitch12" value="deletePayment"><label class="custom-control-label" for="customSwitch12">&nbsp;</label></div></td>
                         </tr>
 
+                        <tr>
+                            <td>App Settings</td>
+                            <td><div class="custom-control custom-switch"><input type="checkbox" name="permission[]" class="custom-control-input" id="customSwitch9" value="updateSetting"><label class="custom-control-label" for="customSwitch9">&nbsp;</label></div></td>
+
+                        </tr>
+
                         </tbody>
                     </table>
 

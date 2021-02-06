@@ -1,289 +1,226 @@
-<?php 
+<?php
 
-class Users extends Admin_Controller 
+class Manufacturer extends Admin_Controller
 {
-	public function __construct()
-	{
-		parent::__construct();
-		$this->not_logged_in();
-		$this->data['page_title'] = 'Users';
-		$this->load->model('model_users');
-		$this->load->model('model_groups');
-	}
-	public function index(){
-		redirect('users/manage', 'refresh');
-	}
-	public function manage()
-	{
-		if(!in_array('viewUser', $this->permission)) {
-            redirect('dashboard', 'refresh');
+    public function __construct(){
+        parent::__construct();
+        $this->not_logged_in();
+        $this->data['page_title'] = 'Manufacturer';
+        $this->load->model('model_manufacturer');
+    }
+    public function index(){
+        if(!in_array('updateSetting', $this->permission)) {
+             redirect('dashboard', 'refresh');
+         }
+        $groups_data = $this->model_groups->getGroupData();
+
+        $query_submodels = $this->db->get('submodel');
+        $result_submodel = $query_submodels->result();
+        $this->data['submodel'] = $result_submodel;
+
+        $query = $this->db->get_where('brandmodels');
+        $this->db->order_by('name', 'ASC');
+        $result = $query->result();
+        $query_brand = $this->db->get_where('brandmodels', array('type' =>'brand'));
+        $this->db->order_by('name', 'ASC');
+        $result_brand = $query_brand->result();
+
+        $this->data['groups_data'] = $groups_data;
+        $this->data['models'] = $result;
+        $this->data['brand'] = $result_brand;
+
+        $this->render_template('manufacturer/create', $this->data);
+    }
+
+    public function create(){
+        if(!in_array('updateSetting', $this->permission)) {
+             redirect('dashboard', 'refresh');
+         }
+        $name =  $this->input->post('makeModels');
+        if(empty($name)){
+            $this->session->set_flashdata('errors', 'Please Enter New Brand!');
+            redirect('manufacturer', 'refresh');
         }
-		$user_data = $this->model_users->getUserData();
-		$result = array();
-		foreach ($user_data as $k => $v) {
-
-			$result[$k]['user_info'] = $v;
-			$group = $this->model_users->getUserGroup($v['user_id']);
-			$result[$k]['user_group'] = $group;
-		}
-
-		$this->data['user_data'] = $result;
-
-		$this->render_template('users/index', $this->data);
-	}
-
-    public function create()
-    {
-
-        if(!in_array('createUser', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-
-        $this->form_validation->set_rules('username', 'user_name', 'trim|required');
-        $this->form_validation->set_rules('companyName', 'user_company', 'trim|required');
-        $this->form_validation->set_rules('phone', 'user_mobile', 'trim|required|is_unique[users.user_mobile]');
-        $this->form_validation->set_rules('password', 'user_password', 'trim|required|min_length[8]');
-        $this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|required|matches[password]');
-
-        if ($this->form_validation->run() == TRUE) {
-            $password = $this->password_hash($this->input->post('password'));
-            $data = array(
-                'user_name' => $this->input->post('username'),
-                'user_password' => $password,
-                'user_email' => $this->input->post('email'),
-                'user_mobile' => $this->input->post('phone'),
-                'user_company' => $this->input->post('companyName'),
-            );
-
-            $create = $this->model_users->create($data, $this->input->post('groups'));
+        $myArray = explode(',', $name);
+        if(count($myArray) !== 0){
+            foreach ($myArray as $k => $v){
+                $data = array('name' => $v,'type'=>'brand','parent'=>0);
+                $create = $this->db->insert('brandmodels', $data);
+            }
+            $this->session->set_flashdata('success', 'Date stored successfully!');
+            redirect('manufacturer/', 'refresh');
+        }else{
+            $data = array('name' => $name,'type'=>'brand','parent'=>0);
+            $create = $this->db->insert('brandmodels', $data);
             if($create == true) {
-                $this->session->set_flashdata('success', 'Successfully created');
-                redirect('users/', 'refresh');
-            }
-            else {
-                $this->session->set_flashdata('errors', 'Error occurred!!');
-                redirect('users/create', 'refresh');
-            }
-        }else {
-            if($_SERVER['REQUEST_METHOD']=='POST'){
-                $this->session->set_flashdata('errors', 'Error occurred!!');
-            }
-            $group_data = $this->model_groups->getGroupData();
-            $this->data['group_data'] = $group_data;
-            $this->render_template('users/create', $this->data);
-        }
+                $this->session->set_flashdata('success', 'Date stored successfully!');
+                redirect('manufacturer/', 'refresh');
 
+            }else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('manufacturer/create', 'refresh');
+            }
+        }
 
     }
 
-	public function password_hash($pass = '')
-	{
-		if($pass) {
-			$password = password_hash($pass, PASSWORD_DEFAULT);
-			return $password;
-		}
-	}
+    public function modelcreate(){
+        if(!in_array('updateSetting', $this->permission)) {
+             redirect('dashboard', 'refresh');
+         }
+        $brand =  $this->input->post('brand');
+        $models =  $this->input->post('makeModels');
+        if($brand=='selectBrand'){
+            $this->session->set_flashdata('errors', 'Please select brand');
+            redirect('manufacturer', 'refresh');
+        }
+        $myArray = explode(',', $models);
+        if(count($myArray) !== 0){
+            foreach ($myArray as $k => $v){
+                $data = array('name' => $v,'type'=>'model','parent'=>$brand);
+                $create = $this->db->insert('brandmodels', $data);
+            }
+            $this->session->set_flashdata('success', 'Date stored successfully!');
+            redirect('manufacturer', 'refresh');
+        }else{
+            $data = array('name' => $brand,'type'=>'model','parent'=>$brand);
+            $create = $this->db->insert('brandmodels', $data);
+            if($create == true) {
+                $this->session->set_flashdata('success', 'Date stored successfully!');
+                redirect('manufacturer', 'refresh');
 
-    public function edit($id = null)
-    {
-        if(!in_array('updateUser', $this->permission)) {
+            }else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('manufacturer', 'refresh');
+            }
+        }
+
+    }
+
+    public function delete($id){
+        if(!in_array('updateSetting', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
         if($id) {
-            $this->form_validation->set_rules('username', 'user_name', 'trim|required');
-            if ($this->form_validation->run() == TRUE) {
-                if(empty($this->input->post('password')) && empty($this->input->post('cpassword'))) {
-                    $data = array(
-                        'user_name' => $this->input->post('username'),
-                        'user_company' => $this->input->post('companyName'),
-                        'user_email' => $this->input->post('email'),
-                        'user_mobile' => $this->input->post('phone'),
-                    );
-                    $update = $this->model_users->edit($data, $id, $this->input->post('groups'));
-                    if($update == true) {
-                        $this->session->set_flashdata('success', 'Successfully Update');
-                        redirect('users/', 'refresh');
-                    }else {
-                        $this->session->set_flashdata('errors', 'Error occurred!!');
-                        redirect('users/edit/'.$id, 'refresh');
-                    }
-                }else {
-                    if($this->form_validation->run() == TRUE) {
-                        $password = $this->password_hash($this->input->post('password'));
-                        $data = array(
-                            'user_name' => $this->input->post('username'),
-                            'user_company' => $this->input->post('companyName'),
-                            'user_password' => $password,
-                            'user_email' => $this->input->post('email'),
-                            'user_mobile' => $this->input->post('phone'),
-                        );
+            if($this->input->post('confirm')) {
+                $query_brand = $this->db->get_where('brandmodels', array('id' =>$id));
+                $result_brand = $query_brand->row();
 
-                        $update = $this->model_users->edit($data, $id, $this->input->post('groups'));
-                        if($update == true) {
-                            $this->session->set_flashdata('success', 'Successfully updated');
-                            redirect('users/', 'refresh');
-                        }else {
-                            $this->session->set_flashdata('errors', 'Error occurred!!');
-                            redirect('users/edit/'.$id, 'refresh');
-                        }
-                    }else {
-                        $user_data = $this->model_users->getUserData($id);
-                        $groups = $this->model_users->getUserGroup($id);
-                        $this->data['user_data'] = $user_data;
-                        $this->data['user_group'] = $groups;
-                        $group_data = $this->model_groups->getGroupData();
-                        $this->data['group_data'] = $group_data;
-                        $this->render_template('users/edit', $this->data);
+                if(!empty($result_brand)){
+                    if($result_brand->type == 'brand'){
+                        $this->db->where('parent', $id);
+                        $this->db->delete('brandmodels');
+                        $this->db->where('id', $id);
+                        $delete = $this->db->delete('brandmodels');
+                        $this->session->set_flashdata('success', 'Successfully removed');
+                        redirect('manufacturer/', 'refresh');
+                    }else{
+                        $this->db->where('id', $id);
+                        $delete = $this->db->delete('brandmodels');
+                        $this->session->set_flashdata('success', 'Successfully removed');
+                        redirect('manufacturer/', 'refresh');
                     }
-
                 }
             }else {
-                $user_data = $this->model_users->getUserData($id);
-                $groups = $this->model_users->getUserGroup($id);
-                $this->data['user_data'] = $user_data;
-                $this->data['user_group'] = $groups;
-                $group_data = $this->model_groups->getGroupData();
-                $this->data['group_data'] = $group_data;
-                $this->render_template('users/edit', $this->data);
+                $this->data['id'] = $id;
+                $this->render_template('manufacturer/delete', $this->data);
+            }
+
+        }
+    }
+
+    public function deletesubmodel($id){
+        if(!in_array('updateSetting', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+        if($id) {
+            if($this->input->post('confirm')) {
+                $this->db->where('id', ($this->atri->de($id)));
+                $delete = $this->db->delete('submodel');
+                if($delete == true) {
+                    $this->session->set_flashdata('success', 'Successfully removed');
+                    redirect('manufacturer/', 'refresh');
+                }else {
+                    $this->session->set_flashdata('error', 'Error occurred!!');
+                    redirect('manufacturer/', 'refresh');
+                }
+            }else{
+                $this->data['id'] = $id;
+                $this->render_template('manufacturer/deletesubmodel', $this->data);
+            }
+
+
+        }
+    }
+
+    public function getModel(){
+        $categoryId = $this->input->post('id');
+        $query = $this->db->get_where('brandmodels', array('parent' => $categoryId,'type'=>'model'));
+        $result = $query->result();
+        $response = array(
+            'status' => 200,
+            'subcategory' => $result,
+        );
+        echo json_encode($response);
+        exit();
+    }
+
+    public function submodelcreate(){
+        if(!in_array('updateSetting', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+        $brand =  $this->input->post('brand');
+        $modelId =  $this->input->post('modelId');
+        $submodels =  $this->input->post('submodels');
+
+        if($brand=='selectBrand'){
+            $this->session->set_flashdata('errors', 'Please select brand');
+            redirect('submodel/create', 'refresh');
+        }
+        $myArray = explode(',', $submodels);
+        if(count($myArray) !== 0){
+            foreach ($myArray as $k => $v){
+                $data = array('submodel' => $v,'brand'=>$brand,'model'=>$modelId);
+                $create = $this->db->insert('submodel', $data);
+            }
+            $this->session->set_flashdata('success', 'Date stored successfully!');
+            redirect('manufacturer/create', 'refresh');
+        }else{
+            $data = array('submodel' => $submodels,'brand'=>$brand,'model'=>$modelId);
+            $create = $this->db->insert('submodel', $data);
+            if($create == true) {
+                $this->session->set_flashdata('success', 'Date stored successfully!');
+                redirect('manufacturer/create', 'refresh');
+
+            }else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('manufacturer/create', 'refresh');
             }
         }
     }
 
-	public function delete($id)
-	{
-
-		if(!in_array('deleteUser', $this->permission)) {
+    public function car_utility(){
+        if(!in_array('updateSetting', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
+        $groups_data = $this->model_groups->getGroupData();
 
-		if($id) {
-			if($this->input->post('confirm')) {
+        $query_submodels = $this->db->get('submodel');
+        $result_submodel = $query_submodels->result();
+        $this->data['submodel'] = $result_submodel;
 
-				
-					$delete = $this->model_users->delete($this->atri->de($id));
-					if($delete == true) {
-		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('users/', 'refresh');
-		        	}
-		        	else {
-		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('users/delete/'.$id, 'refresh');
-		        	}
+        $query = $this->db->get_where('brandmodels');
+        $this->db->order_by('name', 'ASC');
+        $result = $query->result();
+        $query_brand = $this->db->get_where('brandmodels', array('type' =>'brand'));
+        $this->db->order_by('name', 'ASC');
+        $result_brand = $query_brand->result();
 
-			}	
-			else {
-				$this->data['id'] = $id;
-				$this->render_template('users/delete', $this->data);
-			}	
-		}
-	}
+        $this->data['groups_data'] = $groups_data;
+        $this->data['models'] = $result;
+        $this->data['brand'] = $result_brand;
 
-	public function profile()
-	{
-
-		if(!in_array('viewProfile', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-
-		$user_id = $this->session->userdata('id');
-
-		$user_data = $this->model_users->getUserData($user_id);
-		$this->data['user_data'] = $user_data;
-
-		$user_group = $this->model_users->getUserGroup($user_id);
-		$this->data['user_group'] = $user_group;
-
-        $this->render_template('users/profile', $this->data);
-	}
-
-	public function setting()
-	{
-		if(!in_array('updateSetting', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-        
-		$id = $this->session->userdata('id');
-
-		if($id) {
-			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
-			$this->form_validation->set_rules('email', 'Email', 'trim|required');
-
-
-			if ($this->form_validation->run() == TRUE) {
-	            // true case
-		        if(empty($this->input->post('password')) && empty($this->input->post('cpassword'))) {
-		        	$data = array(
-		        		'username' => $this->input->post('username'),
-		        		'email' => $this->input->post('email'),
-		        		'phone' => $this->input->post('phone'),
-		        	);
-
-		        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
-		        	if($update == true) {
-		        		$this->session->set_flashdata('success', 'Successfully updated');
-		        		redirect('users/setting/', 'refresh');
-		        	}
-		        	else {
-		        		$this->session->set_flashdata('errors', 'Error occurred!!');
-		        		redirect('users/setting/', 'refresh');
-		        	}
-		        }
-		        else {
-		        	//$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
-					//$this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|required|matches[password]');
-
-					if($this->form_validation->run() == TRUE) {
-
-						$password = $this->password_hash($this->input->post('password'));
-
-						$data = array(
-			        		'username' => $this->input->post('username'),
-			        		'password' => $password,
-			        		'email' => $this->input->post('email'),
-			        		'phone' => $this->input->post('phone'),
-			        	);
-
-			        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
-			        	if($update == true) {
-			        		$this->session->set_flashdata('success', 'Successfully updated');
-			        		redirect('users/setting/', 'refresh');
-			        	}
-			        	else {
-			        		$this->session->set_flashdata('errors', 'Error occurred!!');
-			        		redirect('users/setting/', 'refresh');
-			        	}
-					}
-			        else {
-			            // false case
-			        	$user_data = $this->model_users->getUserData($id);
-			        	$groups = $this->model_users->getUserGroup($id);
-
-			        	$this->data['user_data'] = $user_data;
-			        	$this->data['user_group'] = $groups;
-
-			            $group_data = $this->model_groups->getGroupData();
-			        	$this->data['group_data'] = $group_data;
-
-						$this->render_template('users/setting', $this->data);	
-			        }	
-
-		        }
-	        }
-	        else {
-	            // false case
-	        	$user_data = $this->model_users->getUserData($id);
-	        	$groups = $this->model_users->getUserGroup($id);
-
-	        	$this->data['user_data'] = $user_data;
-	        	$this->data['user_group'] = $groups;
-
-	            $group_data = $this->model_groups->getGroupData();
-	        	$this->data['group_data'] = $group_data;
-
-				$this->render_template('users/setting', $this->data);	
-	        }	
-		}
-	}
-
+        $this->render_template('manufacturer/car_utility', $this->data);
+    }
 
 }

@@ -74,12 +74,16 @@
                             <li> <a class="waves-effect waves-light" href="warranty.php">Warranty</a></li>
                         </ul>
                     </li>
-                    <li><a class="waves-effect waves-light"><i class="fa fa-gears"></i>App Setting <span
-                                    class="fa fa-chevron-right"></span></a>
-                        <ul class="nav child_menu">
-                            <li> <a class="waves-effect waves-light" href="add_manufacturer.php">Manufacturers</a></li>
-                        </ul>
-                    </li>
+
+                    <?php if(in_array('updateSetting', $user_permission)){ ?>
+                        <li><a class="waves-effect waves-light"><i class="fa fa-gears"></i>App Setting <span
+                                        class="fa fa-chevron-right"></span></a>
+                            <ul class="nav child_menu">
+                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('manufacturer/create');?>">Manage Manufacturers</a></li>
+                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('manufacturer/car_utility');?>">Manage Car Utility</a></li>
+                            </ul>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         <?php } ?>

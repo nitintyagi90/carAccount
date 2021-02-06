@@ -1,4 +1,3 @@
-<?php include('header.php'); ?>
 <!-- End top navigation -->
     <!-- Start Contain Section -->
     <div class="container-fluid right_color">
@@ -23,32 +22,104 @@
                             <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#subModelModal">Add Sub Model</button>
                         </div>
                     </div>        
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="section-body">
 
                             <table id="datatable-zero" class="display datatable-default">
                                 <thead>
                                 <tr>
-                                    <th>S No.</th>
                                     <th>Name</th>
                                     <th>Type</th>
                                     <th>Parient</th>
-                                    <th>Sub Parient</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php if($models): ?>
+                                    <?php foreach ($models as $k => $v): ?>
+                                        <tr>
+                                            <td><?php echo $v->name; ?></td>
+                                            <td><?php echo $v->type; ?></td>
+                                            <td>
+                                                <?php
+                                                if($v->parent==0){?>
+                                                    <span>No Parent</span>
+                                                <?php }else{ ?>
+                                                    <?php
+                                                    $query = $this->db->get_where('brandmodels', array('id' => $v->parent,'type'=>'brand'));
+
+                                                    $result = $query->row();
+
+                                                    if(!empty($result)){
+                                                        echo $result->name;
+                                                    }
+                                                    ?>
+                                                <?php } ?>
+                                            </td>
+                                            <td>
+
+<!--                                                <a href="<?php /*echo base_url('manufacturer/edit/'.$v->id) */?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+-->
+
+                                                <a href="<?php echo base_url('manufacturer/delete/'.$v->id) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+
+                                            </td>
+
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php endif; ?>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="section-body">
+
+                            <table id="datatable-zero" class="display datatable-default">
+                                <thead>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Honda</td>
-                                    <td>Make</td>
-                                    <td>No Parient</td>
-                                    <td>No Sub Parient</td>
-                                    <td>
-                                        <a href="" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                                        <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                    </td>
+                                    <th>Name</th>
+                                    <th>Brand</th>
+                                    <th>Model</th>
+                                    <th>Action</th>
                                 </tr>
+                                </thead>
+                                <tbody>
+                                <?php if($submodel): ?>
+                                    <?php foreach ($submodel as $k => $v): ?>
+                                        <tr>
+                                            <td><?php echo $v->submodel; ?></td>
+                                            <td>
+                                                <?php
+                                                $query = $this->db->get_where('brandmodels', array('id' => $v->brand,'type'=>'brand'));
+                                                $result = $query->row();
+                                                if(!empty($result)){
+                                                    echo $result->name;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                $query = $this->db->get_where('brandmodels', array('id' => $v->model,'type'=>'model'));
+                                                $result = $query->row();
+                                                if(!empty($result)){
+                                                    echo $result->name;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+<!--                                                <a href="<?php /*echo base_url('manufacturer/edit/'.$v->id) */?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+-->
+                                                <a href="<?php echo base_url('manufacturer/deletesubmodel/'.$this->atri->en($v->id)) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+                                            </td>
+
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php endif; ?>
                                 </tbody>
                             </table>
 
@@ -64,18 +135,20 @@
     <div id="makeModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <form action="">
+            <form action="<?php echo base_url().'Manufacturer/create/'; ?>" method="post">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Add Make (Brand)</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Enter Make">
-                            </div>
-                        </div>
+                                <textarea class="form-control" required style="height:260px;" name="makeModels" spellcheck="false"></textarea>
+                                &nbsp;
+                                <div class="alert alert-info">Put one or more brand name as "," (comma) separated. Like MarutiSuzuki,Honda,Nissan</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                                </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Add</button>
@@ -91,23 +164,31 @@
     <div id="modelModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <form action="">
+            <form action="<?php echo base_url().'Manufacturer/modelcreate/'; ?>" method="post">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Model</h4>
+                        <h4 class="modal-title">Add Make (Brand)</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12 m-t-10">
-                                <select name="" class="form-control">
-                                    <option value="">Select Make</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 m-t-10">
-                                <input type="text" class="form-control" placeholder="Enter Model">
-                            </div>
-                        </div>
+
+                        <p>
+                            <b>Select Brand</b>
+                        </p>
+
+                        <select class="form-control" name="brand" required>
+                            <option value="selectBrand">---Select Brand---</option>
+                            <?php if($brand): ?>
+                                <?php foreach ($brand as $k => $v): ?>
+                                    <option value="<?php echo $v->id; ?>"><?php echo $v->name; ?></option>
+                                <?php endforeach ?>
+                            <?php endif; ?>
+                        </select>
+
+                        <textarea class="form-control" required style="height:260px;" name="makeModels" spellcheck="false"></textarea>
+                        &nbsp;
+                        <div class="alert alert-info">Put one or more brand name as "," (comma) separated. Like MarutiSuzuki,Honda,Nissan</div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Add</button>
@@ -123,37 +204,83 @@
     <div id="subModelModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <form action="">
+            <form action="<?php echo base_url().'manufacturer/submodelcreate/'; ?>" method="post">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Add Sub Model</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12 m-t-10">
-                                <select name="" class="form-control">
-                                    <option value="">Select Make</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 m-t-10">
-                                <select name="" class="form-control">
-                                    <option value="">Select Model</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 m-t-10">
-                                <input type="text" class="form-control" placeholder="Enter Sub Model">
-                            </div>
+                        <p>
+                            <b>Select Brand</b>
+                        </p>
+                        <select class="form-control brandListss" name="brand" required>
+                            <option value="selectBrand">---Select Brand---</option>
+                            <?php if($brand): ?>
+                                <?php foreach ($brand as $k => $v): ?>
+                                    <option value="<?php echo $v->id; ?>"><?php echo $v->name; ?></option>
+                                <?php endforeach ?>
+                            <?php endif; ?>
+                        </select>
+
+                        &nbsp;
+                        <p>
+                            <b>Select Model</b>
+                        </p>
+
+                        <select class="form-control" id="modelsLists" name="modelId" required></select>
+
+                        &nbsp;
+
+                        <textarea class="form-control" required style="height:260px;" name="submodels" spellcheck="false"></textarea>
+
+                        &nbsp;
+                        <div class="alert alert-info">Put one or more brand name as "," (comma) separated. Like MarutiSuzuki,Honda,Nissan</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Add</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+
                 </div>
             </form>
         </div>
     </div>
+
+<script>
+    $('.brandListss').change(function () {
+        var id = $(this).val();
+        var $mySelect = $('#modelsLists');
+        if(id==0){
+            $($mySelect)
+                .find('option')
+                .remove()
+                .end()
+                .append('<option value="0">No Record Found!</option>');
+            return
+        }
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo base_url();?>manufacturer/getModel',
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                var jsonParseRe = JSON.parse(data);
+                $($mySelect).empty();
+                if(jsonParseRe.status==200){
+                    $.each(jsonParseRe.subcategory, function(key, value) {
+                        var thing = '<option value="'+value.id+'">'+ value.name +'</option>';
+                        $($mySelect).append(thing);
+                    });
+                    $($mySelect).selectpicker('refresh');
+                }
+            }
+        });
+
+    });
+
+</script>
+
     <!-- Sub Model modal end here -->
 
-<?php include('footer.php'); ?>
