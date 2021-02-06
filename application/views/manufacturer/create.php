@@ -24,7 +24,7 @@
                     </div>        
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="section-body">
-
+                        <h3 class="page-heading" style="margin-bottom:20px;">Make and Model</h3>
                             <table id="datatable-zero" class="display datatable-default">
                                 <thead>
                                 <tr>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="section-body">
-
+                        <h3 class="page-heading" style="margin-bottom:20px;">Sub Model</h3>
                             <table id="datatable-zero" class="display datatable-default">
                                 <thead>
                                 <tr>

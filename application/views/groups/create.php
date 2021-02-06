@@ -39,7 +39,7 @@
                     <label for="group_name">Group Name</label>
                     <div class="custom-control custom-switch"><input type="text" class="form-control" id="group_name" name="group_name" placeholder="Enter group name" autocomplete="off">
                     </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-top: 20px;">
                     <label for="permission">Permission</label>
 
                     <table class="table">

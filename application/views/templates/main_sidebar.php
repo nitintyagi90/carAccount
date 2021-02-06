@@ -88,7 +88,7 @@
             </div>
         <?php } ?>
         </div>
-        <div class="sidebar-footer hidden-small">
+        <!-- <div class="sidebar-footer hidden-small">
             <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="fa fa-cog" aria-hidden="true"></span>
             </a>
@@ -101,6 +101,6 @@
             <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url('auth/logout') ?>">
                 <span class="fa fa-power-off" aria-hidden="true"></span>
             </a>
-        </div>
+        </div> -->
     </div>
 </div>

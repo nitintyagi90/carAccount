@@ -31,7 +31,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Dealer Name</p>
-                            <input class="form-style" name="db1" type="text" data-role="datebox" data-datebox-mode="datebox" id="db2">
+                            <input class="form-style" name="db1" type="text">
 
                         </div>
                     </div>
@@ -283,13 +283,13 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Registration Date</p>
-                            <input type="text" name="text" class="form-style datepicker" autocomplete="off" data-date-format="dd/mm/yyyy"/>
+                            <input type="text" name="text" id="date1" class="form-style" value="0" autocomplete="off" data-date-format="dd/mm/yyyy" data-select="date"/>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">RC Expiry Date</p>
-                            <input type="text" name="text" class="date form-style" autocomplete="off" />
+                            <input type="text" name="text" id="date1" class="form-style" value="0" autocomplete="off" data-date-format="dd/mm/yyyy" data-select="date"/>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -301,7 +301,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Purchase Date</p>
-                            <input type="text" name="text" class="date form-style" autocomplete="off" />
+                            <input type="text" name="text" id="date1" class="form-style" value="0" autocomplete="off" data-date-format="dd/mm/yyyy" data-select="date" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -602,11 +602,11 @@
     </div>
 
 </div>
-<script>
+<!-- <script>
     $('#db2').datebox({
         mode: "calbox",
         maxDays: 10,
         minDays: 10
     });
 
-</script>
+</script> -->

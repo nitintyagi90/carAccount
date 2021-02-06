@@ -19,10 +19,10 @@ class Manufacturer extends Admin_Controller
         $this->data['submodel'] = $result_submodel;
 
         $query = $this->db->get_where('brandmodels');
-        $this->db->order_by('name', 'ASC');
+        // $this->db->order_by('name', 'ASC');
         $result = $query->result();
         $query_brand = $this->db->get_where('brandmodels', array('type' =>'brand'));
-        $this->db->order_by('name', 'ASC');
+        // $this->db->order_by('name', 'ASC');
         $result_brand = $query_brand->result();
 
         $this->data['groups_data'] = $groups_data;
