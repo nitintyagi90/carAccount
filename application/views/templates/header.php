@@ -18,5 +18,5 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>css/jquery-date-picker.css"> -->
     <script src="<?php echo base_url('assets/');?>global/plugins/jquery/dist/jquery.min.js"></script>
     <!-- datepicker -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/');?>datepicker/css/jquery.dateselect.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/');?>datepicker/css/BeatPicker.min.css">
 </head>

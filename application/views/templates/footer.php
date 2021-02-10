@@ -22,7 +22,6 @@
 <script src="<?php echo base_url('assets/');?>global/plugins/datatables/media/js/dataTables.bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/js/datatable.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/js/select2.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/jtsage-datebox-bootstrap4@5.3.3/jtsage-datebox.min.js" type="text/javascript"></script> -->
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -30,6 +29,7 @@
     });
 </script>
 <!-- datepicker -->
-<script src="<?php echo base_url('assets/');?>datepicker/js/jquery.dateselect.js"></script>
+<script src="<?php echo base_url('assets/');?>datepicker/js/BeatPicker.min.js"></script>
+<script src="<?php echo base_url('assets/');?>datepicker/js/jquery-1.11.0.min.js"></script>
 </body>
 </html>

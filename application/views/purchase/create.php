@@ -283,13 +283,13 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Registration Date</p>
-                            <input type="text" name="text" id="date1" class="form-style" value="0" autocomplete="off" data-date-format="dd/mm/yyyy" data-select="date"/>
+                            <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">RC Expiry Date</p>
-                            <input type="text" name="text" id="date1" class="form-style" value="0" autocomplete="off" data-date-format="dd/mm/yyyy" data-select="date"/>
+                            <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -301,7 +301,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Purchase Date</p>
-                            <input type="text" name="text" id="date1" class="form-style" value="0" autocomplete="off" data-date-format="dd/mm/yyyy" data-select="date" />
+                            <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -407,7 +407,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Insurance Expiry Date</p>
-                            <input type="text" name="text" class="Date form-style" autocomplete="off" />
+                            <input type="text" name="text" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
                         </div>
                     </div>
                     <div class="row" style="margin-left: 0">
@@ -436,7 +436,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Warranty Expiry Date</p>
-                            <input type="text" name="text" class="Date form-style" autocomplete="off" />
+                            <input type="text" name="text" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">

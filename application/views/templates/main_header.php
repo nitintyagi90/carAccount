@@ -15,7 +15,7 @@ $result = $query->row();
                         <img src="<?php echo base_url('assets/');?>global/images/logo.png" alt="medium-logo">
                     </a>
                     <a href="<?php echo base_url('dashboard');?>" class="small-logo">
-                        <img src="<?php echo base_url('assets/');?>global/images/logo.png" alt="medium-logo">
+                        <img src="<?php echo base_url('assets/');?>global/images/favicon.png" alt="medium-logo">
                     </a>
                 </div>
 
