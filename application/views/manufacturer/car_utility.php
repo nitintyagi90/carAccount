@@ -31,6 +31,12 @@
                         <button type="button" class="btn btn-sm btn-success btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#fuel">Add Fuel Type</button>
                         <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#transmission">Add Transmission</button>
                         <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#emmisson">Add Emission</button>
+                        <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#bank">Add Bank</button>
+                        <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#insurance">Add Insurance Comapny</button>
+                        <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#finance">Add Finance Comapny</button>
+                        <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#paymentMode">Add Payment Mode</button>
+                        <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#Repairing">Add Repairing items</button>
+                        <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#accessories">Add Accessories items</button>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -73,6 +79,13 @@
 <?php include(APPPATH.'/views/bsModals/fuel_type_modal.php');?>
 <?php include(APPPATH.'/views/bsModals/transmission_modals.php');?>
 <?php include(APPPATH.'/views/bsModals/emmisson_modal.php');?>
+<?php include(APPPATH.'/views/bsModals/emmisson_modal.php');?>
+<?php include(APPPATH.'/views/bsModals/addBankModel.php');?>
+<?php include(APPPATH.'/views/bsModals/insurance_modal.php');?>
+<?php include(APPPATH.'/views/bsModals/finance_modal.php');?>
+<?php include(APPPATH.'/views/bsModals/payment_modal.php');?>
+<?php include(APPPATH.'/views/bsModals/accessories_modal.php');?>
+<?php include(APPPATH.'/views/bsModals/Repairing_modal.php');?>
 
 <script>
     $('.brandListss').change(function () {
