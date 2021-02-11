@@ -89,13 +89,13 @@
                             </div>
                         </div>
                         <div class="row" style="padding: 0 15px;">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
                                     <textarea class="form-style" autocomplete="off" rows="5" style="height: auto;"></textarea>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding: 0;">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <!-- <p class="formLabel">Address</p> -->
@@ -295,13 +295,13 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Registration Date</p>
-                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Expiry Date</p>
-                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -313,7 +313,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Date</p>
-                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -419,7 +419,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Insurance Expiry Date</p>
-                                <input type="text" name="text" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                <input type="text" name="text" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
                             </div>
                         </div>
                         <div class="row" style="margin-left: 0">
@@ -448,7 +448,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Warranty Expiry Date</p>
-                                <input type="text" name="text" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="[10,50]" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                <input type="text" name="text" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -505,13 +505,13 @@
                             </div>
                         </div>
                         <div class="row" style="padding: 0 15px;">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
                                     <textarea class="form-style" autocomplete="off" rows="5" style="height: auto;"></textarea>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding: 0;">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <!-- <p class="formLabel">Address</p> -->
@@ -542,7 +542,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" style="margin-left: 0px;">
+                        <div class="row" style="padding: 0 15px;">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">GST No.</p>

@@ -31,7 +31,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="section-body">
 
-                        <table id="datatable-zero" class="display datatable-default">
+                        <table id="datatable-zero" class="display table datatable-default">
                             <thead>
                             <tr>
                                 <th>Name</th>
@@ -59,10 +59,10 @@
 
                                             <td>
                                                 <?php if(in_array('updateUser', $user_permission)): ?>
-                                                    <a href="<?php echo base_url('users/edit/'.$v['user_info']['user_id']) ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                                    <a href="<?php echo base_url('users/edit/'.$v['user_info']['user_id']) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
                                                 <?php endif; ?>
                                                 <?php if(in_array('deleteUser', $user_permission)): ?>
-                                                    <a href="<?php echo base_url('users/delete/'.$this->atri->en($v['user_info']['user_id'])) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo base_url('users/delete/'.$this->atri->en($v['user_info']['user_id'])) ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                                 <?php endif; ?>
                                             </td>
                                         <?php endif; ?>

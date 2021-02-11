@@ -68,3 +68,95 @@ body.nav-medium, body.nav-small {
 	margin-top: 17px;
 	font-weight: 500;
 }
+
+@media (max-width: 479px)
+{
+	.responsive-logo img
+	{
+		display: none !important;
+	}
+	.owner-name {
+		color: #fff;
+		font-size: 12px;
+		margin-left: 7px;
+		margin-top: 10px;
+		font-weight: 500;
+	}
+	.topbar-right {
+		background: #ffffff00 !important;
+		width: 50% !important;
+	}
+	.nav_menu {
+		height: 55px;
+	}
+	.nav-medium .container.body .right_color, .nav-small .container.body .right_color {
+		padding: 0px 15px 0;
+	}
+	.topbar-right .navbar-right .user-profile img {
+		margin-top: 0;
+	}
+	.page-main-header {
+		text-align: center;
+		display: contents;
+	}
+	.nav-small .small-logo img {
+		width: 60px;
+		margin: 7px 0 0 0;
+	}
+	.w-100
+	{
+		width: 100%;
+	}
+	table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+		font-size: 11px;
+	}
+
+	.contain-section .contain-inner-section {
+		padding: 10px;
+		width: 100%;
+	}
+	div.dataTables_wrapper div.dataTables_filter input {
+		margin-left: 0.5em;
+		display: inline-block;
+		width: 105px;
+		height: 25px;
+	}
+	div.dataTables_wrapper div.dataTables_filter label {
+		float: right;
+	}
+
+	label {
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: 5px !important;
+		font-weight: 600 !important;
+		font-size: 11px !important;
+		float: left;
+	}
+
+	div.dataTables_wrapper div.dataTables_length select {
+		width: 60px !important;
+		height: 25px !important;
+		display: inline-block;
+		margin-top: 5px;
+	}
+
+	
+	div.dataTables_wrapper div.dataTables_info {
+		padding-top: 8px;
+		font-size: 11px;
+		white-space: nowrap;
+		float: left;
+	}
+	div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+		margin: 0px 0;
+		white-space: nowrap;
+		font-size: 8px;
+		float: right;
+	}
+	
+}
+
+.section-body {
+	box-shadow: none !important; 
+}

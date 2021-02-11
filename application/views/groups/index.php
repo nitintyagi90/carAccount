@@ -27,7 +27,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="section-body">
 
-                        <table id="datatable-zero" class="display datatable-default">
+                        <table id="datatable-zero" class="table display datatable-default">
                             <thead>
                             <tr>
                                 <th>Group Name</th>

@@ -29,15 +29,12 @@
     <?php } ?>
 
     <div class="contain-section">
-        <div class="contain-inner-section">
-
-
-
-
+        <div class="contain-inner-section w-100">
             <form role="form" action="<?php base_url('groups/create') ?>" method="post">
                 <div class="form-group">
                     <label for="group_name">Group Name</label>
-                    <div class="custom-control custom-switch"><input type="text" class="form-control" id="group_name" name="group_name" placeholder="Enter group name" autocomplete="off">
+                    <div class="custom-control custom-switch">
+                        <input type="text" class="form-control" id="group_name" name="group_name" placeholder="Enter group name" autocomplete="off">
                     </div>
                 <div class="form-group" style="margin-top: 20px;">
                     <label for="permission">Permission</label>

@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>global/plugins/Waves/dist/waves.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>icons_fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>pages/login/css/user_login_v2.css">
-    <link rel="icon" href="<?php echo base_url('assets/');?>favicon/prince.ico" type="image/x-icon"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url('assets/');?>favicon/prince-192x192.png" type="image/x-icon"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/');?>favicon/prince-180x180.png">
+    <link rel="icon" href="<?php echo base_url('assets/');?>global/images/favicon.png" type="image/x-icon"/>
 </head>
 <body>
 
 <div class="login-background">
     <div class="login-left-section">
-        <img src="<?php echo base_url('assets/');?>global/images/logo.png" alt="logo-image">
+        <img src="<?php echo base_url('assets/');?>global/images/logo.png" alt="logo-image" style="height: auto; width: 25%;">
         <h2>Welcome to the My Car Account</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
     </div>

@@ -22,7 +22,7 @@
                             <button type="button" class="btn btn-sm btn-info btn-outline float-button-light waves-effect waves-button waves-float waves-light" data-toggle="modal" data-target="#subModelModal">Add Sub Model</button>
                         </div>
                     </div>        
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="section-body">
                         <h3 class="page-heading" style="margin-bottom:20px;">Make and Model</h3>
                             <table id="datatable-zero" class="display datatable-default">
@@ -61,7 +61,7 @@
 <!--                                                <a href="<?php /*echo base_url('manufacturer/edit/'.$v->id) */?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
 -->
 
-                                                <a href="<?php echo base_url('manufacturer/delete/'.$v->id) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url('manufacturer/delete/'.$v->id) ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
 
 
                                             </td>
@@ -75,7 +75,7 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="section-body">
                         <h3 class="page-heading" style="margin-bottom:20px;">Sub Model</h3>
                             <table id="datatable-zero" class="display datatable-default">
@@ -113,7 +113,7 @@
                                             <td>
 <!--                                                <a href="<?php /*echo base_url('manufacturer/edit/'.$v->id) */?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
 -->
-                                                <a href="<?php echo base_url('manufacturer/deletesubmodel/'.$this->atri->en($v->id)) ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url('manufacturer/deletesubmodel/'.$this->atri->en($v->id)) ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
 
                                             </td>
 

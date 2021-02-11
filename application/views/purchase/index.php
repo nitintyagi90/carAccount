@@ -38,8 +38,8 @@
                                 <td>2011/04/25</td>
                                 <td>2011/04/25</td>
                                 <td>
-                                    <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                    <a href="" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             </tbody>

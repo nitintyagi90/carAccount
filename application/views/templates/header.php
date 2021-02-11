@@ -19,5 +19,6 @@
     <!-- datepicker -->
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>datepicker/css/BeatPicker.min.css">
     <script src="<?php echo base_url('assets/');?>datepicker/js/jquery-1.11.0.min.js"></script>
+    <link rel="icon" href="<?php echo base_url('assets/');?>global/images/favicon.png" type="image/x-icon"/>
 
 </head>
