@@ -30,6 +30,5 @@
 </script>
 <!-- datepicker -->
 <script src="<?php echo base_url('assets/');?>datepicker/js/BeatPicker.min.js"></script>
-<script src="<?php echo base_url('assets/');?>datepicker/js/jquery-1.11.0.min.js"></script>
 </body>
 </html>
