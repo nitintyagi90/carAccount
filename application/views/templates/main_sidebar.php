@@ -7,21 +7,25 @@
                 <h3>Client Name</h3>
                 <ul class="nav side-menu">
                     <li><a class="waves-effect waves-light" href="<?php echo base_url('dashboard');?>"><i class="fa fa-home"></i> Dashboard</a></li>
-                    <li><a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Group <span
-                                    class="fa fa-chevron-right"></span></a>
+                    <?php
+                    if(in_array('updateGroup', $user_permission) || in_array('createGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)){ ?>
+                        <li>
+                       <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Group <span class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
-                            <?php if(in_array('createGroup', $user_permission)){ ?>
-                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('groups/create');?>">Add Group</a></li>
-                            <?php }
-                            if(in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)){ ?>
-                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('groups/');?>">Manage Group</a></li>
-                            <?php }?>
-                        </ul>
+                                <?php if(in_array('createGroup', $user_permission)){ ?>
+                                    <li> <a class="waves-effect waves-light" href="<?php echo base_url('groups/create');?>">Add Group</a></li>
+                                <?php }
+                                if(in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)){ ?>
+                                    <li> <a class="waves-effect waves-light" href="<?php echo base_url('groups/');?>">Manage Group</a></li>
+                                <?php }?>
+                            </ul>
                     </li>
+                    <?php } ?>
 
+                    <?php if(in_array('updateUser', $user_permission) || in_array('createUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)){ ?>
                     <li>
-                        <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Users <span
-                                    class="fa fa-chevron-right"></span></a>
+                        <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Users <span class="fa fa-chevron-right"></span></a>
+
                         <ul class="nav child_menu">
                             <?php if(in_array('createUser', $user_permission)){ ?>
                                 <li> <a class="waves-effect waves-light" href="<?php echo base_url('users/create');?>">Add User</a></li>
@@ -31,6 +35,10 @@
                             <?php }?>
                         </ul>
                     </li>
+
+                    <?php } ?>
+
+                    <?php  if(in_array('updatePurchase', $user_permission) || in_array('createPurchase', $user_permission) || in_array('viewPurchase', $user_permission) || in_array('deletePurchase', $user_permission)){ ?>
 
                     <li>
                         <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Purchase <span
@@ -45,11 +53,14 @@
                         </ul>
                     </li>
 
+                    <?php } ?>
+
+
                     <li><a class="waves-effect waves-light"><i class="fa fa-recycle"></i>Refurbishment <span
                                     class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
-                            <li> <a class="waves-effect waves-light" href="refurbishment_entry.php">Refurbishment Entry</a></li>
-                            <li> <a class="waves-effect waves-light" href="refurbishment_car.php">Refurbished Car</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('refurbishment/refurbishment_entry');?>">Refurbishment Entry</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('refurbishment/refurbishment_list');?>">Refurbished Car</a></li>
                         </ul>
                     </li>
                     <li><a class="waves-effect waves-light"><i class="fa fa-shopping-cart"></i>Sale <span class="fa fa-chevron-right"></span></a>
@@ -61,17 +72,17 @@
                     <li><a class="waves-effect waves-light"><i class="fa fa-money"></i>Payment <span
                                     class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
-                            <li> <a class="waves-effect waves-light" href="purchase_payment_entry.php">Purchase Payment Entry</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/payment_entry');?>">Purchase Payment Entry</a></li>
                             <li> <a class="waves-effect waves-light" href="#">Purchase Payment</a></li>
-                            <li> <a class="waves-effect waves-light" href="refurbishment_payment_entry.php">Refurbishment Payment Entry</a></li>
-                            <li> <a class="waves-effect waves-light" href="refurbishment_payment_car.php">Refurbished Payment</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/refurbishment_payment_entry');?>">Refurbishment Payment Entry</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/refurbishment_payment');?>">Refurbished Payment</a></li>
                             <li> <a class="waves-effect waves-light" href="#">Sale Payment Entry</a></li>
                             <li> <a class="waves-effect waves-light" href="#">Sale Payment</a></li>
-                            <li> <a class="waves-effect waves-light" href="on_hole.php">On Hold</a></li>
-                            <li> <a class="waves-effect waves-light" href="rc_security.php">RC Security</a></li>
-                            <li> <a class="waves-effect waves-light" href="rto.php">R.T.O</a></li>
-                            <li> <a class="waves-effect waves-light" href="insurance.php">Insurance</a></li>
-                            <li> <a class="waves-effect waves-light" href="warranty.php">Warranty</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/on_hole');?>">On Hold</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/rc_security');?>">RC Security</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/rto');?>">R.T.O</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/insurance');?>">Insurance</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/warranty');?>">Warranty</a></li>
                         </ul>
                     </li>
 

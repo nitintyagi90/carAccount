@@ -1,4 +1,3 @@
-<?php include('header.php'); ?>
 <!-- End top navigation -->
     <!-- Start Contain Section -->
     <div class="container-fluid right_color">
@@ -56,4 +55,3 @@
 
     </div>
     <!-- End Contain Section -->    
-<?php include('footer.php'); ?>
