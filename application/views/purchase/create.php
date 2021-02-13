@@ -163,11 +163,11 @@
                             <div style="display: none"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 showupload">
 
                             <img id="blah" src="#" alt="your image" />
-                                <button class="removePreview">Remove</button>
+                                <button class="hidePreview">Remove</button>
 
                             </div>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removeupload">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hideupload">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Car Photo F With Number Palet</label>
                                     <input type="file" id="imgInp" name="text" class="form-style" autocomplete="off" />
