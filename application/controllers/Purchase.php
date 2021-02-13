@@ -96,6 +96,14 @@ class Purchase extends Admin_Controller
             $this->data['Finance_list'] = $Finance_data;
 
 
+            $query_states = $this->db->get_where('states');
+            $states_data = $query_states->result();
+            $this->data['states'] = $states_data;
+
+            $this->db->order_by('id', 'ASC');
+            $query_brand = $this->db->get_where('brandmodels',array('type' => 'brand'));
+            $result_brand = $query_brand->result();
+            $this->data['models'] = $result_brand;
 
             $this->render_template('purchase/create', $this->data);
         }
@@ -126,5 +134,45 @@ class Purchase extends Admin_Controller
         }
 
     }
+
+    public function getcity(){
+        $categoryId = $this->input->post('id');
+        $query = $this->db->get_where('cities', array('state_id' => $categoryId));
+        $result = $query->result();
+        $response = array(
+            'status' => 200,
+            'subcategory' => $result,
+        );
+        echo json_encode($response);
+        exit();
+    }
+
+    public function getModel(){
+        $categoryId = $this->input->post('id');
+
+        $query = $this->db->get_where('brandmodels', array('parent' => $categoryId,'type'=>'model'));
+        $result = $query->result();
+        $response = array(
+            'status' => 200,
+            'subcategory' => $result,
+        );
+        echo json_encode($response);
+        exit();
+    }
+
+    public function getSubModel(){
+        $categoryId = $this->input->post('id');
+
+        $query = $this->db->get_where('submodel', array('model' => $categoryId));
+        $result = $query->result();
+        $response = array(
+            'status' => 200,
+            'subcategory' => $result,
+        );
+        echo json_encode($response);
+        exit();
+    }
+
+
 
 }

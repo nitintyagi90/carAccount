@@ -15,13 +15,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-header">
-                            <h2 class="header-text">Dealer Details</h2>
+                            <h2 class="header-text">Deler Details (Select Dealer Mobile Before Purchase Entry)</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <select class="form-style js-example-basic-single dealer" required>
-                                <option>Dealer Mobile No.</option>
+                                <option value="0">Dealer Mobile No.</option>
                                 <?php foreach ($user_list as $dealer){ ?>
                                     <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
                                 <?php }?>
@@ -58,8 +58,8 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Reg. No</p>
-                                <input type="text" name="username" class="form-style" autocomplete="off" />
+                                <p class="formLabel">Reg. No*</p>
+                                <input type="text" name="registration_no" id="registration_no" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -67,61 +67,67 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Name</p>
-                                <input type="text" name="username" class="form-style" autocomplete="off" />
+                                <input type="text" name="rc_name" id="rc_name" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mobile</p>
-                                <input type="number" name="number" class="form-style" autocomplete="off" />
+                                <input type="number" name="rc_mobile" id="rc_mobile" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Email ID</p>
-                                <input type="email" name="email" class="form-style" autocomplete="off" />
+                                <input type="email" name="rc_email" id = 'rc_email' class="form-style" autocomplete="off" />
                             </div>
                         </div>
+
+                        
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
-                                <input type="text" name="" class="form-style" autocomplete="off" />
+                                <input type="text" name="rc_pan" id="rc_pan" class="form-style" autocomplete="off" />
                             </div>
                         </div>
+
+
                         <div class="row" style="padding: 0 15px;">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
-                                    <textarea class="form-style" autocomplete="off" rows="5" style="height: auto;"></textarea>
+                                    <textarea class="form-style" name="rc_address" id="rc_address" autocomplete="off" rows="5" style="height: auto;"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <!-- <p class="formLabel">Address</p> -->
-                                        <select class="form-style">
-                                            <option>Select State</option>
+                                        <select class="form-style state1" name="rc_state">
+                                            <option>--Select State--</option>
+                                            <?php foreach ($states as $list){ ?>
+                                                <option value="<?php echo $list->id ?>"><?php echo $list->name ?></option>
+                                            <?php  }?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <!-- <p class="formLabel">Address</p> -->
-                                        <select class="form-style">
-                                            <option>Select City</option>
+                                        <select name="rc_city" class="form-style citydata2">
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Landmark</p>
-                                        <input type="text" name="username" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_ladmark" id="rc_landmark" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Pincode</p>
-                                        <input type="text" name="text" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_pincode" id="rc_pincode" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                             </div>
@@ -153,10 +159,18 @@
                             </div>
                         </div>
                         <div class="col-md-4" style="padding: 113px 0; margin-top: 35px; border: 1px solid #97a3a2;">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div style="display: none"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 showupload">
+
+                            <img id="blah" src="#" alt="your image" />
+                                <button class="removePreview">Remove</button>
+
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removeupload">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Car Photo F With Number Palet</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" id="imgInp" name="text" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -195,25 +209,35 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Make</option>
+                                <select class="form-style brandListss">
+                                    <?php if($models): ?>
+
+                                        <option value="NG" selected="selected">--Select Make--</option>
+
+
+                                        <?php foreach ($models as $k => $v): ?>
+                                            <?php if($v->type=='brand'){ ?>
+                                                <option value="<?php echo $v->id ?>" ><?php echo $v->name ?></option>
+
+                                            <?php } ?>
+
+                                        <?php endforeach ?>
+                                    <?php endif; ?>
+                                </select>
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="form-item">
+                                <select class="form-style modelsLists">
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Model</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Sub Model</option>
+                                <select class="form-style submodeldata">
                                 </select>
                             </div>
                         </div>
@@ -352,115 +376,130 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Car Financed</option>
+                                <select class="form-style finance-option">
+                                    <option value="0">Car Financed</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Financer</option>
-                                    <option value="Bajaj aliance">Bajaj aliance</option>
-                                </select>
+
+
+                        <div class="financedBlock" style="display: none">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <div class="form-item">
+                                    <select class="form-style">
+                                        <option>Financer</option>
+                                        <option value="Bajaj aliance">Bajaj aliance</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <div class="form-item">
+                                    <p class="formLabel">Loan Account No.</p>
+                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <div class="form-item">
+                                    <select class="form-style">
+                                        <option>Bank NOC Received</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Loan Account No.</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Bank NOC Received</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
+
+
                         <div class="row" style="margin-left: 0">
                             <label class="page-heading">Insurance</label>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
+                                <select class="form-style insurance-option">
                                     <option>Insurance</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Insurance Type</option>
-                                    <option value="">Enter type</option>
-                                </select>
+
+
+                        <div class="insuranceBlock" style="display: none">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <div class="form-item">
+                                    <select class="form-style">
+                                        <option>Insurance Type</option>
+                                        <option value="">Enter type</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Insurance Company</option>
-                                    <option value="Bajaj">Bajaj</option>
-                                </select>
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <div class="form-item">
+                                    <!-- <label class="formLabel">Upload Delivery Note</label> -->
+                                    <select class="form-style">
+                                        <option>Insurance Company</option>
+                                        <option value="Bajaj">Bajaj</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Insurance Expiry Date</p>
-                                <input type="text" name="text" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <div class="form-item">
+                                    <p class="formLabel">Insurance Expiry Date</p>
+                                    <input type="text" name="text" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                </div>
                             </div>
+
                         </div>
+
+
+
                         <div class="row" style="margin-left: 0">
                             <label class="page-heading">Warranty</label>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
+                                <select class="form-style warranty-option">
                                     <option>Warranty</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Warranty Upto</option>
-                                    <option value="1 Year">1 Year</option>
-                                    <option value="6 Month">6 Months</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Warranty Expiry Date</p>
-                                <input type="text" name="text" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Category</option>
-                                    <option value="Certified">Certified</option>
-                                    <option value="Non-certified">Non-certified</option>
-                                </select>
-                            </div>
-                        </div>
+
+                        <div class="warrantyBlock" style="display: none">
+                           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                               <div class="form-item">
+                                   <!-- <label class="formLabel">Upload Delivery Note</label> -->
+                                   <select class="form-style">
+                                       <option>Warranty Upto</option>
+                                       <option value="1 Year">1 Year</option>
+                                       <option value="6 Month">6 Months</option>
+                                   </select>
+                               </div>
+                           </div>
+
+                           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                               <div class="form-item">
+                                   <p class="formLabel">Warranty Expiry Date</p>
+                                   <input type="text" name="text" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                               </div>
+                           </div>
+
+                           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                               <div class="form-item">
+                                   <select class="form-style">
+                                       <option>Category</option>
+                                       <option value="Certified">Certified</option>
+                                       <option value="Non-certified">Non-certified</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
@@ -471,9 +510,9 @@
                         <div class="row" style="margin-left: 0px;">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                    <select class="form-style">
-                                        <option>Same</option>
+                                    <select class="form-style purchase-type">
+                                        <option>--Select Purchase Type--</option>
+                                        <option value="same">Same</option>
                                         <option>Dealership</option>
                                         <option>Dealer/Third Party Name</option>
                                     </select>
@@ -482,62 +521,66 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">RC Name</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <p class="formLabel purchase_rc">RC Name</p>
+                                <input type="text" name="purchase_rc" id="purchase_rc" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Mobile</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <p class="formLabel purchase_mobile">Mobile</p>
+                                <input type="text" name="purchase_mobile" id="purchase_mobile" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Email ID</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <p class="formLabel purchase_email">Email ID</p>
+                                <input type="text" name="purchase_email" id="purchase_email" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">PAN Number</p>
-                                <input type="text" name="" class="form-style" autocomplete="off" />
+                                <p class="formLabel purchase_pan">PAN Number</p>
+                                <input type="text" name="purchase_pan" id="purchase_pan" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="row" style="padding: 0 15px;">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
-                                    <p class="formLabel">Address</p>
-                                    <textarea class="form-style" autocomplete="off" rows="5" style="height: auto;"></textarea>
+                                    <p class="formLabel purchase_address">Address</p>
+                                    <textarea class="form-style" name="purchase_address" id="purchase_address" autocomplete="off" rows="5" style="height: auto;"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <!-- <p class="formLabel">Address</p> -->
-                                        <select class="form-style">
-                                            <option>Select State</option>
+                                        <select class="form-style state2" name="state2">
+
+                                            <option>--Select State--</option>
+                                            <?php foreach ($states as $list){ ?>
+                                                <option value="<?php echo $list->id ?>"><?php echo $list->name ?></option>
+                                            <?php  }?>
+
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <!-- <p class="formLabel">Address</p> -->
-                                        <select class="form-style">
-                                            <option>Select City</option>
+                                        <select name="purchase_city" class="form-style citydata1">
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <p class="formLabel">Landmark</p>
-                                        <input type="text" name="text" class="form-style" autocomplete="off" />
+                                        <p class="formLabel purchase_landmark">Landmark</p>
+                                        <input type="text" name="purchase_landmark" id="purchase_landmark" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <p class="formLabel">Pincode</p>
-                                        <input type="text" name="text" class="form-style" autocomplete="off" />
+                                        <p class="formLabel purchase_pincode">Pincode</p>
+                                        <input type="text" name="purchase_pincode" id="purchase_pincode" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                             </div>
@@ -616,30 +659,5 @@
     </div>
 
 </div>
-<script>
-    $('.dealer').change(function() {
-        var $this = $(this);
-        var user_id = $this.val();
-        $.ajax({
-            type:"POST",
-            url : "<?php echo base_url('purchase/user_detail');?>",
-            data: {user_id : user_id},
-            success : function(data) {
-                var json = $.parseJSON(data);
-                if(json.status==200){
-                    $('.dealer_comapny_lebel').remove();
-                    $('.dealer_name_lebel').remove();
-                    var user_company = json.data.user_company;
-                    var user_name = json.data.user_name;
-                    $('.dealer_name').val(user_name);
-                    $('.dealer_company').val(user_company);
-                    $('.purchase_entry').show();
-                }else{
-                    alert('somthing went wrong!')
-                }
 
-            }
-        });
-
-    });
-</script>
+<?php include('js.php');?>
