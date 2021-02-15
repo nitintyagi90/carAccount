@@ -66,6 +66,21 @@
                             <input type="text" name="email" class="form-style" autocomplete="off" />
                         </div>
                     </div>
+
+
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-item">
+                            <select class="form-style js-example-basic-single dealer" name="user_location" required>
+                                <option value="0">Location</option>
+                                <?php foreach ($city as $dealer){ ?>
+                                    <option value="<?php echo $dealer->city ?>"><?php echo $dealer->city ?></option>
+                                <?php }?>
+                            </select>
+                        </div>
+                    </div>
+
+
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Password</p>

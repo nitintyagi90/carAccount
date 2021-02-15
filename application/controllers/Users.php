@@ -40,6 +40,7 @@ class Users extends Admin_Controller
         }
 
         $this->form_validation->set_rules('username', 'user_name', 'trim|required');
+        $this->form_validation->set_rules('user_location', 'user_location', 'trim|required');
         $this->form_validation->set_rules('companyName', 'user_company', 'trim|required');
         $this->form_validation->set_rules('phone', 'user_mobile', 'trim|required|is_unique[users.user_mobile]');
         $this->form_validation->set_rules('password', 'user_password', 'trim|required|min_length[8]');
@@ -53,6 +54,8 @@ class Users extends Admin_Controller
                 'user_email' => $this->input->post('email'),
                 'user_mobile' => $this->input->post('phone'),
                 'user_company' => $this->input->post('companyName'),
+                'user_location' => $this->input->post('user_location'),
+                'user_role' => 2,
             );
 
             $create = $this->model_users->create($data, $this->input->post('groups'));
@@ -70,6 +73,12 @@ class Users extends Admin_Controller
             }
             $group_data = $this->model_groups->getGroupData();
             $this->data['group_data'] = $group_data;
+
+
+            $query_city = $this->db->get_where('cities');
+            $city_data = $query_city->result();
+            $this->data['city'] = $city_data;
+
             $this->render_template('users/create', $this->data);
         }
 

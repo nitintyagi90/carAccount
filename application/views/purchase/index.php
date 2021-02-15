@@ -13,7 +13,16 @@
         <div class="contain-inner-section">
 
             <div class="row">
+                <?php if($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
 
+                <?php elseif($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $this->session->flashdata('error'); ?>
+                    </div>
+                <?php endif; ?>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="section-body">
 
@@ -24,24 +33,29 @@
                                 <th>Model</th>
                                 <th>Sub Model</th>
                                 <th>Color</th>
-                                <th>Insurance</th>
-                                <th>Validity</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>2011/04/25</td>
-                                <td>
-                                    <a href="" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
+                            <?php if($purchase_list): ?>
+                                <?php foreach ($purchase_list as $k => $v): ?>
+                                    <tr>
+                                        <td><?php echo $v->registration_no ?></td>
+                                        <td><?php echo $v->car_brand ?></td>
+                                        <td><?php echo $v->car_model ?></td>
+                                        <td><?php echo $v->car_color ?></td>
+
+                                        <td>
+                                            <a href="" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
+                                            <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+
+
+
+                            <?php endif; ?>
+
                             </tbody>
                         </table>
 
