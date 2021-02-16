@@ -11,16 +11,31 @@
 
     <div class="contain-section">
         <div class="contain-inner-section">
-            <form accept="" method="post">
+            <?php if($this->session->flashdata('success')): ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+
+            <?php elseif($this->session->flashdata('error')): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $this->session->flashdata('error'); ?>
+                </div>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('errors')){ ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo validation_errors(); ?>
+                </div>
+            <?php } ?>
+            <form accept="<?php base_url('purchase/create') ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-header">
-                            <h2 class="header-text">Deler Details (Select Dealer Mobile Before Purchase Entry)</h2>
+                            <h2 class="header-text">Dealer Details (Select Dealer Mobile Before Purchase Entry)</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
-                            <select class="form-style js-example-basic-single dealer" required>
+                            <select class="form-style js-example-basic-single dealer" name="dealer_id" required>
                                 <option value="0">Dealer Mobile No.</option>
                                 <?php foreach ($user_list as $dealer){ ?>
                                     <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
@@ -43,8 +58,8 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
-                            <p class="formLabel">Dealer Location</p>
-                            <input type="text"  name="username" disabled="" class="form-style" autocomplete="off" />
+                            <p class="formLabel user_location_label">Dealer Location</p>
+                            <input type="text"  name="location_dealer" disabled="" class="form-style user_location" autocomplete="off" />
                         </div>
                     </div>
                 </div>
@@ -83,7 +98,6 @@
                             </div>
                         </div>
 
-                        
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
@@ -102,19 +116,20 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <select class="form-style state1" name="rc_state">
-                                            <option>--Select State--</option>
+
+                                        <select class="form-style js-example-basic-single state1" name="rc_state" required>
+                                            <option value="0">--Select State--</option>
                                             <?php foreach ($states as $list){ ?>
-                                                <option value="<?php echo $list->id ?>"><?php echo $list->name ?></option>
+                                                <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                             <?php  }?>
                                         </select>
+
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <!-- <p class="formLabel">Address</p> -->
-                                        <select name="rc_city" class="form-style citydata2">
-
+                                        <select name="rc_city" class="form-style js-example-basic-single citydata2">
+                                            <option>--Select City--</option>
                                         </select>
                                     </div>
                                 </div>
@@ -136,25 +151,25 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload RC</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="rc_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Insurance</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file"  name="insurance_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Bank NOC</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="bank_noc_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Pan Card</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="pan_card_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -170,7 +185,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hideupload">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Car Photo F With Number Palet</label>
-                                    <input type="file" id="imgInp" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" id="imgInp" name="car_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -178,25 +193,25 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Address Proof 1</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="add_proof_img1" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Address Proof 2</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="add_proof_img2" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Sell Letter</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="sell_ltr_img" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Delivery Note</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                    <input type="file" name="delivery_note_img" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -209,7 +224,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style brandListss">
+                                <select class="form-style js-example-basic-single brandListss" name="make">
                                     <?php if($models): ?>
 
                                         <option value="NG" selected="selected">--Select Make--</option>
@@ -217,7 +232,7 @@
 
                                         <?php foreach ($models as $k => $v): ?>
                                             <?php if($v->type=='brand'){ ?>
-                                                <option value="<?php echo $v->id ?>" ><?php echo $v->name ?></option>
+                                                <option data-id="<?php echo $v->id ?>" value="<?php echo $v->name ?>" ><?php echo $v->name ?></option>
 
                                             <?php } ?>
 
@@ -231,22 +246,26 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style modelsLists">
+                                <select class="form-style js-example-basic-single modelsLists" name="model">
+                                    <option value="NG" selected="selected">--Select Model--</option>
+
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style submodeldata">
+                                <select class="form-style js-example-basic-single submodeldata" name="submodel">
+                                    <option value="NG" selected="selected">--Select Submodel--</option>
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
+                                <select class="form-style js-example-basic-single" name="color">
+                                    <option>--Select Color--</option>
                                     <?php foreach ($color_list as $color){ ?>
-                                        <option>--Select Color--</option>
                                         <option value="<?php echo $color->name ?>"><?php echo $color->name ?></option>
                                     <?php  }?>
                                 </select>
@@ -255,31 +274,31 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Chassis No</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="chassis_no" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Engine No</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="engine_no" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Manuf. Year</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="manuf_year" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mileage</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="mileage" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
 
-                                <select class="form-style">
+                                <select class="form-style js-example-basic-single" name="Fuel_type">
                                     <option>--Select Fuel Type--</option>
                                     <?php foreach ($fuel_list as $fuel){ ?>
                                         <option value="<?php echo $fuel->name ?>"><?php echo $fuel->name ?></option>
@@ -289,15 +308,24 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                <select class="form-style">
-                                    <option>Owner Serial No</option>
+                                <select class="form-style" name="serial_number">
+                                    <option>--Select Owner Serial No--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style">
+                                <select class="form-style js-example-basic-single" name="Transmission">
                                     <option>--Select Transmission--</option>
                                     <?php foreach ($transmission_list as $transmission){ ?>
                                         <option value="<?php echo $transmission->name ?>"><?php echo $transmission->name ?></option>
@@ -308,7 +336,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style">
+                                <select class="form-style js-example-basic-single" name="emission">
                                     <option>--Select Emission--</option>
                                     <?php foreach ($emission_list as $emission){ ?>
                                         <option value="<?php echo $emission->name ?>"><?php echo $emission->name ?></option>
@@ -319,49 +347,49 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Registration Date</p>
-                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="registration_date" class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Expiry Date</p>
-                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="rc_expiry_date" class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Cubic Capacity</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="cubic_capicity" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Date</p>
-                                <input type="text" name="text" class="form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="purchase_date"  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Time</p>
-                                <input type="text" name="text" class="time form-style" autocomplete="off" />
+                                <input type="text" name="purchase_time" class="time form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Price</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="purchase_price" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Commission</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="commission" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Total Purchase Price</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="text" name="total_purchase_price" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -388,21 +416,26 @@
                         <div class="financedBlock" style="display: none">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <select class="form-style">
-                                        <option>Financer</option>
-                                        <option value="Bajaj aliance">Bajaj aliance</option>
+
+                                    <select class="form-style js-example-basic-single" name="emission">
+                                        <option>--Select Financer--</option>
+                                        <?php foreach ($Finance_list as $list){ ?>
+                                            <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
+                                        <?php  }?>
                                     </select>
+
+
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Loan Account No.</p>
-                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                    <input type="text" name="loan_amount" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <select class="form-style">
+                                    <select class="form-style" name="bank_noc">
                                         <option>Bank NOC Received</option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
@@ -418,7 +451,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style insurance-option">
-                                    <option>Insurance</option>
+                                    <option value="0">Insurance</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -429,27 +462,34 @@
                         <div class="insuranceBlock" style="display: none">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <select class="form-style">
+                                    <select class="form-style" name="insurance_type">
                                         <option>Insurance Type</option>
-                                        <option value="">Enter type</option>
+                                        <option value="COMPREHENSIVE">COMPREHENSIVE</option>
+                                        <option value="THIRD PARTY">THIRD PARTY</option>
+                                        <option value="NO INSURANCE">NO INSURANCE</option>
                                     </select>
+
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                    <select class="form-style">
-                                        <option>Insurance Company</option>
-                                        <option value="Bajaj">Bajaj</option>
+
+                                    <select class="form-style js-example-basic-single" name="emission">
+                                        <option>--Select Insurance Company--</option>
+                                        <?php foreach ($Insurance_list as $list){ ?>
+                                            <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
+                                        <?php  }?>
                                     </select>
+
+
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Insurance Expiry Date</p>
-                                    <input type="text" name="text" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                    <input type="text" name="insurance_expiry_date" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
                                 </div>
                             </div>
 
@@ -462,7 +502,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style warranty-option">
-                                    <option>Warranty</option>
+                                    <option value="0">Warranty</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -472,8 +512,7 @@
                         <div class="warrantyBlock" style="display: none">
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                <div class="form-item">
-                                   <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                   <select class="form-style">
+                                   <select class="form-style" name="Warranty">
                                        <option>Warranty Upto</option>
                                        <option value="1 Year">1 Year</option>
                                        <option value="6 Month">6 Months</option>
@@ -484,13 +523,13 @@
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                <div class="form-item">
                                    <p class="formLabel">Warranty Expiry Date</p>
-                                   <input type="text" name="text" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                   <input type="text" name="Warranty_exp_date" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
                                </div>
                            </div>
 
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                <div class="form-item">
-                                   <select class="form-style">
+                                   <select class="form-style" name="category">
                                        <option>Category</option>
                                        <option value="Certified">Certified</option>
                                        <option value="Non-certified">Non-certified</option>
@@ -511,8 +550,9 @@
                                     <select class="form-style purchase-type">
                                         <option>--Select Purchase Type--</option>
                                         <option value="same">Same</option>
-                                        <option>Dealership</option>
-                                        <option>Dealer/Third Party Name</option>
+                                        <option value="dealership">Dealership</option>
+                                        <option value="third_Party">Third Party Name</option>
+                                        <option value="Dealer">Dealer</option>
                                     </select>
                                 </div>
                             </div>
@@ -549,26 +589,59 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="form-item">
-                                        <select class="form-style state2" name="state2">
-
-                                            <option>--Select State--</option>
-                                            <?php foreach ($states as $list){ ?>
-                                                <option value="<?php echo $list->id ?>"><?php echo $list->name ?></option>
-                                            <?php  }?>
 
 
-                                        </select>
+
+                                <div class="p-state-city">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-item">
+                                            <select class="form-style js-example-basic-single state2" name="purchase_state">
+
+                                                <option>--Select State--</option>
+                                                <?php foreach ($states as $list){ ?>
+                                                    <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
+                                                <?php  }?>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-item">
+                                            <select name="purchase_city" class="form-style js-example-basic-single citydata1">
+                                                <option>--Select City--</option>
+
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="form-item">
-                                        <select name="purchase_city" class="form-style citydata1">
 
-                                        </select>
+                                <div class="p-state-city-same" style="display: none">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-item">
+                                            <select class="form-style js-example-basic-single state2-same" name="purchase_state">
+
+                                                <option>--Select State--</option>
+                                                <?php foreach ($states as $list){ ?>
+                                                    <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
+                                                <?php  }?>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-item">
+                                            <select name="purchase_city" class="form-style js-example-basic-single citydata1-same">
+
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+
+
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel purchase_landmark">Landmark</p>
@@ -587,7 +660,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">GST No.</p>
-                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                    <input type="text" name="gst" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -596,57 +669,61 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">In the Name Of</p>
-                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                    <input type="text" name="in_the_name_of" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
-                                    <!-- <label class="formLabel">Upload Delivery Note</label> -->
-                                    <select class="form-style">
-                                        <option>Bank Name</option>
-                                        <option>Punjab Namtional Bank</option>
-                                        <option>State Bank Of India</option>
+
+                                    <select class="form-style js-example-basic-single" name="emission">
+                                        <option>--Select Bank Name--</option>
+                                        <?php foreach ($bank_list as $list){ ?>
+                                            <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
+                                        <?php  }?>
                                     </select>
+
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Account Number</p>
-                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                    <input type="text" name="account_number" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">IFSC Code</p>
-                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                    <input type="text" name="ifsc_code" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
-                        <label class="page-heading">KYC</label>
-                        <div class="row" style="margin-left: 0px; margin-right: 0">
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                <div class="form-item">
-                                    <label>Pan Upload</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                        <div class="kyc">
+                            <label class="page-heading">KYC</label>
+                            <div class="row" style="margin-left: 0px; margin-right: 0">
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-item">
+                                        <label>Pan Upload</label>
+                                        <input type="file" name="kyc_pan_img" class="form-style" autocomplete="off" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                <div class="form-item">
-                                    <label>Address Proof Upload 1</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-item">
+                                        <label>Address Proof Upload 1</label>
+                                        <input type="file" name="kyc_Address1_img" class="form-style" autocomplete="off" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                <div class="form-item">
-                                    <label>Address Proof Upload 2</label>
-                                    <input type="file" name="text" class="form-style" autocomplete="off" />
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-item">
+                                        <label>Address Proof Upload 2</label>
+                                        <input type="file" name="kyc_Address2_img" class="form-style" autocomplete="off" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <button type="button" class="btn btn-danger btn-outline float-button-light waves-effect waves-button waves-float waves-light">Submit</button>
+                            <button type="submit" class="btn btn-danger btn-outline float-button-light waves-effect waves-button waves-float waves-light">Submit</button>
                         </div>
                     </div>
                 </div>

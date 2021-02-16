@@ -38,6 +38,7 @@
                                 <th>Mobile No.</th>
                                 <th>Company Name</th>
                                 <th>Email Id</th>
+                                <th>Location</th>
                                 <th>Group</th>
                                 <?php if(in_array('updateUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
                                 <th>Action</th>
@@ -53,6 +54,7 @@
                                         <td><?php echo $v['user_info']['user_mobile']; ?></td>
                                         <td><?php echo $v['user_info']['user_company']; ?></td>
                                         <td><?php echo $v['user_info']['user_email']; ?></td>
+                                        <td><?php echo $v['user_info']['user_location']; ?></td>
                                         <td><?php echo $v['user_group']['group_name']; ?></td>
 
                                         <?php if(in_array('updateUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>

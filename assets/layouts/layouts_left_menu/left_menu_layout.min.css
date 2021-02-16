@@ -161,11 +161,6 @@ body.nav-medium, body.nav-small {
 		top: 7px;
 		font-size: 10px !important;
 	}
-	button, select, textarea {
-		font-size: 10px !important;
-		line-height: 20px;
-		letter-spacing: .025em;
-	}
 	.header-text {
 		font-size: 11px !important;
 		color: #d12629;
@@ -180,6 +175,12 @@ body.nav-medium, body.nav-small {
 		line-height: 40px;
 		font-size: 10px;
 	}
+	button, select, textarea {
+		font-size: 10px !important;
+		line-height: 20px;
+		letter-spacing: .025em;
+	}
+	
 }
 
 .section-body {

@@ -77,11 +77,19 @@ $db['default'] = array(
     'dsn'	=> '',
     'hostname' => 'localhost',
     'username' => 'root',
+<<<<<<< HEAD
     // 'username' => 'u780262359_nitin',
     'password' => '',
     // 'password' => 'Password@9045',
     'database' => 'mycaraccount',
     // 'database' => 'u780262359_mycaraccount',
+=======
+    //'username' => 'u780262359_nitin',
+    'password' => 'password',
+    //'password' => 'Password@9045',
+    'database' => 'myCarAccount',
+    //'database' => 'u780262359_mycaraccount',
+>>>>>>> bcb5960091dfe799718bfe18ee40aaacd0ca827f
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
