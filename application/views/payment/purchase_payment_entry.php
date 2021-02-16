@@ -56,8 +56,11 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Reg. No</p>
-                                <input type="text" name="username" class="form-style" autocomplete="off" />
+                                <!-- <p class="formLabel">Address</p> -->
+                                <select class="form-style js-example-basic-single">
+                                    <option>Reg. No.</option>
+                                    <option>9857854852</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -263,6 +266,36 @@
                     </div>
                     <div class="row">
                         <label class="page-heading">Payment Detail</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="form-item">
+                                    <p class="formLabel">In the Name Of</p>
+                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="form-item">
+                                    <!-- <label class="formLabel">Upload Delivery Note</label> -->
+                                    <select class="form-style">
+                                        <option>Bank Name</option>
+                                        <option>Punjab Namtional Bank</option>
+                                        <option>State Bank Of India</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="form-item">
+                                    <p class="formLabel">Account Number</p>
+                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="form-item">
+                                    <p class="formLabel">IFSC Code</p>
+                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                </div>
+                            </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">

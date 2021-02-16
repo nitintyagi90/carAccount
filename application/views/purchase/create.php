@@ -410,8 +410,8 @@
                                 </div>
                             </div>
                         </div>
-
-
+                    </div>
+                    <div class="row">
                         <div class="row" style="margin-left: 0">
                             <label class="page-heading">Insurance</label>
                         </div>
@@ -454,9 +454,8 @@
                             </div>
 
                         </div>
-
-
-
+                    </div>
+                    <div class="row">
                         <div class="row" style="margin-left: 0">
                             <label class="page-heading">Warranty</label>
                         </div>
@@ -499,7 +498,6 @@
                                </div>
                            </div>
                        </div>
-
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
