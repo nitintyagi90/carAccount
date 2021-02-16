@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-header">
-                            <h2 class="header-text">Deler Details (Select Dealer Mobile Before Purchase Entry)</h2>
+                            <h2 class="header-text">Dealer Details (Select Dealer Mobile Before Purchase Entry)</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -116,18 +116,20 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <select class="form-style state1" name="rc_state">
-                                            <option>--Select State--</option>
+
+                                        <select class="form-style js-example-basic-single state1" name="rc_state" required>
+                                            <option value="0">--Select State--</option>
                                             <?php foreach ($states as $list){ ?>
                                                 <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                             <?php  }?>
                                         </select>
+
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <select name="rc_city" class="form-style citydata2">
-
+                                        <select name="rc_city" class="form-style js-example-basic-single citydata2">
+                                            <option>--Select City--</option>
                                         </select>
                                     </div>
                                 </div>
@@ -222,7 +224,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style brandListss" name="make">
+                                <select class="form-style js-example-basic-single brandListss" name="make">
                                     <?php if($models): ?>
 
                                         <option value="NG" selected="selected">--Select Make--</option>
@@ -244,19 +246,24 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style modelsLists" name="model">
+                                <select class="form-style js-example-basic-single modelsLists" name="model">
+                                    <option value="NG" selected="selected">--Select Model--</option>
+
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style submodeldata" name="submodel">
+                                <select class="form-style js-example-basic-single submodeldata" name="submodel">
+                                    <option value="NG" selected="selected">--Select Submodel--</option>
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style" name="color">
+                                <select class="form-style js-example-basic-single" name="color">
                                     <option>--Select Color--</option>
                                     <?php foreach ($color_list as $color){ ?>
                                         <option value="<?php echo $color->name ?>"><?php echo $color->name ?></option>
@@ -291,7 +298,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
 
-                                <select class="form-style" name="Fuel_type">
+                                <select class="form-style js-example-basic-single" name="Fuel_type">
                                     <option>--Select Fuel Type--</option>
                                     <?php foreach ($fuel_list as $fuel){ ?>
                                         <option value="<?php echo $fuel->name ?>"><?php echo $fuel->name ?></option>
@@ -302,7 +309,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style" name="serial_number">
-                                    <option>--Select Serial No--</option>
+                                    <option>--Select Owner Serial No--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -318,7 +325,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style" name="Transmission">
+                                <select class="form-style js-example-basic-single" name="Transmission">
                                     <option>--Select Transmission--</option>
                                     <?php foreach ($transmission_list as $transmission){ ?>
                                         <option value="<?php echo $transmission->name ?>"><?php echo $transmission->name ?></option>
@@ -329,7 +336,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style" name="emission">
+                                <select class="form-style js-example-basic-single" name="emission">
                                     <option>--Select Emission--</option>
                                     <?php foreach ($emission_list as $emission){ ?>
                                         <option value="<?php echo $emission->name ?>"><?php echo $emission->name ?></option>
@@ -410,7 +417,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
 
-                                    <select class="form-style" name="emission">
+                                    <select class="form-style js-example-basic-single" name="emission">
                                         <option>--Select Financer--</option>
                                         <?php foreach ($Finance_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
@@ -444,7 +451,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style insurance-option">
-                                    <option>Insurance</option>
+                                    <option value="0">Insurance</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -468,7 +475,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
 
-                                    <select class="form-style" name="emission">
+                                    <select class="form-style js-example-basic-single" name="emission">
                                         <option>--Select Insurance Company--</option>
                                         <?php foreach ($Insurance_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
@@ -496,7 +503,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style warranty-option">
-                                    <option>Warranty</option>
+                                    <option value="0">Warranty</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -546,7 +553,8 @@
                                         <option>--Select Purchase Type--</option>
                                         <option value="same">Same</option>
                                         <option value="dealership">Dealership</option>
-                                        <option value="third_Party">Dealer/Third Party Name</option>
+                                        <option value="third_Party">Third Party Name</option>
+                                        <option value="Dealer">Dealer</option>
                                     </select>
                                 </div>
                             </div>
@@ -589,7 +597,7 @@
                                 <div class="p-state-city">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="form-item">
-                                            <select class="form-style state2" name="purchase_state">
+                                            <select class="form-style js-example-basic-single state2" name="purchase_state">
 
                                                 <option>--Select State--</option>
                                                 <?php foreach ($states as $list){ ?>
@@ -603,7 +611,8 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="form-item">
-                                            <select name="purchase_city" class="form-style citydata1">
+                                            <select name="purchase_city" class="form-style js-example-basic-single citydata1">
+                                                <option>--Select City--</option>
 
                                             </select>
                                         </div>
@@ -613,7 +622,7 @@
                                 <div class="p-state-city-same" style="display: none">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="form-item">
-                                            <select class="form-style state2-same" name="purchase_state">
+                                            <select class="form-style js-example-basic-single state2-same" name="purchase_state">
 
                                                 <option>--Select State--</option>
                                                 <?php foreach ($states as $list){ ?>
@@ -627,7 +636,7 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="form-item">
-                                            <select name="purchase_city" class="form-style citydata1-same">
+                                            <select name="purchase_city" class="form-style js-example-basic-single citydata1-same">
 
                                             </select>
                                         </div>
@@ -668,8 +677,8 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
 
-                                    <select class="form-style" name="emission">
-                                        <option>--Select Bank--</option>
+                                    <select class="form-style js-example-basic-single" name="emission">
+                                        <option>--Select Bank Name--</option>
                                         <?php foreach ($bank_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                         <?php  }?>

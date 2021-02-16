@@ -7,8 +7,6 @@
         $('.current_date').val(strDate);
 
 
-
-
         $('.dealer').change(function() {
             var $this = $(this);
             var user_id = $this.val();
@@ -47,61 +45,59 @@
         $('.state1').change(function () {
             var id = $("option:selected", this).attr("data-id");
             var $mySelect = $('.citydata2');
-            if(id==0){
-                $($mySelect)
-                    .find('option')
-                    .hide()
-                    .end()
-                    .append('<option value="0">No Record Found!</option>');
-                return
-            }
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo base_url();?>purchase/getcity',
-                data: {
-                    'id': id
-                },
-                success: function (data) {
-                    var jsonParseRe = JSON.parse(data);
-                    $($mySelect).empty();
-                    if(jsonParseRe.status==200){
-                        $.each(jsonParseRe.subcategory, function(key, value) {
-                            var thing = '<option value="'+value.city+'">'+ value.city +'</option>';
-                            $($mySelect).append(thing);
-                        });
+            if(id===undefined){
+                var thing2 = '<option value="0">--Select City--</option>';
+                $($mySelect).empty();
+                $($mySelect).append(thing2);
+            }else{
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url();?>purchase/getcity',
+                    data: {
+                        'id': id
+                    },
+                    success: function (data) {
+                        var jsonParseRe = JSON.parse(data);
+                        $($mySelect).empty();
+                        if(jsonParseRe.status==200){
+                            $.each(jsonParseRe.subcategory, function(key, value) {
+                                var thing = '<option value="'+value.city+'">'+ value.city +'</option>';
+                                $($mySelect).append(thing);
+                            });
+                        }
                     }
-                }
-            });
+                });
+            }
+
 
         });
         $('.state2').change(function () {
             var id = $("option:selected", this).attr("data-id");
             var $mySelect = $('.citydata1');
-            if(id==0){
-                $($mySelect)
-                    .find('option')
-                    .hide()
-                    .end()
-                    .append('<option value="0">No Record Found!</option>');
-                return
-            }
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo base_url();?>purchase/getcity',
-                data: {
-                    'id': id
-                },
-                success: function (data) {
-                    var jsonParseRe = JSON.parse(data);
-                    $($mySelect).empty();
-                    if(jsonParseRe.status==200){
-                        $.each(jsonParseRe.subcategory, function(key, value) {
-                            var thing = '<option value="'+value.city+'">'+ value.city +'</option>';
-                            $($mySelect).append(thing);
-                        });
+            if(id===undefined){
+                var thing2 = '<option value="0">--Select City--</option>';
+                $($mySelect).empty();
+                $($mySelect).append(thing2);
+            }else{
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url();?>purchase/getcity',
+                    data: {
+                        'id': id
+                    },
+                    success: function (data) {
+                        var jsonParseRe = JSON.parse(data);
+                        $($mySelect).empty();
+                        if(jsonParseRe.status==200){
+                            $.each(jsonParseRe.subcategory, function(key, value) {
+                                var thing = '<option value="'+value.city+'">'+ value.city +'</option>';
+                                $($mySelect).append(thing);
+                            });
+                        }
                     }
-                }
-            });
+                });
+
+            }
 
         });
         $('.brandListss').change(function () {
@@ -201,6 +197,9 @@
             if(value=='Yes'){
                 $('.financedBlock').show();
 
+            }else if(value==="0"){
+                $('.financedBlock').show();
+
             }else{
                 $('.financedBlock').hide();
 
@@ -213,6 +212,9 @@
             if(value=='Yes'){
                 $('.insuranceBlock').show();
 
+            }else if(value==="0"){
+                $('.insuranceBlock').show();
+
             }else{
                 $('.insuranceBlock').hide();
 
@@ -222,6 +224,9 @@
             var $this = $(this);
             var value = $this.val();
             if(value=='Yes'){
+                $('.warrantyBlock').show();
+
+            }else if(value==="0"){
                 $('.warrantyBlock').show();
 
             }else{
@@ -238,11 +243,15 @@
 
 
             if(value=='dealership'){
-                $('.purchase_rc').text('Dealer Name')
+                $('.purchase_rc').text('Dealership Name')
             }
 
             if(value=='third_Party'){
                 $('.purchase_rc').text('Third Party Name')
+            }
+
+            if(value=='Dealer'){
+                $('.purchase_rc').text('Dealer Name')
             }
 
 
