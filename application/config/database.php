@@ -59,10 +59,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	['save_queries'] TRUE/FALSE - Whether to "save" all executed queries.
 | 				NOTE: Disabling this will also effectively disable both
 | 				$this->db->last_query() and profiling of DB queries.
+| 				a lot of SQL queries ... disable this to avoid that problem.
 | 				When you run a query, with this setting set to TRUE (default),
 | 				CodeIgniter will store the SQL statement for debugging purposes.
 | 				However, this may cause high memory usage, especially if you run
-| 				a lot of SQL queries ... disable this to avoid that problem.
 |
 | The $active_group variable lets you choose which connection group to
 | make active.  By default there is only one group (the 'default' group).
@@ -77,19 +77,12 @@ $db['default'] = array(
     'dsn'	=> '',
     'hostname' => 'localhost',
     'username' => 'root',
-<<<<<<< HEAD
-    // 'username' => 'u780262359_nitin',
-    'password' => '',
-    // 'password' => 'Password@9045',
-    'database' => 'mycaraccount',
-    // 'database' => 'u780262359_mycaraccount',
-=======
     //'username' => 'u780262359_nitin',
-    'password' => 'password',
+    'password' => '',
     //'password' => 'Password@9045',
-    'database' => 'myCarAccount',
+    'database' => 'mycaraccount',
     //'database' => 'u780262359_mycaraccount',
->>>>>>> bcb5960091dfe799718bfe18ee40aaacd0ca827f
+
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,

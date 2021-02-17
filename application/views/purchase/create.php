@@ -116,14 +116,12 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-
                                         <select class="form-style js-example-basic-single state1" name="rc_state" required>
                                             <option value="0">--Select State--</option>
                                             <?php foreach ($states as $list){ ?>
                                                 <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                             <?php  }?>
                                         </select>
-
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
