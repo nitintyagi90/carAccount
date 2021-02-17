@@ -171,13 +171,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4" style="padding: 113px 0; margin-top: 35px; border: 1px solid #97a3a2;">
+                        <div class="col-md-4" style="margin-top: 0px; padding: 0;">
 
                             <div style="display: none"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 showupload">
-
-                            <img id="blah" src="#" alt="your image" />
-                                <button class="hidePreview">Remove</button>
-
+                                <button class="btn btn-danger hidePreview btn-xs pull-right" style="  border-radius:0px; margin-bottom: 5px;">x</button>
+                                <img id="blah" src="#" alt="your image" />
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hideupload">
@@ -369,7 +367,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Time</p>
-                                <input type="text" name="purchase_time" class="time form-style" autocomplete="off" />
+                                <input type="text" name="purchase_time" id="timepicker" class="time form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">

@@ -30,5 +30,13 @@
 </script>
 <!-- datepicker -->
 <script src="<?php echo base_url('assets/');?>datepicker/js/BeatPicker.min.js"></script>
+
+<!-- timepicker -->
+<script src="<?php echo base_url('assets/');?>timepicker/js/mdtimepicker.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#timepicker').mdtimepicker(); //Initializes the time picker
+  });
+</script>
 </body>
 </html>
