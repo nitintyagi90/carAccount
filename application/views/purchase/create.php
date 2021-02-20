@@ -110,7 +110,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
-                                    <textarea class="form-style" name="rc_address" id="rc_address" autocomplete="off" rows="5" style="height: auto;"></textarea>
+                                    <textarea class="form-style" name="rc_address" id="rc_address" autocomplete="off" rows="4" style="height: auto;"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
@@ -581,7 +581,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel purchase_address">Address</p>
-                                    <textarea class="form-style" name="purchase_address" id="purchase_address" autocomplete="off" rows="5" style="height: auto;"></textarea>
+                                    <textarea class="form-style" name="purchase_address" id="purchase_address" autocomplete="off" rows="4" style="height: auto;"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
