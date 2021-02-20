@@ -24,14 +24,14 @@
 
                     <?php if(in_array('updateUser', $user_permission) || in_array('createUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)){ ?>
                     <li>
-                        <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Users <span class="fa fa-chevron-right"></span></a>
+                        <a class="waves-effect waves-light"><i class="fa fa-desktop"></i>Dealer <span class="fa fa-chevron-right"></span></a>
 
                         <ul class="nav child_menu">
                             <?php if(in_array('createUser', $user_permission)){ ?>
-                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('users/create');?>">Add User</a></li>
+                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('users/create');?>">Add Dealer</a></li>
                             <?php }
                             if(in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)){ ?>
-                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('users/manage');?>">Manage User</a></li>
+                                <li> <a class="waves-effect waves-light" href="<?php echo base_url('users/manage');?>">Manage Dealer</a></li>
                             <?php }?>
                         </ul>
                     </li>
