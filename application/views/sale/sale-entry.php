@@ -1,4 +1,3 @@
-<?php include('header.php'); ?>
     <!-- Start Contain Section -->
     <div class="container-fluid right_color">
         <div class="page-main-header">
@@ -319,4 +318,3 @@
 
     </div>
     <!-- End Contain Section -->    
-    <?php include('footer.php'); ?>

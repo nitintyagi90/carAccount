@@ -441,6 +441,32 @@ class Purchase extends Admin_Controller
         exit();
     }
 
+    public function detail($id){
+        $PurchaseId = $this->atri->de($id);
+        if(!empty($PurchaseId)){
+            $query = $this->db->get_where('purchase', array('purchase_id' => $PurchaseId));
+            $data_purchase = $query->row();
+            if(!empty($data_purchase)){
+                $query_dealer = $this->db->get_where('users', array('user_id' => $data_purchase->dealer_id));
+                $data_dealer = $query_dealer->row();
+                $groups_data = $this->model_groups->getGroupData();
+                $this->data['groups_data'] = $groups_data;
+                $this->data['purchase'] = $data_purchase;
+                $this->data['dealer'] = $data_dealer;
+                $this->render_template('purchase/detail',$this->data);
+            }
+
+        }
+    }
+
+    public function sale(){
+        $groups_data = $this->model_groups->getGroupData();
+        $this->data['groups_data'] = $groups_data;
+        $this->render_template('sale/sale-entry',$this->data);
+
+
+    }
+
 
 
 }

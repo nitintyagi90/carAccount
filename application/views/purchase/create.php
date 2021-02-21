@@ -373,19 +373,19 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Price</p>
-                                <input type="text" name="purchase_price" class="form-style" autocomplete="off" />
+                                <input type="number" name="purchase_price" class="form-style purchase-price" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Commission</p>
-                                <input type="text" name="commission" class="form-style" autocomplete="off" />
+                                <input type="number" name="commission" class="form-style commission" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Total Purchase Price</p>
-                                <input type="text" name="total_purchase_price" class="form-style" autocomplete="off" />
+                                <p class="formLabel purchase-label">Total Purchase Price</p>
+                                <input type="text" disabled name="total_purchase_price" class="form-style total-price" autocomplete="off" />
                             </div>
                         </div>
                     </div>
