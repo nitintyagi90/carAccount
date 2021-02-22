@@ -36,7 +36,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <select class="form-style js-example-basic-single dealer" name="dealer_id" required>
-                                <option value="0">Dealer Mobile No.</option>
+                                <option value="" selected disabled hidden>Search Dealer Mobile</option>
                                 <?php foreach ($user_list as $dealer){ ?>
                                     <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
                                 <?php }?>
@@ -74,7 +74,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Reg. No*</p>
-                                <input type="text" name="registration_no" id="registration_no" class="form-style" autocomplete="off" />
+                                <input type="text" name="registration_no" required id="registration_no" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -82,13 +82,13 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Name</p>
-                                <input type="text" name="rc_name" id="rc_name" class="form-style" autocomplete="off" />
+                                <input type="text" name="rc_name" id="rc_name" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mobile</p>
-                                <input type="number" name="rc_mobile" id="rc_mobile" class="form-style" autocomplete="off" />
+                                <input type="number" name="rc_mobile" required id="rc_mobile" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -101,7 +101,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
-                                <input type="text" name="rc_pan" id="rc_pan" class="form-style" autocomplete="off" />
+                                <input type="text" name="rc_pan" required minlength="10" id="rc_pan" class="form-style" autocomplete="off" />
                             </div>
                         </div>
 
@@ -110,14 +110,14 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
-                                    <textarea class="form-style" name="rc_address" id="rc_address" autocomplete="off" rows="4" style="height: auto;"></textarea>
+                                    <textarea class="form-style" required name="rc_address" id="rc_address" autocomplete="off" rows="4" style="height: auto;"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <select class="form-style js-example-basic-single state1" name="rc_state" required>
-                                            <option value="0">--Select State--</option>
+                                            <option value="" selected disabled hidden>--Select State--</option>
                                             <?php foreach ($states as $list){ ?>
                                                 <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                             <?php  }?>
@@ -126,8 +126,8 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <select name="rc_city" class="form-style js-example-basic-single citydata2">
-                                            <option>--Select City--</option>
+                                        <select name="rc_city" class="form-style js-example-basic-single citydata2" required>
+                                            <option value="" selected disabled hidden>--Select City--</option>
                                         </select>
                                     </div>
                                 </div>
@@ -140,7 +140,8 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Pincode</p>
-                                        <input type="text" name="rc_pincode" id="rc_pincode" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_pincode" required minlength="6" id="purchase_pincode" class="form-style" autocomplete="off" />
+
                                     </div>
                                 </div>
                             </div>
@@ -220,12 +221,9 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style js-example-basic-single brandListss" name="make">
+                                <select class="form-style js-example-basic-single brandListss" name="make" required>
                                     <?php if($models): ?>
-
-                                        <option value="NG" selected="selected">--Select Make--</option>
-
-
+                                        <option value="" selected disabled hidden>--Select Make--</option>
                                         <?php foreach ($models as $k => $v): ?>
                                             <?php if($v->type=='brand'){ ?>
                                                 <option data-id="<?php echo $v->id ?>" value="<?php echo $v->name ?>" ><?php echo $v->name ?></option>
@@ -242,25 +240,24 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style js-example-basic-single modelsLists" name="model">
-                                    <option value="NG" selected="selected">--Select Model--</option>
-
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <select class="form-style js-example-basic-single submodeldata" name="submodel">
-                                    <option value="NG" selected="selected">--Select Submodel--</option>
+                                <select class="form-style js-example-basic-single modelsLists" name="model" required>
+                                    <option value="" selected disabled hidden>--Select Model--</option>
 
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style js-example-basic-single" name="color">
-                                    <option>--Select Color--</option>
+                                <select class="form-style js-example-basic-single submodeldata" name="submodel" required>
+                                    <option value="" selected disabled hidden>--Select Submodel--</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="form-item">
+                                <select class="form-style js-example-basic-single" name="color" required>
+                                    <option value="" selected disabled hidden>--Select Color--</option>
                                     <?php foreach ($color_list as $color){ ?>
                                         <option value="<?php echo $color->name ?>"><?php echo $color->name ?></option>
                                     <?php  }?>
@@ -270,32 +267,32 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Chassis No</p>
-                                <input type="text" name="chassis_no" class="form-style" autocomplete="off" />
+                                <input type="text" name="chassis_no" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Engine No</p>
-                                <input type="text" name="engine_no" class="form-style" autocomplete="off" />
+                                <input type="text" name="engine_no" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Manuf. Year</p>
-                                <input type="text" name="manuf_year" class="form-style" autocomplete="off" />
+                                <input type="text" required name="manuf_year" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mileage</p>
-                                <input type="text" name="mileage" class="form-style" autocomplete="off" />
+                                <input type="text" name="mileage" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
 
-                                <select class="form-style js-example-basic-single" name="Fuel_type">
-                                    <option>--Select Fuel Type--</option>
+                                <select class="form-style js-example-basic-single" name="Fuel_type" required>
+                                    <option value="" selected disabled hidden>--Select Fuel Type--</option>
                                     <?php foreach ($fuel_list as $fuel){ ?>
                                         <option value="<?php echo $fuel->name ?>"><?php echo $fuel->name ?></option>
                                     <?php  }?>
@@ -304,8 +301,8 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style" name="serial_number">
-                                    <option>--Select Owner Serial No--</option>
+                                <select class="form-style" name="serial_number" required>
+                                    <option value="" selected disabled hidden>--Select Owner Serial No--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -321,8 +318,9 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style js-example-basic-single" name="Transmission">
-                                    <option>--Select Transmission--</option>
+                                <select class="form-style js-example-basic-single" name="Transmission" required>
+                                    <option value="" selected disabled hidden>--Select Transmission--</option>
+
                                     <?php foreach ($transmission_list as $transmission){ ?>
                                         <option value="<?php echo $transmission->name ?>"><?php echo $transmission->name ?></option>
                                     <?php  }?>
@@ -332,8 +330,8 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <select class="form-style js-example-basic-single" name="emission">
-                                    <option>--Select Emission--</option>
+                                <select class="form-style js-example-basic-single" name="emission" required>
+                                    <option value="" selected disabled hidden>--Select Emission--</option>
                                     <?php foreach ($emission_list as $emission){ ?>
                                         <option value="<?php echo $emission->name ?>"><?php echo $emission->name ?></option>
                                     <?php  }?>
@@ -343,37 +341,37 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Registration Date</p>
-                                <input type="text" name="registration_date" class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Expiry Date</p>
-                                <input type="text" name="rc_expiry_date" class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="rc_expiry_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Cubic Capacity</p>
-                                <input type="text" name="cubic_capicity" class="form-style" autocomplete="off" />
+                                <input type="text" name="cubic_capicity" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Date</p>
-                                <input type="text" name="purchase_date"  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Time</p>
-                                <input type="text" name="purchase_time" id="timepicker" class="time form-style" autocomplete="off" />
+                                <input type="text" name="purchase_time" required id="timepicker" class="time form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Price</p>
-                                <input type="number" name="purchase_price" class="form-style purchase-price" autocomplete="off" />
+                                <input type="number" name="purchase_price" required class="form-style purchase-price" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -385,7 +383,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase-label">Total Purchase Price</p>
-                                <input type="text" disabled name="total_purchase_price" class="form-style total-price" autocomplete="off" />
+                                <input type="text" readonly name="total_purchase_price" required class="form-style total-price" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -401,7 +399,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style finance-option">
-                                    <option value="0">Car Financed</option>
+                                    <option value="" selected disabled hidden>Car Financed</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -414,7 +412,7 @@
                                 <div class="form-item">
 
                                     <select class="form-style js-example-basic-single" name="emission">
-                                        <option>--Select Financer--</option>
+                                        <option value="" selected disabled hidden>--Select Financer--</option>
                                         <?php foreach ($Finance_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                         <?php  }?>
@@ -432,7 +430,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <select class="form-style" name="bank_noc">
-                                        <option>Bank NOC Received</option>
+                                        <option value="" selected disabled hidden>Bank NOC Received</option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -447,7 +445,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style insurance-option">
-                                    <option value="0">Insurance</option>
+                                    <option value="" selected disabled hidden>Insurance</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -459,7 +457,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <select class="form-style" name="insurance_type">
-                                        <option>Insurance Type</option>
+                                        <option value="" selected disabled hidden>Insurance Type</option>
                                         <option value="COMPREHENSIVE">COMPREHENSIVE</option>
                                         <option value="THIRD PARTY">THIRD PARTY</option>
                                         <option value="NO INSURANCE">NO INSURANCE</option>
@@ -472,7 +470,7 @@
                                 <div class="form-item">
 
                                     <select class="form-style js-example-basic-single" name="emission">
-                                        <option>--Select Insurance Company--</option>
+                                        <option value="" selected disabled hidden>--Select Insurance Company--</option>
                                         <?php foreach ($Insurance_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                         <?php  }?>
@@ -498,7 +496,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style warranty-option">
-                                    <option value="0">Warranty</option>
+                                    <option value="" selected disabled hidden>Warranty</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -509,7 +507,7 @@
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                <div class="form-item">
                                    <select class="form-style" name="Warranty">
-                                       <option>Warranty Upto</option>
+                                       <option value="" selected disabled hidden>Warranty Upto</option>
                                        <option value="1 Year">1 Year</option>
                                        <option value="6 Month">6 Months</option>
                                    </select>
@@ -526,7 +524,7 @@
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                <div class="form-item">
                                    <select class="form-style" name="category">
-                                       <option>Category</option>
+                                       <option value="" selected disabled hidden>Category</option>
                                        <option value="Certified">Certified</option>
                                        <option value="Non-certified">Non-certified</option>
                                    </select>
@@ -544,7 +542,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <select class="form-style purchase-type">
-                                        <option>--Select Purchase Type--</option>
+                                        <option value="" selected disabled hidden>Select Purchase Type</option>
                                         <option value="same">Same</option>
                                         <option value="dealership">Dealership</option>
                                         <option value="third_Party">Third Party Name</option>
@@ -556,13 +554,13 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_rc">RC Name</p>
-                                <input type="text" name="purchase_rc" id="purchase_rc" class="form-style" autocomplete="off" />
+                                <input type="text" required name="purchase_rc" id="purchase_rc" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_mobile">Mobile</p>
-                                <input type="text" name="purchase_mobile" id="purchase_mobile" class="form-style" autocomplete="off" />
+                                <input type="text" name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -574,7 +572,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_pan">PAN Number</p>
-                                <input type="text" name="purchase_pan" id="purchase_pan" class="form-style" autocomplete="off" />
+                                <input type="text" name="purchase_pan" id="purchase_pan"  minlength="10" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="row" style="padding: 0 15px;">
@@ -592,8 +590,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="form-item">
                                             <select class="form-style js-example-basic-single state2" name="purchase_state">
-
-                                                <option>--Select State--</option>
+                                                <option value="" selected disabled hidden>--Select State--</option>
                                                 <?php foreach ($states as $list){ ?>
                                                     <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                                 <?php  }?>
@@ -606,7 +603,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="form-item">
                                             <select name="purchase_city" class="form-style js-example-basic-single citydata1">
-                                                <option>--Select City--</option>
+                                                <option value="" selected disabled hidden>--Select City--</option>
 
                                             </select>
                                         </div>
@@ -618,7 +615,8 @@
                                         <div class="form-item">
                                             <select class="form-style js-example-basic-single state2-same" name="purchase_state">
 
-                                                <option>--Select State--</option>
+                                                <option value="" selected disabled hidden>--Select State--</option>
+
                                                 <?php foreach ($states as $list){ ?>
                                                     <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                                 <?php  }?>
@@ -647,7 +645,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel purchase_pincode">Pincode</p>
-                                        <input type="text" name="purchase_pincode" id="purchase_pincode" class="form-style" autocomplete="off" />
+                                        <input type="text" name="purchase_pincode" minlength="6" id="" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                             </div>
@@ -672,7 +670,8 @@
                                 <div class="form-item">
 
                                     <select class="form-style js-example-basic-single" name="emission">
-                                        <option>--Select Bank Name--</option>
+                                        <option value="" selected disabled hidden>--Select Bank Name--</option>
+
                                         <?php foreach ($bank_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                         <?php  }?>

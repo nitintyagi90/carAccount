@@ -53,9 +53,9 @@ class Purchase extends Admin_Controller
         $this->form_validation->set_rules('rc_expiry_date', 'rc_expiry_date', 'trim|required');
         $this->form_validation->set_rules('cubic_capicity', 'cubic_capicity', 'trim|required');
         $this->form_validation->set_rules('purchase_date', 'purchase_date', 'trim|required');
-        $this->form_validation->set_rules('purchase_time', 'purchase_time', 'trim|required');
+       // $this->form_validation->set_rules('purchase_time', 'purchase_time', 'trim|required');
         $this->form_validation->set_rules('purchase_price', 'purchase_price', 'trim|required');
-        $this->form_validation->set_rules('total_purchase_price', 'total_purchase_price', 'trim|required');
+        //$this->form_validation->set_rules('total_purchase_price', 'total_purchase_price', 'trim|required');
         $this->form_validation->set_rules('purchase_rc', 'purchase_rc', 'trim|required');
         $this->form_validation->set_rules('purchase_mobile', 'purchase_mobile', 'trim|required');
 

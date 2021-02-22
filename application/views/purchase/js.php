@@ -317,7 +317,19 @@
 
 
         $('.commission').keyup(function() {
-
+            var sum = 0;
+            var n1 = 0;
+            var n2 = 0;
+            n1 = parseInt($('.commission').val());
+            n2 = parseInt($('.purchase-price').val());
+            sum = n1 + n2;
+            if(isNaN(sum)) {
+                sum = 0
+            }
+            $('.purchase-label').remove();
+            $('.total-price').val(sum);
+        });
+        $('.purchase-price').keyup(function() {
             var sum = 0;
             var n1 = 0;
             var n2 = 0;
