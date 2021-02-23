@@ -1,6 +1,6 @@
 <div class="container-fluid right_color">
     <div class="page-main-header">
-        <!-- Page Title -->
+        <!-- Page Title --> 
         <h2 class="page-name-title">Purchase Car</h2>
         <!--  Breadcrumb -->
         <ol class="breadcrumb">

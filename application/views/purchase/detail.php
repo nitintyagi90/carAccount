@@ -1,4 +1,3 @@
-            <!-- End header -->
             <!-- Start Contain Section -->
             <div class="container-fluid right_color">
                 <div class="page-main-header">
@@ -12,12 +11,12 @@
                 </div>
 
                 <div class="contain-section">
-                    <div class="profile-background" style="height:83px;">
+                    <div class="profile-background">
                         <div class="profile-social">
                             <ul>
                                 <li class="profile-name">
-                                    <h4><?php echo ($dealer->user_name!==null) ? $dealer->user_name:''?></h4>
-                                    <span><i class="fa fa-building-o "></i><?php echo ($dealer->user_company!==null) ? $dealer->user_company:''?></span>
+                                    <h4><?php echo ($dealer->user_company!==null) ? $dealer->user_company:''?></h4>
+                                    <span><i class="fa fa-user "></i> <?php echo ($dealer->user_name!==null) ? $dealer->user_name:''?></span>
                                 </li>
                                 <li class="profile-follow">
                                     <h6><i class="fa fa-phone "></i></h6>
@@ -46,7 +45,7 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div id="rc" class="tab-pane fade in active">
-                                        <div class="section-body">
+                                        <div class="section-body" style="padding:0px;">
                                             <div class="profile-body">
                                                 <h4 class="profile-title"><i class="fa fa-hand-o-right"></i> RC Details</h4>
                                                 <div class="row">

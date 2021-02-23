@@ -180,6 +180,14 @@ body.nav-medium, body.nav-small {
 		line-height: 20px;
 		letter-spacing: .025em;
 	}
+
+	.profile-background .profile-social {
+		padding-left: 10px;
+	}
+
+	.profile-social ul li.profile-follow {
+		display: none;
+	}
 	
 }
 
