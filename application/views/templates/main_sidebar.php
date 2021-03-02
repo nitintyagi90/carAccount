@@ -85,6 +85,11 @@
                             <li> <a class="waves-effect waves-light" href="<?php echo base_url('payment/warranty');?>">Warranty</a></li>
                         </ul>
                     </li>
+                    <li><a class="waves-effect waves-light"><i class="fa fa-file"></i>Invoice <span class="fa fa-chevron-right"></span></a>
+                        <ul class="nav child_menu">
+                            <li> <a class="waves-effect waves-light" href="invoice-entry.php">Invoice Entry</a></li>
+                        </ul>
+                    </li>
 
                     <?php if(in_array('updateSetting', $user_permission)){ ?>
                         <li><a class="waves-effect waves-light"><i class="fa fa-gears"></i>App Setting <span
