@@ -12,7 +12,7 @@ START LOGIN V2
 
 ================================*/
 .login-background {
-  background-image: url("../../../../assets/pages/login/images/login_2.jpg");
+  background-image: url("../../../../assets/pages/login/images/test3.gif");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -22,7 +22,7 @@ START LOGIN V2
   position: fixed;
   width: 100%; }
   .login-background:before {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0);
     position: fixed;
     z-index: 0;
     width: 100%;

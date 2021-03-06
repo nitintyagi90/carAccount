@@ -11,10 +11,11 @@
     <div class='selector'>
                 <ul>
                     <li>
-                    <a href="#" for='c1' style="color:red" title="Purchase"> <i class="fa fa-car fa-4x"></i> </a>
+                    <a href="#" for='c1' style="color:red" title="Purchase"> <img src="<?php echo base_url('assets/');?>global/images/push.png"  alt="hii" srcset=""> </a>
+                    <!--<a href="#" for='c1' style="color:red" title="Purchase"> <i class="fa fa-car fa-4x"></i> </a>-->
                     </li>
                     <li>
-                    <a href="#" for='c2' style="color:green" title="Sales"><i class="fa fa-car fa-4x"></i></a>
+                    <a href="#" for='c2' style="color:green" title="Sales"><i class="fa fa-car fa-4x" alt="hii"></i></a>
                     </li>
                     <li>
                     <a href="#" for='c3' style="color:yellow" title="R.T.O"><i class="fa fa-car fa-4x"></i></a>

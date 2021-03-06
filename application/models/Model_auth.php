@@ -6,7 +6,7 @@ class Model_auth extends CI_Model
 	{
 		parent::__construct();
 	}
-
+   
 	public function check_email($email) 
 	{
 		if($email) {

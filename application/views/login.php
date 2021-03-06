@@ -17,7 +17,7 @@
     <div class="login-left-section">
         <img src="<?php echo base_url('assets/');?>global/images/logo.png" alt="logo-image" style="height: auto; width: 25%;">
         <h2>Welcome to the My Car Account</h2>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
+        <p>Here you can sell or buy your car.</p>
     </div>
     <div class="login-page">
         <div class="main-login-contain">
@@ -28,7 +28,7 @@
                 } ?>
                 <form id="form-validation" action="<?php echo base_url('auth/login') ?>" method="post">
                     <h4>Login to your account</h4>
-                    <p class="login-title-text">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                    <p class="login-title-text">Start sell or buy your car</p>
                     <div class="form-group">
                         <input required="required" name="phone" type="text" id="input-email">
                         <label class="control-label" for="input-email">Enter Mobile Number</label><i class="bar"></i>
