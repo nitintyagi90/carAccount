@@ -27,20 +27,26 @@
                     echo $errors;
                 } ?>
                 <form id="form-validation" action="<?php echo base_url('auth/login') ?>" method="post">
-                    <h4>Login to your account</h4>
-                    <p class="login-title-text">Start sell or buy your car</p>
-                    <div class="form-group">
-                        <input required="required" name="phone" type="text" id="input-email">
-                        <label class="control-label" for="input-email">Enter Mobile Number</label><i class="bar"></i>
+                   <div class="row" style="rgba(228, 233, 239, 0.76) !important"> <div class="login-head "  > <h3 style="color:red" >Login to your account</h3>
+                    <p class="login-title-text" style="color:green">Start sell or buy your car</p></div></div>
+                    <div class="form-group" style="padding-top:40px">
+                        <input placeholder="Enter Mobile Number" required="required" name="phone" type="text" id="input-email" style="height:40px;">
+                        <!--<label class="control-label" for="input-email">Enter Mobile Number</label>--><!--i class="bar"></i>-->
                     </div>
-                    <div class="form-group">
-                        <input required="required" name="password" type="password" id="input-password">
-                        <label class="control-label" for="input-password">Enter Password</label><i class="bar"></i>
+                    <div class="form-group" style="padding-top:20px">
+                        <input placeholder="Enter Password" required="required" name="password" type="password" id="input-password" style="height:40px;">
+                       <!-- <label class="control-label" for="input-password">Enter Password</label>--><!--i class="bar"></i>-->
                     </div>
-
-                    <div class="goto-login">
+                    <div class="panel-footer" style="background-color: rgba(228, 233, 239, 0.76) !important; border: 1px solid rgba(0, 0, 0, 0.2); padding-top: 10px; padding-bottom: 10px;    margin-left: -35px;
+    margin-right: -41px; border-radius: 0px; align-item:center;">
+                               <!-- <button type="submit"  class="btn btn-border btn-primary btn-center">LogIn</button>
+                            </div>-->
+                           
+    
+                    <div class="goto-login" >
                         <button type="submit" class="btn btn-login float-button-light">Submit</button>
                     </div>
+                   </div>
                 </form>
             </div>
         </div>

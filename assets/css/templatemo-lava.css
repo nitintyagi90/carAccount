@@ -147,7 +147,7 @@ a.main-button-slider {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #fba70b;
+  background-color: #bb1313;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -166,7 +166,7 @@ a.main-button {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #f4813f;
+  background-color:  #bb1313;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -188,7 +188,7 @@ button.main-button {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #f4813f;
+  background-color:  #bb1313;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -219,7 +219,7 @@ button.main-button:hover {
 
 .center-heading h2 em {
   font-style: normal;
-  color: #f4813f;
+  color:  #bb1313;
 }
 
 .center-heading p {
@@ -236,7 +236,7 @@ header
 */
 
 .background-header {
-  background-color: #fff;
+  background-color:  #bb1313;
   height: 80px!important;
   position: fixed!important;
   top: 0px;
@@ -251,11 +251,11 @@ header
 }
 
 .background-header .main-nav .nav li:hover a {
-  color: #fba70b!important;
+  color:  #bb1313!important;
 }
 
 .background-header .nav li a.active {
-  color: #fba70b!important;
+  color:  #bb1313!important;
 }
 
 .header-area {
@@ -296,7 +296,7 @@ header
   margin-top: 27px;
   margin-left: 15%;
   margin-right: 0px;
-  background-color: #fff;
+  background-color:  #fefefe;;
   padding: 0px 20px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -332,7 +332,7 @@ header
 }
 
 .header-area .main-nav .nav li:hover a {
-  color: #fba70b;
+  color:  #bb1313;
 }
 
 .header-area .main-nav .nav li.submenu {
@@ -531,6 +531,7 @@ header
 
 .header-area.header-sticky {
   min-height: 80px;
+  background-color:#bb1313 ;
 }
 
 .header-area.header-sticky .nav {
@@ -680,7 +681,7 @@ welcome
 
 .welcome-area .header-text h1 em {
   font-style: normal;
-  color: #fba70b;
+  color:  #bb1313;
 }
 
 .welcome-area .header-text p {

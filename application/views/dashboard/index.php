@@ -11,7 +11,7 @@
     <div class='selector'>
                 <ul>
                     <li>
-                    <a href="#" for='c1' style="color:red" title="Purchase"> <img src="<?php echo base_url('assets/');?>global/images/push.png"  alt="hii" srcset=""> </a>
+                    <a href="#" for='c1' style="color:red" title="Purchase"> <img src="<?php echo base_url('assets/');?>global/images/push.png" alt="" alt="hii" srcset=""> </a>
                     <!--<a href="#" for='c1' style="color:red" title="Purchase"> <i class="fa fa-car fa-4x"></i> </a>-->
                     </li>
                     <li>
@@ -21,7 +21,9 @@
                     <a href="#" for='c3' style="color:yellow" title="R.T.O"><i class="fa fa-car fa-4x"></i></a>
                     </li>
                     <li>
-                    <a href="#" for='c4' style="color:blue" title="Warranty"><i class="fa fa-car fa-4x"></i></a>
+                    <a href="#" for='c1' style="color:red" title="Purchase"> <img src="<?php echo base_url('assets/');?>global/images/push.png" alt="" alt="hii" srcset=""> </a>
+                   
+                   <!-- <a href="#" for='c4' style="color:blue" title="Warranty"><i class="fa fa-car fa-4x"></i></a>-->
                     </li>
                     <li>
                     <a href="#" for='c5' style="color:orange" title="Insurance"><i class="fa fa-car fa-4x"></i></a>
