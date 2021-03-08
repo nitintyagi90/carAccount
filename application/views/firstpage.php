@@ -62,7 +62,7 @@ https://templatemo.com/tm-540-lava-landing-page
                             
                             <li class="scroll-to-section"><a href="#contact-us" class="menu-item">Contact Us</a></li>
                              <!-- <li class="scroll-to-section"><a href="/index.php" class="menu-item">login</a></li>-->
-                             <li><a href="Test/login"> login</a></li>
+                             <li><a href="Admin/"> login</a></li>
   
 
 

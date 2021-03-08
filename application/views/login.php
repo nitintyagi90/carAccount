@@ -27,8 +27,11 @@
                     echo $errors;
                 } ?>
                 <form id="form-validation" action="<?php echo base_url('auth/login') ?>" method="post">
-                    <h4>Login to your account</h4>
-                    <p class="login-title-text">Start sell or buy your car</p>
+                   <div class="text-center heading" style="width:100%;height:30%;">
+                   <h4 >Login to your account</h4>
+                   <p class="login-title-text">Start sell or buy your car</p>
+                   </div> 
+                    
                     <div class="form-group">
                         <input required="required" name="phone" type="text" id="input-email">
                         <label class="control-label" for="input-email">Enter Mobile Number</label><i class="bar"></i>
@@ -38,8 +41,8 @@
                         <label class="control-label" for="input-password">Enter Password</label><i class="bar"></i>
                     </div>
 
-                    <div class="goto-login">
-                        <button type="submit" class="btn btn-login float-button-light">Submit</button>
+                    <div class="text-center " >
+                        <button type="submit" class="btn btn-danger">Login</button>
                     </div>
                 </form>
             </div>
