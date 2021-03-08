@@ -12,7 +12,25 @@
 
         <div class="contain-section">
             <div class="contain-inner-section">
-                <form accept="" method="post">
+
+            <?php if($this->session->flashdata('success')): ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+
+            <?php elseif($this->session->flashdata('error')): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $this->session->flashdata('error'); ?>
+                </div>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('errors')){ ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo validation_errors(); ?>
+                </div>
+            <?php } ?>
+
+
+                <form accept="<?php base_url('purchase/create') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">

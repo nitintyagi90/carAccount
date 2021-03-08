@@ -147,7 +147,7 @@ a.main-button-slider {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #fba70b;
+  background-color: #dd0a13;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -332,7 +332,7 @@ header
 }
 
 .header-area .main-nav .nav li:hover a {
-  color: #fba70b;
+  color: #dd0a13;
 }
 
 .header-area .main-nav .nav li.submenu {
@@ -397,7 +397,7 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  background: #fba70b;
+  background: #dd0a13;
 }
 
 .header-area .main-nav .nav li.submenu ul li a:hover {
@@ -538,7 +538,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: #fba70b;
+  color: #dd0a13;
 }
 
 @media (max-width: 1200px) {
@@ -680,7 +680,7 @@ welcome
 
 .welcome-area .header-text h1 em {
   font-style: normal;
-  color: #fba70b;
+  color: #dd0a13;
 }
 
 .welcome-area .header-text p {
@@ -1060,7 +1060,7 @@ footer .right-content {
 
 .footer-content .right-content h2 em {
   font-style: normal;
-  color: #fba70b;
+  color: #dd0a13;
 }
 
 .footer-content .right-content p {
@@ -1107,8 +1107,8 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #fba70b;
-  border-color: #fba70b;
+  background-color: #dd0a13;
+  border-color: #dd0a13;
   color: #fff;
 }
 

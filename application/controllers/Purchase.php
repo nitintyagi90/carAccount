@@ -13,7 +13,7 @@ class Purchase extends Admin_Controller
     public function index()
     {
         redirect('purchase/manage', 'refresh');
-    }
+    }   
 
     public function manage(){
         if(!in_array('viewPurchase', $this->permission)) {
