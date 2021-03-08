@@ -112,7 +112,8 @@ https://templatemo.com/tm-540-lava-landing-page
                     <div class="features-item">
                         <div class="features-icon">
                             <h2>01</h2>
-                            <img src="assets/images/features-icon-1.png" alt="">
+                            <img src="https://img.icons8.com/ios-filled/50/fa314a/store-setting.png"/>
+                            <!-- <img src="assets/images/features-icon-1.png" alt=""> -->
                             <h4>Trend Analysis</h4>                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
                             <a href="#testimonials" class="main-button">
                                 Read More
@@ -125,7 +126,8 @@ https://templatemo.com/tm-540-lava-landing-page
                     <div class="features-item">
                         <div class="features-icon">
                             <h2>02</h2>
-                            <img src="assets/images/features-icon-1.png" alt="">
+                            <img src="https://img.icons8.com/ios-filled/50/fa314a/store-setting.png"/>
+                       <!-- <img src="assets/images/features-icon-1.png" alt=""> -->
                             <h4>Site Optimization</h4>
                             <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
                             <a href="#testimonials" class="main-button">
@@ -139,7 +141,8 @@ https://templatemo.com/tm-540-lava-landing-page
                     <div class="features-item">
                         <div class="features-icon">
                             <h2>03</h2>
-                            <img src="assets/images/features-icon-3.png" alt="">
+                            <img src="https://img.icons8.com/ios-filled/50/fa314a/store-setting.png"/>
+                            <!-- <img src="assets/images/features-icon-3.png" alt=""> -->
                             <h4>Email Design</h4>
                             <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
                             <a href="#testimonials" class="main-button">
@@ -185,7 +188,8 @@ https://templatemo.com/tm-540-lava-landing-page
             <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                 <ul>
                     <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                        <img src="assets/images/about-icon-01.png" alt="">
+                    <img src="https://img.icons8.com/pastel-glyph/64/fa314a/car--v1.png"/>   
+                    <!-- <img src="assets/images/about-icon-01.png" alt=""> -->
                         <div class="text">
                             <h4>Vestibulum pulvinar rhoncus</h4>
                             <p>Please do not redistribute this template ZIP file for a download purpose. You may  us for
@@ -193,7 +197,8 @@ https://templatemo.com/tm-540-lava-landing-page
                         </div>
                     </li>
                     <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
-                        <img src="assets/images/about-icon-02.png" alt="">
+                    <img src="https://img.icons8.com/pastel-glyph/64/fa314a/car--v1.png"/>    
+                    <!-- <img src="assets/images/about-icon-02.png" alt=""> -->
                         <div class="text">
                             <h4>Sed blandit quam in velit</h4>
                             <p>You can from our website. Duis viverra, ipsum et scelerisque placerat, orci
@@ -201,7 +206,8 @@ https://templatemo.com/tm-540-lava-landing-page
                         </div>
                     </li>
                     <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
-                        <img src="assets/images/about-icon-02.png" alt="">
+                    <img src="https://img.icons8.com/pastel-glyph/64/fa314a/car--v1.png"/>   
+                    <!-- <img src="assets/images/about-icon-02.png" alt=""> -->
                         <div class="text">
                             <h4>Sed blandit quam in velit</h4>
                             <p>You can  from our website. Duis viverra, ipsum et scelerisque placerat, orci
