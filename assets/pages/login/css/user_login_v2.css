@@ -12,7 +12,7 @@ START LOGIN V2
 
 ================================*/
 .login-background {
-  background-image: url("../../../../assets/pages/login/images/test3.gif");
+  /* background-image: url("../../../../assets/pages/login/images/test3.gif"); */
   background-repeat: no-repeat;
   /* background-position: top center; */
   position: relative;
@@ -99,8 +99,10 @@ START LOGIN V2
       color: #4390ff; }
   .login-background .login-left-section {
     position: absolute;
-    width: 700px;
-    padding: 50px;
+    /* width: 970px; */
+    height: 100vh;
+    /* padding: 50px; */
+    z-index: -1;
     color: #fff;
     bottom: 0;
     left: 0;
