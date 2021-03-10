@@ -11,9 +11,35 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/');?>pages/login/css/user_login_v2.css">
     <link rel="icon" href="<?php echo base_url('assets/');?>global/images/favicon.png" type="image/x-icon"/>
 </head>
-<body>
+<body >
 
+  
 <div class="login-background">
+<section class="carousel-default">
+    <div id="carousel-default" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-default" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-default" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-default" data-slide-to="2" class=""></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
+        <div class="item">
+          <img src="<?php echo base_url('assets/');?>pages/login/images/banner2.jpg" alt="First slide"  >
+          
+        </div>
+        <div class="item">
+          <img src="<?php echo base_url('assets/');?>pages/login/images/banner1.jfif" alt="Second slide" >
+          
+        </div>
+        <div class="item active">
+          <img src="<?php echo base_url('assets/');?>pages/login/images/bgimage2.jpg" alt="Third slide">
+         
+        </div>
+      </div>
+    </div>
+ 
+
     <div class="login-left-section">
         <img src="<?php echo base_url('assets/');?>global/images/logo.png" alt="logo-image" style="height: auto; width: 25%;">
         <h2>Welcome to the My Car Account</h2>
@@ -27,25 +53,37 @@
                     echo $errors;
                 } ?>
                 <form id="form-validation" action="<?php echo base_url('auth/login') ?>" method="post">
-                    <h4>Login to your account</h4>
-                    <p class="login-title-text">Start sell or buy your car</p>
-                    <div class="form-group">
-                        <input required="required" name="phone" type="text" id="input-email">
-                        <label class="control-label" for="input-email">Enter Mobile Number</label><i class="bar"></i>
+                   <div class="row" style="rgba(228, 233, 239, 0.76) !important"> <div class="login-head "  > <h3 style="color:red" >Login to your account</h3>
+                    <p class="login-title-text" style="color:red">Start sell or buy your car</p></div></div>
+                    <div class="form-group" style="padding-top:40px">
+                        <input placeholder="Enter Mobile Number" required="required" name="phone" type="text" id="input-email" style="height:40px;">
+                        <!--<label class="control-label" for="input-email">Enter Mobile Number</label>--><!--i class="bar"></i>-->
                     </div>
-                    <div class="form-group">
-                        <input required="required" name="password" type="password" id="input-password">
-                        <label class="control-label" for="input-password">Enter Password</label><i class="bar"></i>
+                    <div class="form-group" style="padding-top:20px">
+                        <input placeholder="Enter Password" required="required" name="password" type="password" id="input-password" style="height:40px;">
+                       <!-- <label class="control-label" for="input-password">Enter Password</label>--><!--i class="bar"></i>-->
                     </div>
-
-                    <div class="goto-login">
-                        <button type="submit" class="btn btn-login float-button-light">Submit</button>
+                    <div class="panel-footer" style="background-color: rgba(228, 233, 239, 0.76) !important; border: 1px solid rgba(0, 0, 0, 0.2); padding-top: 10px; padding-bottom: 10px;    margin-left: -35px;
+    margin-right: -41px; border-radius: 0px; align-item:center;">
+                               <!-- <button type="submit"  class="btn btn-border btn-primary btn-center">LogIn</button>
+                            </div>-->
+                           
+    
+                    <div class="goto-login" >
+                        <button type="submit" class="btn btn-login float-button-light">LogIn</button>
                     </div>
+                   </div>
                 </form>
             </div>
         </div>
+    
     </div>
+    </section>
 </div>
+
+
+
+
 
 <script src="<?php echo base_url('assets/');?>global/plugins/jquery/dist/jquery.min.js"></script>
 <script src="<?php echo base_url('assets/');?>global/plugins/bootstrap/dist/js/bootstrap.min.js"></script>

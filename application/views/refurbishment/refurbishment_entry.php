@@ -23,9 +23,12 @@
                             <div class="form-item">
                                 <!-- <p class="formLabel">Address</p> -->
                                 <select class="form-style js-example-basic-single">
-                                    <option>Dealer Mobile No.</option>
-                                    <option>1586587558</option>
-                                    <option>9857854852</option>
+                                  <option>Dealer Mobile No.</option>
+                                     <!--<option>1586587558</option>
+                                    <option>9857854852</option>-->
+                                    <?php foreach ($user as $dealer){ ?>
+                                    <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
+                                <?php }?>
                                 </select>
                             </div>
                         </div>
@@ -131,32 +134,32 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Job Date</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Bill No.</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Amount</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" >
                             <div class="form-item">
                                 <!-- <p class="formLabel">Amount</p> -->
                                 <input type="file" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 pull-right">
-                            <button type="button" class="btn btn-success" style="margin-top: 12px;"><i class="fa fa-plus"></i> </button>
+                            <button type="button" id="duplicate" class="btn btn-success" style="margin-top: 12px;"><i class="fa fa-plus"></i> </button>
                         </div>
                     </div>
                     <div class="row">
@@ -167,25 +170,25 @@
                         </div>
                     </div>    
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Details</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Job Date</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Bill No.</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
                             <div class="form-item">
                                 <p class="formLabel">Amount</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
@@ -429,4 +432,32 @@
         </div>
 
     </div>
+    <!--<script>
+ code for duolicate the field
+$(function() {
+        var scntDiv = $('#duplicatefield');
+        var i = $('#duplicatefield').size() + 1;
+        
+        $('#duplicate').live('click', function() {
+                $(' <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="duplicatefield">
+                            <div class="form-item">
+                                <p class="formLabel">Job Date</p>
+                                <input type="text"id="text" name="text '+ i +'" class="form-style" autocomplete="off" />
+                            </div>
+                        </div> <a href="#" id="remScnt">Remove</a>').appendTo(scntDiv);
+                i++;
+                return false;
+        });
+        
+        $('#remScnt').live('click', function() { 
+                if( i > 2 ) {
+                        $(this).parents('p').remove();
+                        i--;
+                }
+                return false;
+        });
+});
+
+        
+    </script>-->
     <!-- End Contain Section -->    
