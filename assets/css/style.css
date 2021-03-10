@@ -196,7 +196,7 @@ border: 1px solid #fff;
 } 	
 .page { overflow: hidden } 
 .page .container {
-padding: 60px 0;
+padding-top: 50px;
 }
 .page .content.cover { padding: 240px 0 }
 .page .heading h2 {
@@ -399,9 +399,9 @@ line-height: 50px;
   margin-bottom: 10px;
   color: #00aced;
 }
-.space{
+/* .space{
      padding:35px 0 !important;
-}
+} */
 #contact {
   background: url(../img/cover/contact.jpg);
   background-repeat: no-repeat;

@@ -13,23 +13,7 @@
         <div class="contain-section">
             <div class="contain-inner-section">
 
-            <?php if($this->session->flashdata('success')): ?>
-                <div class="alert alert-success" role="alert">
-                    <?php echo $this->session->flashdata('success'); ?>
-                </div>
-
-            <?php elseif($this->session->flashdata('error')): ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $this->session->flashdata('error'); ?>
-                </div>
-            <?php endif; ?>
-            <?php if($this->session->flashdata('errors')){ ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo validation_errors(); ?>
-                </div>
-            <?php } ?>
-
-
+        
                 <form accept="<?php base_url('purchase/create') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12">
@@ -40,11 +24,12 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Address</p> -->
-                                <select class="form-style js-example-basic-single">
-                                    <option>Dealer Mobile No.</option>
-                                    <option>1586587558</option>
-                                    <option>9857854852</option>
-                                </select>
+                                <select class="form-style js-example-basic-single dealer" name="dealer_id" required>
+                                <option value="" selected disabled hidden>Search Dealer Mobile</option>
+                                <?php foreach ($user_list as $dealer){ ?>
+                                    <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
+                                <?php }?>
+                            </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -447,4 +432,5 @@
         </div>
 
     </div>
+    <?php include('js.php');?>
     <!-- End Contain Section -->    
