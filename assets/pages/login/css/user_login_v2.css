@@ -12,12 +12,13 @@ START LOGIN V2
 
 ================================*/
 .login-background {
-  background-image: url("../../../../assets/pages/login/images/bgimage.gif");
+ /* background-image: url("../../../../assets/pages/login/images/bgimage.gif");
+  */
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
   height: 100%;
-  opacity: 0.8;
+  opacity: 2;
   overflow: auto;
   position: fixed;
   width: 100%; }
@@ -40,7 +41,7 @@ START LOGIN V2
   .login-background .login-page {
     display: table;
     height: 50%;
-    margin-top: 15%;
+    margin-top: -40%;
     margin-bottom:15%;
     float: right;
     min-width: 400px;
