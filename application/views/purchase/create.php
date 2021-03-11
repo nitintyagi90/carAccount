@@ -44,7 +44,7 @@
                             </select>
                         </div>
                     </div>
-                    <?php echo "hello" ?>
+                   
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel dealer_name_lebel">Dealer Name</p>
@@ -318,6 +318,7 @@
                                 </select>
                             </div>
                         </div>
+                    
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single" name="Transmission" required>
@@ -732,4 +733,3 @@
 
 </div>
 
-<?php include('js.php');?>

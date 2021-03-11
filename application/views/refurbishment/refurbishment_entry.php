@@ -12,7 +12,7 @@
 
         <div class="contain-section">
             <div class="contain-inner-section">
-                <form accept="" method="post">
+                <form accept="<?php base_url('refurbishment/refurbishment_entry') ?>" method="post">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">
@@ -32,16 +32,19 @@
                                 </select>
                             </div>
                         </div>
+                        
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Dealer Name</p>
-                                <input type="text" name="username" disabled="" class="form-style" autocomplete="off" />
+                              <input type="text" name="username" disabled="" value="<?php  echo $dealer->user_name ?>" class="form-style" autocomplete="off" />
+                                <!--<input disabled="" class="form-style dealer_name" required name="dealer_name" type="text">-->
+                               
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Dealer Company Name</p>
-                                <input type="text" name="username" disabled="" class="form-style" autocomplete="off" />
+                                <input type="text" name="username" disabled=""  value="<?php echo $dealer->user_company ?>" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -430,8 +433,12 @@
                 </form>
             </div>
         </div>
+    
+
 
     </div>
+
+    <?php include('jss.php');?>
     <!--<script>
  code for duolicate the field
 $(function() {

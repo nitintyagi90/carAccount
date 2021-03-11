@@ -1,8 +1,12 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     
     <link rel="shortcut icon" href="#">
@@ -13,14 +17,18 @@
 	<link href="assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css"> 
     <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">   
   </head>
   <body> 
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  
           <div id="navbar-top">
       <nav class="navbar navbar-default navbar-static" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <!--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">-->
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -42,10 +50,11 @@
               <li class="scroll-to-section">
                 <a href="#contact">CONTACT US</a>
               </li>
+             
               <li >
-                <a href="http://localhost/mycaraccount/admin/Test/login"><i class="fa fa-user"></i> LOGIN</a>
+                <a href="<?php echo base_url('Test/login') ?>"><i class="fa fa-user"></i> LOGIN</a>
               </li>
-              
+             
             </ul>
           </div>
         </div>
@@ -139,6 +148,7 @@
                 </ul>
               </div>
             </div>
+            
             <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
                 <img class="img-responsive" src="assets/img/team/3.jpg" alt="">
