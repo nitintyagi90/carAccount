@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 
+=======
+/*-----------------------------------------
+Responsive One Page Template
+Template By: WebThemez.com
+https://www.flickr.com/photos/dellphotos/8071882701/sizes/l/
+-------------------------------------------*/
+>>>>>>> f6e1ab0a3cd0ac6ddef3162d1c8f15f2d0c6942d
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two:700italic);
@@ -402,7 +410,6 @@ line-height: 50px;
   margin-bottom: 10px;
   color: #00aced;
 }
-
 #contact {
   background: url(../img/cover/contact.jpg);
   background-repeat: no-repeat;
@@ -695,4 +702,7 @@ padding: 2px 15px;
     .heroText h2{font-size: 40px; line-height: 40px;}
     .heroText h2 strong{font-size: 25px;}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f6e1ab0a3cd0ac6ddef3162d1c8f15f2d0c6942d
