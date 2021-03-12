@@ -1,4 +1,5 @@
 <script>
+
     $(document).ready(function () {
 
         var d = new Date();
@@ -10,7 +11,7 @@
             var $this = $(this);
             var user_id = $this.val();
             if(user_id==='0'){
-                $('.refurbishment_entry').hide();
+                $('.purchase_entry').hide();
 
             }else{
                 $.ajax({
@@ -322,11 +323,7 @@
             n1 = parseInt($('.commission').val());
             n2 = parseInt($('.purchase-price').val());
             sum = n1 + n2;
-
             if(isNaN(sum)) {
-
-           if(isNaN(sum)) {
-
                 sum = 0
             }
             $('.purchase-label').remove();
@@ -336,19 +333,11 @@
             var sum = 0;
             var n1 = 0;
             var n2 = 0;
-
             n1 = parseInt($('.commission').val());
             n2 = parseInt($('.purchase-price').val());
             sum = n1 + n2;
             if(isNaN(sum)) {
                 sum = 0
-
-           // n1 = parseInt($('.commission').val());
-            n2 = parseInt($('.purchase-price').val());
-            sum = n1 + n2;
-            if(isNaN(sum)) {
-                sum = 0;
-
             }
             $('.purchase-label').remove();
             $('.total-price').val(sum);

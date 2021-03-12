@@ -12,12 +12,13 @@ class Refurbishment extends Admin_Controller
 
     }
     
- public function refurbishment_entry(){
+
+    public function refurbishment_entry(){
         $group_data = $this->model_groups->getGroupData();
         $this->data['group_data'] = $group_data;
-          $userData = $this->model_groups->userInfo();
+        $userData = $this->model_groups->userInfo();
         $this->data['user_list'] = $userData;
-      $this->render_template('refurbishment/refurbishment_entry',$this->data);
+        $this->render_template('refurbishment/refurbishment_entry',$this->data);
 
     }
 
