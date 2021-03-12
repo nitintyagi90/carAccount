@@ -80,7 +80,7 @@ $db['default'] = array(
     //'username' => 'u780262359_nitin',
     'password' => '',
     //'password' => 'Password@9045',
-    'database' => 'mycaraacount',
+    'database' => 'caraccount',
     //'database' => 'u780262359_mycaraccount',
 
     'dbdriver' => 'mysqli',
