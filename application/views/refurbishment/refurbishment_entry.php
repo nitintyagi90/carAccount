@@ -22,35 +22,35 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <!-- <p class="formLabel">Address</p> -->
-                                <select class="form-style js-example-basic-single dealer" name="dealer_id" required>
+                        <div class="form-item">
+                            <select class="form-style js-example-basic-single dealer" name="dealer_id" required>
                                 <option value="" selected disabled hidden>Search Dealer Mobile</option>
                                 <?php foreach ($user_list as $dealer){ ?>
                                     <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
                                 <?php }?>
                             </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Dealer Name</p>
-                                <input type="text" name="username" disabled="" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Dealer Company Name</p>
-                                <input type="text" name="username" disabled="" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Dealer Location</p>
-                                <input type="text" name="username" disabled="" class="form-style" autocomplete="off" />
-                            </div>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-item">
+                            <p class="formLabel dealer_name_lebel">Dealer Name</p>
+                            <input disabled="" class="form-style dealer_name" required name="dealer_name" type="text">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-item">
+                            <p class="formLabel dealer_comapny_lebel">Dealer Company</p>
+                            <input type="text" name="dealer_company" disabled="" class="form-style dealer_company" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="form-item">
+                            <p class="formLabel user_location_label">Dealer Location</p>
+                            <input type="text"  name="location_dealer" disabled="" class="form-style user_location" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">

@@ -2,8 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     
     <link rel="shortcut icon" href="#">
     <title>MY CAR ACCOUNT</title>
@@ -18,7 +17,7 @@
     
   </head>
   <body> 
-          <div id="navbar-top">
+          <div id="navbar-fixed" style="position: fixed; width: -webkit-fill-available; z-index: 10000;">
       <nav class="navbar navbar-default navbar-static" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -28,7 +27,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand nav-external" href="index.php"><strong>MY CAR ACCOUNT</strong></a>
+            <a class="navbar-brand nav-external" href="#">
+             
+              <img src="assets/global/images/logo.png" alt="" width="100"/> 
+               <strong>MY CAR ACCOUNT</strong>
+            </a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -42,7 +45,7 @@
                 <a href="#services">SERVICES</a>
               </li>
               <li class="scroll-to-section">
-                <a href="#priceTable">OUR WORK</a>
+                <a href="#work">OUR WORK</a>
               </li>
               <li class="scroll-to-section">
                 <a href="#contact">CONTACT US</a>
@@ -68,8 +71,8 @@
           </div>
           	<div class="banner-content">
 			        <div class="heroText">
-              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300">Welcome to My Car Account</h1>
-              <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">We Have Made A Lot Of Friends.</h3>
+              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300">MY CAR ACCOUNT</h1>
+              <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">LET THE HUNT BEGIN</h3>
                 <!-- <h2><span> MY CAR ACCOUNT </span><br> -->
                   <!-- <strong>One stop CAR solution</strong></h2> -->
               </div>
@@ -77,7 +80,7 @@
         </div>
       </div>
     </section>
-    <section id="about" class="page space">
+    <section id="about" class="page">
       <div class="container text-center"> 
           <div class="heading">
             <h2>About Us</h2>
@@ -201,148 +204,9 @@
           </div>         -->
       </div>
      
-    </section> 
- 
-<section id="work" class="page space">
-      <div class="container text-center">
-          <div class="heading">
-            <h2>Our Work</h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, alias enim placeat earum quos ab.</p>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div id="portfolio">
-                <ul class="filters list-inline">
-                  <li>
-                    <a class="active" data-filter="*" href="#">All</a>
-                  </li>
-                  <li>
-                    <a data-filter=".photography" href="#"> Virtual Call Center</a>
-                  </li>
-                  <li>
-                    <a data-filter=".branding" href="#"> Mobile Apps</a>
-                  </li>
-                  <li>
-                    <a data-filter=".web" href="#">Webinars</a>
-                  </li>
-                  <li>
-                    <a data-filter=".web" href="#">Quality Service</a>
-                  </li>
-                  <li>
-                    <a data-filter=".web" href="#">Store Data Service</a>
-                  </li>
-                </ul>
-                <ul class="items list-unstyled clearfix animated hiding" data-animation="fadeInRight">
-                  <li class="item branding">
-                     <a href="assets/img/work/1.jpg" class="fancybox">
-                      <img src="assets/img/work/1.jpg" alt="">
-                      <div class="overlay">
-                        <span>Etiam porta</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/2.jpg" class="fancybox">
-                      <img src="assets/img/work/2.jpg" alt="">
-                      <div class="overlay">
-                        <span>Lorem ipsum</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item branding">
-                     <a href="assets/img/work/3.jpg" class="fancybox">
-                      <img src="assets/img/work/3.jpg" alt="">
-                      <div class="overlay">
-                        <span>Vivamus quis</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/4.jpg" class="fancybox">
-                      <img src="assets/img/work/4.jpg" alt="">
-                      <div class="overlay">
-                        <span>Donec ac tellus</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/5.jpg" class="fancybox">
-                      <img src="assets/img/work/5.jpg" alt="">
-                      <div class="overlay">
-                        <span>Etiam volutpat</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item web">
-                     <a href="assets/img/work/6.jpg" class="fancybox">
-                      <img src="assets/img/work/6.jpg" alt="">
-                      <div class="overlay">
-                        <span>Donec congue </span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/7.jpg" class="fancybox">
-                      <img src="assets/img/work/7.jpg" alt="">
-                      <div class="overlay">
-                        <span>Nullam a ullamcorper diam</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="item web">
-                    <a href="assets/img/work/8.jpg" class="fancybox">
-                      <img src="assets/img/work/8.jpg" alt="">
-                      <div class="overlay">
-                        <span>Etiam consequat</span>
-                      </div> 
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>       
-      </div>
-    </section> 
-    
-    
-    <!-- <section id="clients" class="page space">
-      <div class="container text-center"> 
-          <div class="row">
-            <div class="col-lg-12 animated hiding" data-animation="fadeInDown">
-              <div id="testimonials" class="carousel slide">
-                <ol class="carousel-indicators">
-                  <li data-target="#testimonials" data-slide-to="0" class="active"></li>
-                  <li data-target="#testimonials" data-slide-to="1" class=""></li>
-                  <li data-target="#testimonials" data-slide-to="2" class=""></li>
-                  <li data-target="#testimonials" data-slide-to="3" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <p class="quote">Quisque convallis diam ligula, ac accumsan eros pretium vel. Curabitur convallis nibh sit amet iaculis ornare. Integer blandit quis diam sed tincidunt.</p>
-                    <p class="client">John Doe / CEO</p>
-                  </div>
-                  <div class="item">
-                    <p class="quote">Vestibulum volutpat accumsan sem non eleifend. Vivamus pretium nisi semper sapien eleifend, vel lacinia lacus sodales. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra.</p>
-                    <p class="client">Jorginho Jian / Developer</p>
-                  </div>
-                  <div class="item">
-                    <p class="quote">Curabitur in nulla et lorem varius convallis. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra. Duis quis accumsan urna. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut.</p>
-                    <p class="client">Gandalf Kadir / Web Designer</p>
-                  </div>
-                  <div class="item">
-                    <p class="quote">Nullam vel tempor quam, id dictum eros. Nam augue sem, aliquam ac mauris in, pharetra convallis quam. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut. Vivamus pretium nisi semper sapien eleifend.</p>
-                    <p class="client">Homeros Yehudi / QA Engineer</p>
-                  </div>
-                </div>
-                <a class="left carousel-control" data-slide="prev" href="#testimonials">&lsaquo;</a>
-                <a class="right carousel-control" data-slide="next" href="#testimonials">&rsaquo;</a>
-              </div>
-            </div>
-          </div>      
-      </div>
-    </section> -->
-    <section id="services" class="page space">
+    </section>
+
+    <section id="services" class="page" style="padding-bottom:50px;">
       <div class="container text-center"> 
           <div class="heading">
             <h2>Our Services</h2>
@@ -384,7 +248,7 @@
 					</div><!-- END COLUMN 3 -->
 					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="200">
 						<div class="service-icon">
-							<img src="assets/img/car-service.jpg" alt=""/> 
+							<img src="assets/img/5.jpg" alt=""/> 
 						</div>
 						<h4 class="color-white">Daily Expenses</h4>
 						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
@@ -399,16 +263,155 @@
 				
 				</div>     
       </div>
-    </section>
+    </section> 
+ 
+<section id="work" class="page" style="padding-bottom:30px;">
+      <div class="container text-center">
+          <div class="heading">
+            <h2>Our Work</h2>
+            </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="portfolio">
+                <ul class="filters list-inline">
+                  <li>
+                    <a class="active" data-filter="*" href="#">All</a>
+                  </li>
+                  <li>
+                    <a data-filter=".call" href="#"> Virtual Call Center</a>
+                  </li>
+                  <li>
+                    <a data-filter=".app" href="#"> Mobile Apps</a>
+                  </li>
+                  <li>
+                    <a data-filter=".web" href="#">Webinars</a>
+                  </li>
+                  <li>
+                    <a data-filter=".serv" href="#">Quality Service</a>
+                  </li>
+                  <li>
+                    <a data-filter=".data" href="#">Store Data Service</a>
+                  </li>
+                </ul>
+                <ul class="items list-unstyled clearfix animated hiding" data-animation="fadeInRight">
+                  <li class="item data">
+                     <a>
+                      <img src="assets/img/work/1.jpg" alt="">
+                      <div class="overlay">
+                        <span>Store Data Service</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item serv">
+                  <a>
+                      <img src="assets/img/work/2.jpg" alt="">
+                      <div class="overlay">
+                        <span>Quality Service</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item call">
+                  <a>
+                      <img src="assets/img/work/3.jpg" alt="">
+                      <div class="overlay">
+                        <span>Vertual Call Center</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item web">
+                  <a>
+                      <img src="assets/img/work/4.jpg" alt="">
+                      <div class="overlay">
+                        <span>Webinars</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item web">
+                  <a>
+                      <img src="assets/img/work/5.jpg" alt="">
+                      <div class="overlay">
+                        <span>Webinars</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item app">
+                  <a>
+                      <img src="assets/img/work/6.jpg" alt="">
+                      <div class="overlay">
+                        <span>Mobile App</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item call">
+                  <a>
+                      <img src="assets/img/work/7.jpg" alt="">
+                      <div class="overlay">
+                        <span>Vertual Call Center</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item app">
+                  <a>
+                      <img src="assets/img/work/8.jpg" alt="">
+                      <div class="overlay">
+                        <span>Mobile App</span>
+                      </div> 
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>       
+      </div>
+    </section> 
+    
+    
+    <!-- <section id="clients" class="page">
+      <div class="container text-center"> 
+          <div class="row">
+            <div class="col-lg-12 animated hiding" data-animation="fadeInDown">
+              <div id="testimonials" class="carousel slide">
+                <ol class="carousel-indicators">
+                  <li data-target="#testimonials" data-slide-to="0" class="active"></li>
+                  <li data-target="#testimonials" data-slide-to="1" class=""></li>
+                  <li data-target="#testimonials" data-slide-to="2" class=""></li>
+                  <li data-target="#testimonials" data-slide-to="3" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <p class="quote">Quisque convallis diam ligula, ac accumsan eros pretium vel. Curabitur convallis nibh sit amet iaculis ornare. Integer blandit quis diam sed tincidunt.</p>
+                    <p class="client">John Doe / CEO</p>
+                  </div>
+                  <div class="item">
+                    <p class="quote">Vestibulum volutpat accumsan sem non eleifend. Vivamus pretium nisi semper sapien eleifend, vel lacinia lacus sodales. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra.</p>
+                    <p class="client">Jorginho Jian / Developer</p>
+                  </div>
+                  <div class="item">
+                    <p class="quote">Curabitur in nulla et lorem varius convallis. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra. Duis quis accumsan urna. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut.</p>
+                    <p class="client">Gandalf Kadir / Web Designer</p>
+                  </div>
+                  <div class="item">
+                    <p class="quote">Nullam vel tempor quam, id dictum eros. Nam augue sem, aliquam ac mauris in, pharetra convallis quam. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut. Vivamus pretium nisi semper sapien eleifend.</p>
+                    <p class="client">Homeros Yehudi / QA Engineer</p>
+                  </div>
+                </div>
+                <a class="left carousel-control" data-slide="prev" href="#testimonials">&lsaquo;</a>
+                <a class="right carousel-control" data-slide="next" href="#testimonials">&rsaquo;</a>
+              </div>
+            </div>
+          </div>      
+      </div>
+    </section> -->
+    
    
    
-    <section id="contact" class="content-section form contact light space">
+    <section id="contact" class="content-section form contact light">
     	<div class="container">
         	  <div class="content cover text-center">
               <div class="heading">
                 <h2>Contact Us</h2>
                 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/><br/></p>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/><br/></p> -->
               </div>
                <div class="row">
             <span id="message"></span><!-- remove #message to stop floating jQuery messages -->
@@ -478,9 +481,10 @@
               </li>
             </ul>
             <p class="copyright"> 
-             <h3>My Car Account</h3>
+             <h3>37 GF, The Sapphire Mall Sector 49, Gurugram (Hr.)</h3>
+             <h4>Email: carmart.mfc@gmail.com</h4>
             </p>
-          </div>
+          </div
         </div>
       </div>
     </footer>
@@ -504,6 +508,7 @@
 			bgincrement: 0
 		});
     });
+
     </script>
   </body>
 </html>

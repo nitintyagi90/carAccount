@@ -1,8 +1,4 @@
-/*-----------------------------------------
-Responsive One Page Template
-Template By: WebThemez.com
-https://www.flickr.com/photos/dellphotos/8071882701/sizes/l/
--------------------------------------------*/
+
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two:700italic);
@@ -128,7 +124,10 @@ color: #fff;
 	color:#fff;
 	}
 .navbar-default{ 	
-	background:#b40f02;
+	/* background:#b40f02; */
+  background: linear-gradient(
+231deg
+, rgba(232,40,41,0.9304096638655462) 8%, rgba(0,0,0,0.8743872549019608) 95%);
 	}
 .navbar-default .navbar-brand {
   font-weight: 600;
@@ -169,22 +168,26 @@ bottom: 0px;
 text-align: center;
 left: 0px;
 right: 0px;
+font-weight:100px;
+color: rgb(0, 0, 0);
 	}
 .heroText {
-margin-top: 19%;
-    opacity: .7;
+margin-top: 25%;
+    /* opacity: .7; */
 }
 .heroText h2 {
 border: none;
-color: #FFF;
+/* color: #FFF; */
+color: rgb(0, 0, 0);
+
 text-transform: uppercase;
 line-height: 80px;
 padding-bottom: 0;
 font-size: 65px;
 margin-bottom: 35px;
-    text-align: center;
+  text-align: center;
 font-weight: bold;
-    text-shadow: 1px 0px 1px #000;
+  text-shadow: 10px 0px 1px #000;
 }
 .heroText h2 strong{
     font-size: 50px;
@@ -194,9 +197,9 @@ width: 10px;
 height: 10px; 
 border: 1px solid #fff;  
 } 	
-.page { overflow: hidden } 
+.page { overflow: hidden; } 
 .page .container {
-padding-top: 50px;
+padding-top: 90px;
 }
 .page .content.cover { padding: 240px 0 }
 .page .heading h2 {
@@ -214,7 +217,7 @@ padding-top: 50px;
 #home {
   padding: 0;
   color: #fff;
-  background-image: url(../img/cover/home.jpg);
+  background-image: url(../img/cover/ban.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -399,9 +402,7 @@ line-height: 50px;
   margin-bottom: 10px;
   color: #00aced;
 }
-/* .space{
-     padding:35px 0 !important;
-} */
+
 #contact {
   background: url(../img/cover/contact.jpg);
   background-repeat: no-repeat;
@@ -584,7 +585,7 @@ line-height: 50px;
 .form.contact .input-group button.submit {
 	width:100%;
 	height:66px;
-	background:#FF7F00;
+	background:#b40f02;
 	border:0;
 	font-family:"Roboto", Arial, sans-serif;
 	color:#fff;
@@ -694,3 +695,4 @@ padding: 2px 15px;
     .heroText h2{font-size: 40px; line-height: 40px;}
     .heroText h2 strong{font-size: 25px;}
 }
+
