@@ -88,7 +88,8 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mobile</p>
-                                <input type="number" name="rc_mobile" required id="rc_mobile" class="form-style" autocomplete="off" />
+                                <input name="rc_mobile" required id="rc_mobile" class="form-style" autocomplete="off" 
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "10"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -101,12 +102,12 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
-                                <input type="text" name="rc_pan" required minlength="10" id="rc_pan" class="form-style" autocomplete="off" />
+                                <input type="text" name="rc_pan" required minlength="10"  id="rc_pan" class="form-style" autocomplete="off" style="text-transform:uppercase;" />
                             </div>
                         </div>
 
 
-                        <div class="row" style="padding: 0 15px;">
+                        <div class="row" style="purchase_panadding: 0 15panx;">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
@@ -179,9 +180,9 @@
                                 <img id="blah" src="#" alt="your image" />
                             </div>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hideupload">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                 <div class="form-item">
-                                    <label class="formLabel">Upload Car Photo F With Number Palet</label>
+                                    <label class="formLabel">Upload Car Photo  With Number Palet</label>
                                     <input type="file" id="imgInp" name="car_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
@@ -341,8 +342,9 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Registration Date</p>
-                                <input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;:#fff padding: 0;">Registration Date</p>
+                                <input type="date" name="registration_date" id="" required class="form-style current_date" >
+                                <!--<input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -382,8 +384,8 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel purchase-label">Total Purchase Price</p>
+                            <div class="form-item ">
+                                <p class="formLabel"style="top:-14px; position: absolute; left: 15px;  color:#d12629;; padding: 0; background-color: #fff;">Total Purchase Price</p>
                                 <input type="text" readonly name="total_purchase_price" required class="form-style total-price" autocomplete="off" />
                             </div>
                         </div>
@@ -573,7 +575,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_pan">PAN Number</p>
-                                <input type="text" name="purchase_pan" id="purchase_pan"  minlength="10" class="form-style" autocomplete="off" />
+                                <input type="text" name="purchase_pan" id="purchase_pan"   minlength="10" class="form-style" autocomplete="off" style="text-transform:uppercase;" />
                             </div>
                         </div>
                         <div class="row" style="padding: 0 15px;">

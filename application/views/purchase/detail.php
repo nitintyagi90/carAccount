@@ -51,7 +51,7 @@
                                                 <div class="row">
                                                     <div class="prosonal-info">
                                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                            <p><span>Reg. No.:- </span> <?php echo ($purchase->registration_no!==null) ? $purchase->registration_no:''?></p>
+                                                            <p><span>Reg. No.:- </span> <?php echo ($purchase->registration_no!==null) ? $purchase->registration_no:''?> </p>
                                                             <p><span>RC Name:- </span> <?php echo ($purchase->rc_name!==null) ? $purchase->rc_name:''?></p>
                                                             <p><span>Mobile:- </span>  <?php echo ($purchase->rc_mobile!==null) ? $purchase->rc_mobile:''?></p>
                                                             <p><span>Email:- </span> <?php echo ($purchase->rc_email!==null) ? $purchase->rc_email:''?></p>
