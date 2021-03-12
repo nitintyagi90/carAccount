@@ -347,7 +347,12 @@
     });
 
 
-
+$(document).ready(function(){
+  $("#add").click(function(){
+    $("#row").clone().appendTo("#added");
+  });
+});
+</script>
 
 
 </script>

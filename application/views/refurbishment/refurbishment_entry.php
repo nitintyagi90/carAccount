@@ -60,7 +60,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Reg. No</p>
-                                <input type="text" name="username" class="form-style" autocomplete="off" />
+                                <input type="text" name="reg_no" id="reg" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -112,10 +112,7 @@
                                 </select>
                             </div>
                         </div> -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <button class="btn btn-success btn-block">Ready to Sell</button>
-                            </div>
+                        
                         </div>
                     </div>
                     <div class="row">
@@ -124,8 +121,10 @@
                                 <h2 class="header-text">Add Refurbishment Details</h2>
                             </div>
                         </div>
-                    </div>    
-                    <div class="row">
+                    </div>  
+                    <div id="added"> 
+                    <div class="row" id="row">
+                        <div class="col-md-12">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <label class="formLabel">Upload Delivery Note</label> -->
@@ -152,16 +151,20 @@
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        
+                        </div></div>
+                        
+                     </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Amount</p> -->
                                 <input type="file" name="text" class="form-style" autocomplete="off" />
                             </div>
+                    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6 pull-right" >    
+                            <button type="button" id="add" class="btn btn-success" style="margin-top: 12px;"><i class="fa fa-plus"></i> </button>
                         </div>
-                        <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 pull-right">
-                            <button type="button" class="btn btn-success" style="margin-top: 12px;"><i class="fa fa-plus"></i> </button>
-                        </div>
-                    </div>
+
+                    </div> 
+                <!-- ------------------------ -->
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">
@@ -424,7 +427,11 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <button type="button" class="btn btn-danger btn-outline float-button-light waves-effect waves-button waves-float waves-light">Submit</button>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="form-item">
+                                <button class="btn btn-success btn-block">Ready to Sell</button>
+                            </div>
+                            <!-- <button type="button" class="btn btn-danger btn-outline float-button-light waves-effect waves-button waves-float waves-light">Submit</button> -->
                         </div>
                     </div>
                 </form>
@@ -432,5 +439,6 @@
         </div>
 
     </div>
+    
     <?php include('js.php');?>
     <!-- End Contain Section -->    
