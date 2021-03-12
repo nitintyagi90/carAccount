@@ -40,11 +40,9 @@
                                 <?php foreach ($user_list as $dealer){ ?>
                                     <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
                                 <?php }?>
-                               
                             </select>
                         </div>
                     </div>
-                   
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel dealer_name_lebel">Dealer Name</p>
@@ -218,6 +216,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">
+                                
                                 <h2 class="header-text">Vehicle Details</h2>
                             </div>
                         </div>
@@ -318,7 +317,6 @@
                                 </select>
                             </div>
                         </div>
-                    
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single" name="Transmission" required>
@@ -733,3 +731,4 @@
 
 </div>
 
+<?php include('js.php');?>
