@@ -557,7 +557,7 @@ line-height: 50px;
 	padding:0 10px;
 	text-indent:40px;
 	margin:0;
-	height:66px;
+	height: 58px;
 	width:100%;
 	line-height:20px;
 	font-size:20px;
@@ -573,7 +573,7 @@ line-height: 50px;
 }
 
 .form.contact .input-group textarea.lg {
-	height:162px;
+	height:225px;
 	text-indent:10px;
 	padding-top:15px;
 	resize:none;

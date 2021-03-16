@@ -342,15 +342,16 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;:#fff padding: 0;">Registration Date</p>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Registration Date</p>
                                 <input type="date" name="registration_date" id="" required class="form-style current_date" >
                                 <!--<input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">RC Expiry Date</p>
-                                <input type="text" name="rc_expiry_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">RC Expiry Date</p>
+                                <input type="date" name="rc_expiry_date" id="" required class="form-style current_date" >
+                                 <!-- <input type="text" name="rc_expiry_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -359,12 +360,15 @@
                                 <input type="text" name="cubic_capicity" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                  
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" >
                             <div class="form-item">
-                                <p class="formLabel">Purchase Date</p>
-                                <input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;padding: 0;">Purchase Date</p>
+                                <input type="date" name="Purchase_date" id="" required class="form-style current_date" >
+                                  <!--<input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
+                     
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Time</p>
@@ -385,7 +389,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item ">
-                                <p class="formLabel"style="top:-14px; position: absolute; left: 15px;  color:#d12629;; padding: 0; background-color: #fff;">Total Purchase Price</p>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629;; padding: 0; background-color: #fff;">Total Purchase Price</p>
                                 <input type="text" readonly name="total_purchase_price" required class="form-style total-price" autocomplete="off" />
                             </div>
                         </div>
