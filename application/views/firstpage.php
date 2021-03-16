@@ -77,8 +77,8 @@
           </div>
           	<div class="banner-content">
 			        <div class="heroText">
-              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300">MY CAR ACCOUNT</h1>
-              <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">LET THE HUNT BEGIN</h3>
+              <h3 class="animated hiding" data-animation="fadeInDown" data-delay="300" style="font-size:28px;"><strong>MY CAR ACCOUNT</strong></h3>
+              <h1 class="animated hiding" data-animation="fadeIn" data-delay="600">LET THE HUNT BEGIN</h1>
                 <!-- <h2><span> MY CAR ACCOUNT </span><br> -->
                   <!-- <strong>One stop CAR solution</strong></h2> -->
               </div>

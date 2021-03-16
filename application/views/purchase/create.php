@@ -364,7 +364,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" >
                             <div class="form-item">
                                 <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;padding: 0;">Purchase Date</p>
-                                <input type="date" name="Purchase_date" id="" required class="form-style current_date" >
+                                <input type="date" name="purchase_date" id="" required class="form-style current_date" >
                                   <!--<input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>

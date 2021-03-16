@@ -8,6 +8,7 @@ class Purchase extends Admin_Controller
         $this->not_logged_in();
         $this->data['page_title'] = 'Purchase';
         $this->load->model('model_groups');
+        $this->load->model('model_purchase');
 
     }
     public function index()
@@ -466,6 +467,45 @@ class Purchase extends Admin_Controller
 
 
     }
+    public function delete($id)
+
+	{
+		// if(!in_array('deletePurchase', $this->permission)) {
+        //     redirect('dashboard', 'refresh');
+        // }
+        
+		if($id) {
+			if($this->input->post('confirm')) {
+                
+				$id = $this->atri->de($id);
+               
+				 $check = $this->model_purchase->existInPurchase($id);
+                
+				if($check == 0) {
+                   
+					$this->session->set_flashdata('error', 'Purchase exists in the users');
+	        		redirect('purchase/', 'refresh');
+				}
+				else {
+                    
+					$delete = $this->model_purchase->deletePurchase($id);
+                    
+					if($delete == true) {
+		        		$this->session->set_flashdata('success', 'Successfully removed');
+		        		redirect('purchase/', 'refresh');
+		        	}
+		        	else {
+		        		$this->session->set_flashdata('error', 'Error occurred!!');
+		        		redirect('purchase/delete/'.$id, 'refresh');
+		        	}
+				}	
+			}	
+			else {
+				$this->data['id'] = $id;
+				$this->render_template('purchase/delete', $this->data);
+			}	
+		}
+	}
 
 
 
