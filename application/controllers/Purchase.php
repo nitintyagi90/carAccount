@@ -467,38 +467,61 @@ class Purchase extends Admin_Controller
 
 
     }
-    public function delete($id)
+    // public function delete($id)
 
+	// {
+	// 	// if(!in_array('deletePurchase', $this->permission)) {
+    //     //     redirect('dashboard', 'refresh');
+    //     // }
+        
+	// 	if($id) {
+	// 		if($this->input->post('confirm')) {
+    //            $id = $this->atri->de($id);
+    //             $check = $this->model_purchase->existInPurchase($id);
+
+    //            if($check == true) {
+    //              	$this->session->set_flashdata('error', 'Purchase exists in the users');
+	//         		redirect('purchase/', 'refresh');
+	// 			}
+	// 			else {
+    //                $delete = $this->model_purchase->deletePurchase($id);
+    //                if($delete == true) {
+	// 	        		$this->session->set_flashdata('success', 'Successfully removed');
+	// 	        		redirect('purchase/', 'refresh');
+	// 	        	}
+	// 	        	else {
+	// 	        		$this->session->set_flashdata('error', 'Error occurred!!');
+	// 	        		redirect('purchase/delete/'.$id, 'refresh');
+	// 	        	}
+	// 			}	
+	// 		}	
+	// 		else {
+	// 			$this->data['id'] = $id;
+	// 			$this->render_template('purchase/delete', $this->data);
+	// 		}	
+	// 	}
+	// }
+
+
+    public function delete($id)
 	{
-		// if(!in_array('deletePurchase', $this->permission)) {
+		// if(!in_array('deleteGroup', $this->permission)) {
         //     redirect('dashboard', 'refresh');
         // }
         
 		if($id) {
 			if($this->input->post('confirm')) {
-                
 				$id = $this->atri->de($id);
-               
-				 $check = $this->model_purchase->existInPurchase($id);
-                
-				if($check == 0) {
-                   
-					$this->session->set_flashdata('error', 'Purchase exists in the users');
-	        		redirect('purchase/', 'refresh');
-				}
-				else {
-                    
-					$delete = $this->model_purchase->deletePurchase($id);
-                    
+				 	$delete = $this->model_purchase->deletePurchase($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('purchase/', 'refresh');
+		        		redirect('purchase/manage', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
 		        		redirect('purchase/delete/'.$id, 'refresh');
 		        	}
-				}	
+		
 			}	
 			else {
 				$this->data['id'] = $id;
@@ -506,7 +529,6 @@ class Purchase extends Admin_Controller
 			}	
 		}
 	}
-
 
 
 }
