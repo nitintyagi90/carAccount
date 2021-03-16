@@ -93,14 +93,16 @@
             
             <p><strong>MY CAR ACCOUNT</strong> is a dealer centric, centralized Web based application developed for Automobile Dealer for automate all Over India locations. It takes care of all operations of  Pre-Owned Cars  i.e. Stock Management,  Purchases entry, repairing entry , Sales entry, dealer profit & loss a/c, Invoicing, Delivery Chillan, Gate Pass Generation etc. It increases the efficiency of users by automating the pre-owned dealer operations and keeps track of the inventory and approvals. The application provides business intelligence to dealers transactional and various reporting needs, which will be highly useful for Pre-Owned Dealers Management for monitoring their daily transactions across all Over India locations. We at <strong>MY CAR ACCOUNT</strong> appreciate your association and support from all users</p>
           </div>
-          <!-- <div class="row">
+
+          <!-- about us section start-->
+          <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/1.jpg" alt="">
+                <img class="img-responsive" src="assets/img/team/member1.jfif" alt="">
               </div>
               <div class="bio">
-                <h4>John Doe</h4>
-                <h5>Web Developer</h5>
+                <h4>R. P. SHARAN</h4>
+                <h5>Founder lllinois,USA</h5>
                  
                 <ul class="list-inline">
                   <li>
@@ -128,11 +130,11 @@
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/2.jpg" alt="">
+                <img class="img-responsive" src="assets/img/team/memeber2.jfif" alt="">
               </div>
               <div class="bio">
-                <h4>Clarinda Gratia</h4>
-                <h5>Designer</h5>
+                <h4>S. P. SHARAN </h4>
+                <h5>Co Founder, New Delhi, INDIA</h5>
                  
                 <ul class="list-inline">
                   <li>
@@ -155,11 +157,11 @@
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/3.jpg" alt="">
+                <img class="img-responsive" src="assets/img/team/member3.jfif" alt="">
               </div>
               <div class="bio">
-                <h4>Mandeep Eimear</h4>
-                <h5>Mobile Developer</h5>
+                <h4>Raj SINHA</h4>
+                <h5>CEO ,Chicago,USA</h5>
                  
                 <ul class="list-inline">
                   <li>
@@ -180,7 +182,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInRight" data-delay="600">
+           <!-- <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInRight" data-delay="600">
               <div class="profile-photo">
                 <img class="img-responsive" src="assets/img/team/4.jpg" alt="">
               </div>
@@ -207,7 +209,7 @@
                 </ul>
               </div>
             </div>
-          </div>         -->
+          </div>        <!-- aboutus end-->
       </div>
      
     </section>
@@ -430,11 +432,17 @@
                         <input type="text" name="contactName" id="contactName" class="lg" placeholder="Name">
                     </span><!-- .input-group -->
                     
+                    
+                    <span class="input-group">
+                        <i class="fa fa-mobile"></i>
+                        <input type="number" name="mobilenumber" id="mobilenumber" class="lg" placeholder=" Mobile Number">
+                    </span><!-- .input-group -->
+
                     <span class="input-group">
                         <i class="fa fa-envelope"></i>
                         <input type="text" name="contactEmail" id="contactAddress" class="lg" placeholder="Email Address">
                     </span><!-- .input-group -->
-                    
+
                    	<span class="input-group">
                         <i class="fa fa-book"></i>
                         <input type="text" name="contactSubject" id="contactSubject" class="lg" placeholder="Subject">

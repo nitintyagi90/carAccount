@@ -60,6 +60,13 @@
                                 <input type="text" name="username" class="form-style" autocomplete="off" />
                             </div>
                         </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="form-item">
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629;; padding: 0; background-color: #fff;">UPLOAD RC IMAGE</p>
+                                <input type="file" name="rcimage" class="form-style" autocomplete="off" />
+                            </div>
+                        </div>
+                       
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pull-right">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Date</p>

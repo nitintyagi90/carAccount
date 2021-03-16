@@ -51,6 +51,7 @@
                                                 <div class="row">
                                                     <div class="prosonal-info">
                                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                          
                                                             <p><span>Reg. No.:- </span> <?php echo ($purchase->registration_no!==null) ? $purchase->registration_no:''?> </p>
                                                             <p><span>RC Name:- </span> <?php echo ($purchase->rc_name!==null) ? $purchase->rc_name:''?></p>
                                                             <p><span>Mobile:- </span>  <?php echo ($purchase->rc_mobile!==null) ? $purchase->rc_mobile:''?></p>
@@ -58,10 +59,12 @@
                                                             
                                                         </div>
                                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                            <p><span>Pan No.:- </span> <?php echo ($purchase->rc_pan!==null) ? $purchase->rc_pan:''?></p>
+                                                        
+                                                             <p><span>Pan No.:- </span> <?php echo ($purchase->rc_pan!==null) ? $purchase->rc_pan:''?></p>
                                                             <p><span>Address:- </span> <?php echo ($purchase->rc_address!==null) ? $purchase->rc_address:''?></p>
                                                             <p><span>State:- </span> <?php echo ($purchase->rc_state!==null) ? $purchase->rc_state:''?></p>
                                                             <p><span>City:- </span> <?php echo ($purchase->rc_city!==null) ? $purchase->rc_city:''?></p>
+                                                     
                                                         </div>
                                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                             <p><span>Landmark:- </span><?php echo ($purchase->rc_ladmark!==null) ? $purchase->rc_ladmark:''?></p>
@@ -74,38 +77,47 @@
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">RC</label>
                                                         <a href="<?php echo ($purchase->rc_image!==null) ? $purchase->rc_image:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->rc_image!==null) ? $purchase->rc_image:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Insurance</label>
                                                         <a href="<?php echo ($purchase->insurance_image!==null) ? $purchase->insurance_image:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->insurance_image!==null) ? $purchase->insurance_image:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">NOC</label>
                                                         <a href="<?php echo ($purchase->bank_noc_image!==null) ? $purchase->bank_noc_image:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->bank_noc_image!==null) ? $purchase->bank_noc_image:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Pan Card</label>
                                                         <a href="<?php echo ($purchase->pan_card_image!==null) ? $purchase->pan_card_image:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->pan_card_image!==null) ? $purchase->pan_card_image:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Car Photo</label>
                                                         <a href="<?php echo ($purchase->car_image!==null) ? $purchase->car_image:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->car_image!==null) ? $purchase->car_image:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Address Proof 1</label>
                                                         <a href="<?php echo ($purchase->add_proof_img!==null) ? $purchase->add_proof_img:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->add_proof_img!==null) ? $purchase->add_proof_img:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Address Proof 2</label>
                                                         <a href="<?php echo ($purchase->add_proof_img2!==null) ? $purchase->add_proof_img2:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->add_proof_img2!==null) ? $purchase->add_proof_img2:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Sell Letter</label>
                                                         <a href="<?php echo ($purchase->sell_ltr_img!==null) ? $purchase->sell_ltr_img:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->sell_ltr_img!==null) ? $purchase->sell_ltr_img:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Delivery Note</label>
                                                         <a href="<?php echo ($purchase->delivery_note_img!==null) ? $purchase->delivery_note_img:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->delivery_note_img!==null) ? $purchase->delivery_note_img:''?>"></a>
+                                                        <button type="button" class="btn btn-success">DOWNLOAD</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -271,6 +283,7 @@
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Pan Card</label>
                                                         <a href="<?php echo ($purchase->kyc_pan_img!==null) ? $purchase->kyc_pan_img:''?>" target="_blank"><img class="img img-responsive" src="<?php echo ($purchase->kyc_pan_img!==null) ? $purchase->kyc_pan_img:''?>"></a>
+                                                     
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label class="m-t-1">Address Proof 1</label>
