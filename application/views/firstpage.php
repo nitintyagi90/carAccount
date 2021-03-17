@@ -372,6 +372,90 @@
           </div>       
       </div>
     </section> 
+    <section id="priceTable" class="page space">
+    	 <div class="container text-center"> 
+         <div class="heading">
+            <h2>Our Efforts</h2>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+          </div> 
+         	<div class="row"> 
+            <div class="col-sm-4">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h3>Basic</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">RS 4100/-<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">Activation charge  Rs 3000/-</li>
+                  <li class="list-group-item">Monitering charge Rs 500/-</li>
+                  <li class="list-group-item">Fix Service Charge Rs 500/-</li>
+                  <li class="list-group-item">Per Car Entry Rs 100/-</li>
+                  <li class="list-group-item">Entry detail sales/purchase</li>
+                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>
+            <!--<div class="col-sm-3">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h3>Plus</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">$19<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">10 Projects</li>
+                  <li class="list-group-item">10 GB of Storage</li>
+                  <li class="list-group-item">Up to 250 Users</li>
+                  <li class="list-group-item">25 GB Bandwidth</li>
+                  <li class="list-group-item">Security Suite</li>
+                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>-->
+            <div class="col-sm-4">
+              <div class="panel panel-danger text-center">
+                <div class="panel-heading">
+                  <h3>Premium</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">$29<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">Unlimited</li>
+                  <li class="list-group-item">Activation charge  Rs 3000/-</li>
+                  <li class="list-group-item">Service charge Rs 500/- </li>
+                  <li class="list-group-item">per car entry RS 150/-</li>
+                  <li class="list-group-item">Entry detail sales/purchase/ refurbishment</li>
+                  <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>
+            <div class="col-sm-4">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h3>Ultimate</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">$49<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">Unlimited</li>
+                  <li class="list-group-item">Activation charge  RS 10000/-</li>
+                  <li class="list-group-item">Service charge Rs 5000/-</li>
+                  <li class="list-group-item">Car Entry Unlimited</li>
+                  <li class="list-group-item">3 entry perday</li>
+                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>
+     
+          </div>
+         </div>      
+    </section>
     
     
     <!-- <section id="clients" class="page">

@@ -26,15 +26,15 @@
       <div class="carousel-inner" role="listbox">
         <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
         <div class="item active">
-          <img src="http://localhost/carAccount/assets/pages/login/images/banner2.jpg" alt="First slide">
+          <img src="http://localhost/carAccount/assets/pages/login/images/banner21.jpg" alt="First slide">
           
         </div>
         <div class="item">
-          <img src="http://localhost/carAccount/assets/pages/login/images/banner1.jfif" alt="Second slide">
+          <img src="http://localhost/carAccount/assets/pages/login/images/banner12.jfif" alt="Second slide">
           
         </div>
         <div class="item">
-          <img src="http://localhost/carAccount/assets/pages/login/images/bgimage2.jpg" alt="Third slide">
+          <img src="http://localhost/carAccount/assets/pages/login/images/bgimage22.jpg" alt="Third slide">
          
         </div>
       </div>

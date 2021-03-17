@@ -141,7 +141,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Pincode</p>
-                                        <input type="text" name="rc_pincode" required minlength="6" id="purchase_pincode" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_pincode" required minlength="6" id="rc_pincode" class="form-style" autocomplete="off" />
 
                                     </div>
                                 </div>
@@ -281,7 +281,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Manuf. Year</p>
-                                <input type="text" required name="manuf_year" class="form-style" autocomplete="off" />
+                                <input type="number"   required name="manuf_year" class="form-style" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4"/> 
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -357,7 +357,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Cubic Capacity</p>
-                                <input type="text" name="cubic_capicity" required class="form-style" autocomplete="off" />
+                                <input type="number" name="cubic_capicity" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                   
@@ -567,7 +567,10 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_mobile">Mobile</p>
-                                <input type="text" name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" />
+                              <!--  <input type="text" name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" />-->
+                                <input name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" 
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "10"/>
+                           
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -652,7 +655,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel purchase_pincode">Pincode</p>
-                                        <input type="text" name="purchase_pincode" minlength="6" id="" class="form-style" autocomplete="off" />
+                                        <input type="text" name="purchase_pincode" minlength="6" id="purchase_pincode" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                             </div>
