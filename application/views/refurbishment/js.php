@@ -11,7 +11,7 @@
             var $this = $(this);
             var user_id = $this.val();
             if(user_id==='0'){
-                $('.purchase_entry').hide();
+                $('.reb_entry').hide();
 
             }else{
                 $.ajax({
@@ -30,16 +30,69 @@
                             $('.dealer_name').val(user_name);
                             $('.dealer_company').val(user_company);
                             $('.user_location').val(user_location);
-                            $('.purchase_entry').show();
+                            $('.reb_entry').show();
                         }else{
                             alert('somthing went wrong!')
                         }
-
                     }
                 });
             }
+        });
 
 
+        $('.select_reg').change(function() {
+            var $this = $(this);
+            var purchase_id = $this.val();
+            if(purchase_id==='0'){
+                $('.purchase_entry').hide();
+                $('#make').val('');
+                $('#model').val('');
+                $('#submodel').val('');
+                $('#color').val('');
+                $('#purchase_date').val('');
+                $('#purchase_price').val('');
+
+                $('.make').show();
+                $('.model').show();
+                $('.submodel').show();
+                $('.color').show();
+                $('.purchase_date').show();
+                $('.purchase_price').show();
+            }else{
+                $.ajax({
+                    type:"POST",
+                    url : "<?php echo base_url('refurbishment/purchaseDetails');?>",
+                    data: {purchase_id : purchase_id},
+                    success : function(data) {
+                        var json = $.parseJSON(data);
+                        if(json.status==200){
+
+                            $('.make').hide();
+                            $('.model').hide();
+                            $('.submodel').hide();
+                            $('.color').hide();
+                            $('.purchase_date').hide();
+                            $('.purchase_price').hide();
+
+                            var make = json.data.car_brand;
+                            var model = json.data.car_model;
+                            var submodel = json.data.car_submodel;
+                            var color = json.data.car_color;
+                            var purchase_date = json.data.purchase_date;
+                            var purchase_price = json.data.purchase_price;
+
+                            $('#make').val(make);
+                            $('#model').val(model);
+                            $('#submodel').val(submodel);
+                            $('#color').val(color);
+                            $('#purchase_date').val(purchase_date);
+                            $('#purchase_price').val(purchase_price);
+                        }else{
+                            alert('somthing went wrong!')
+                        }
+                    }
+                });
+            }
         });
 
         $('.state1').change(function () {
@@ -344,14 +397,91 @@
         });
 
 
+
+        var html_2 = '<div class="row multi-field" id="row">' +
+            '<div class="col-md-12">' +
+            '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">' +
+            '<div class="form-item"> <select class="form-style js-example-basic-single select_reg" name="registration_no" required> ' +
+            '<option>Repairing Details</option></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
+
+
+
+
+
+
+
+
+
+
+
+        var max_fields      = 10;
+        var wrapper   		= $(".multi-fields");
+        var wrapper_expenses      = $(".expenses");
+        var wrapper_accessiores      = $(".accessiores");
+        var wrapper_other_expenses      = $(".other-expenses");
+
+        var add_button      = $(".add-field");
+        var add_button_expenses      = $(".fields-expenses");
+        var add_accessiores      = $(".add-accessiores");
+        var add_other_expenses     = $(".add_other_expenses");
+        var x = 1;
+        $(add_button).click(function(e){
+            e.preventDefault();
+            if(x < max_fields){
+                x++; //text box increment
+                $(wrapper).append(html_2); //add input box
+            }else{
+                alert('No More fields added')
+            }
+        });
+        $(add_button_expenses).click(function(e){
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"> <option>Details</option> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
+            e.preventDefault();
+            if(x < max_fields){
+                x++; //text box increment
+                $(wrapper_expenses).append(html_2); //add input box
+            }else{
+                alert('No More fields added')
+            }
+        });
+        $(add_accessiores).click(function(e){
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"> <option>Details</option> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
+            e.preventDefault();
+            if(x < max_fields){
+                x++; //text box increment
+                $(wrapper_accessiores).append(html); //add input box
+            }else{
+                alert('No More fields added')
+            }
+        });
+        $(add_other_expenses).click(function(e){
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"> <option>Details</option> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
+            e.preventDefault();
+            if(x < max_fields){
+                x++; //text box increment
+                $(wrapper_other_expenses).append(html); //add input box
+            }else{
+                alert('No More fields added')
+            }
+        });
+
+        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        });
+        $(wrapper_expenses).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+        $(wrapper_accessiores).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+        $(wrapper_other_expenses).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+
     });
 
 
-$(document).ready(function(){
-  $("#add").click(function(){
-    $("#row").clone().appendTo("#added");
-  });
-});
+
 </script>
 
 
