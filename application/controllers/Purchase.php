@@ -32,8 +32,9 @@ class Purchase extends Admin_Controller
     public function create(){
         if(!in_array('createPurchase', $this->permission)) {
             redirect('dashboard', 'refresh');
+        
         }
-        $this->form_validation->set_rules('registration_no', 'registration_no', 'trim|required');
+        $this->form_validation->set_rules('registration_no', 'registration_no', 'trim|required|is_unique[purchase.registration_no]');
         $this->form_validation->set_rules('rc_name', 'rc_name', 'trim|required');
         $this->form_validation->set_rules('rc_mobile', 'rc_mobile', 'trim|required');
         $this->form_validation->set_rules('rc_address', 'rc_address', 'trim|required');
