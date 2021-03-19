@@ -51,6 +51,7 @@
                 $('#color').val('');
                 $('#purchase_date').val('');
                 $('#purchase_price').val('');
+                $('#purchase_commission').val('');
 
                 $('.make').show();
                 $('.model').show();
@@ -58,6 +59,7 @@
                 $('.color').show();
                 $('.purchase_date').show();
                 $('.purchase_price').show();
+                $('.purchase_commission').show();
             }else{
                 $.ajax({
                     type:"POST",
@@ -88,7 +90,7 @@
                             $('#color').val(color);
                             $('#purchase_date').val(purchase_date);
                             $('#purchase_price').val(purchase_price);
-                            $('#purchase_commission').val(commission);
+                            $('#purchase_commission').val(purchase_commission);
                         }else{
                             alert('something went wrong!')
                         }
