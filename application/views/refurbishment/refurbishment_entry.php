@@ -174,8 +174,9 @@
 
                             </div>
                         </div>
+                        <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 pull-right">
                         <button type="button" class="btn btn-success add-field" style="margin-top: 12px;"><i class="fa fa-plus"></i> </button>
-
+                        </div>
                     </div>
 
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
