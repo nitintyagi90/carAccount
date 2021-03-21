@@ -228,8 +228,8 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">DOB</p>
-                                <input type="text" name="" class="form-style" autocomplete="off" />
+                                <p class="formLabel"style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">DOB</p>
+                                <input type="date" name="" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -256,9 +256,15 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <!-- <p class="formLabel">Address</p> -->
-                                    <select class="form-style">
+                                    <!-- <select class="form-style">
                                         <option>Select State</option>
-                                    </select>
+                                    </select> -->
+                                    <select class="form-style js-example-basic-single state1" name="rc_state" required>
+                                            <option value="" selected disabled hidden>--Select State--</option>
+                                            <?php foreach ($states as $list){ ?>
+                                                <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
+                                            <?php  }?>
+                                        </select>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
