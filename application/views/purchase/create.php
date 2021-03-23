@@ -75,14 +75,17 @@
                             <div class="form-item">
                                 <p class="formLabel">Reg. No*</p>
                                 <input type="text" name="registration_no" required id="registration_no" class="form-style" autocomplete="off" />
+                           
                             </div>
+                           
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Name</p>
-                                <input type="text" name="rc_name" id="rc_name" required class="form-style" autocomplete="off" />
+                                
+                                <input type="text" name="rc_name" id="rc_name" required class="form-style" autocomplete="off"  />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -102,12 +105,13 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
-                                <input type="text" name="rc_pan" required minlength="10"  id="rc_pan" class="form-style" autocomplete="off" style="text-transform:uppercase;" />
+                                <input type="text" name="rc_pan" required minlength="10"  id="rc_pan" class="form-style" autocomplete="off" 
+                                value="<?php if (isset($_POST['rc_name'])) echo $_POST['rc_name']; else echo "FORM16"?>" maxlength="10"style="text-transform:uppercase;" />
                             </div>
                         </div>
 
 
-                        <div class="row" style="purchase_panadding: 0 15panx;">
+                        <div class="row" style="padding: 0 15panx;">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>

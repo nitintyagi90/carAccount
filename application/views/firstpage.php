@@ -96,39 +96,35 @@
 
           <!-- about us section start-->
           <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
+          <div class="col-md-4 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/member1.jfif" alt="">
+                <img class="img-responsive" src="assets/img/team/member3.jfif" alt="">
               </div>
               <div class="bio">
-                <h4>R. P. SHARAN</h4>
-                <h5>Founder lllinois,USA</h5>
+                <h4>Raj SINHA</h4>
+                <h5>CEO ,Chicago,USA</h5>
                  
                 <ul class="list-inline">
-                  <li>
-                    <a href="http://www.facebook.com/" title="Facebook">
-                      <i class="fa fa-facebook"></i>
-                    </a>
-                  </li>
                   <li>
                     <a href="http://www.twitter.com/" title="Twitter">
                       <i class="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://www.linkedin.com/" title="LinkedIn">
-                      <i class="fa fa-linkedin"></i>
+                    <a href="http://developer.android.com/index.html" title="Android Developers">
+                      <i class="fa fa-android"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://www.github.com/" title="GitHub">
-                      <i class="fa fa-github"></i>
+                    <a href="http://www.stackoverflow.com/" title="Stack Overflow">
+                      <i class="fa fa-stack-overflow"></i>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+          
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
                 <img class="img-responsive" src="assets/img/team/memeber2.jfif" alt="">
               </div>
@@ -155,28 +151,34 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+      
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/member3.jfif" alt="">
+                <img class="img-responsive" src="assets/img/team/member1.jfif" alt="">
               </div>
               <div class="bio">
-                <h4>Raj SINHA</h4>
-                <h5>CEO ,Chicago,USA</h5>
+                <h4>R. P. SHARAN</h4>
+                <h5>Founder lllinois,USA</h5>
                  
                 <ul class="list-inline">
+                  <li>
+                    <a href="http://www.facebook.com/" title="Facebook">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
                   <li>
                     <a href="http://www.twitter.com/" title="Twitter">
                       <i class="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://developer.android.com/index.html" title="Android Developers">
-                      <i class="fa fa-android"></i>
+                    <a href="http://www.linkedin.com/" title="LinkedIn">
+                      <i class="fa fa-linkedin"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://www.stackoverflow.com/" title="Stack Overflow">
-                      <i class="fa fa-stack-overflow"></i>
+                    <a href="http://www.github.com/" title="GitHub">
+                      <i class="fa fa-github"></i>
                     </a>
                   </li>
                 </ul>
@@ -386,7 +388,7 @@
                   <h3>Basic</h3>
                 </div>
                 <div class="panel-body">
-                  <h3 class="panel-title price">RS 4100/-<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                  <h3 class="panel-title price">RS 4100<span class="price-cents"></span><span class="price-month">mo.</span></h3>
                 </div>
                 <ul class="list-group">
                   <li class="list-group-item">Activation charge  Rs 3000/-</li>
@@ -422,11 +424,11 @@
                   <h3>Premium</h3>
                 </div>
                 <div class="panel-body">
-                  <h3 class="panel-title price">$29<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                  <h3 class="panel-title price">Rs 5650<span class="price-cents"></span><span class="price-month">mo.</span></h3>
                 </div>
                 <ul class="list-group">
                   <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">Activation charge  Rs 3000/-</li>
+                  <li class="list-group-item">Activation charge  Rs 5000/-</li>
                   <li class="list-group-item">Service charge Rs 500/- </li>
                   <li class="list-group-item">per car entry RS 150/-</li>
                   <li class="list-group-item">Entry detail sales/purchase/ refurbishment</li>
@@ -440,14 +442,14 @@
                   <h3>Ultimate</h3>
                 </div>
                 <div class="panel-body">
-                  <h3 class="panel-title price">$49<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                  <h3 class="panel-title price">Rs 15000<span class="price-cents"></span><span class="price-month">mo.</span></h3>
                 </div>
                 <ul class="list-group">
                   <li class="list-group-item">Unlimited</li>
                   <li class="list-group-item">Activation charge  RS 10000/-</li>
                   <li class="list-group-item">Service charge Rs 5000/-</li>
                   <li class="list-group-item">Car Entry Unlimited</li>
-                  <li class="list-group-item">3 entry perday</li>
+                  <li class="list-group-item">3 entry per day</li>
                   <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
                 </ul>
               </div>          

@@ -10,8 +10,10 @@ class Model_users extends CI_Model
 	public function getUserData($userId = null) 
 	{
 		if($userId) {
-			$sql = "SELECT * FROM users WHERE user_id = ?";
+		$sql = "SELECT * FROM users WHERE user_id = ?";
+		
 			$query = $this->db->query($sql, array($userId));
+			
 			return $query->row_array();
 		}
 
@@ -21,16 +23,21 @@ class Model_users extends CI_Model
 	}
 
     public function getUserGroup($userId = null)
-    {
+         {
+			// print_r($userId);
         if($userId) {
-            $sql = "SELECT * FROM user_group WHERE user_id = ?";
+             $sql = "SELECT * FROM user_group WHERE user_id = $userId";
             $query = $this->db->query($sql, array($userId));
+		
             $result = $query->row_array();
+			 $group_id = $result['group_id'];
+		  $g_sql = "SELECT * FROM groups WHERE id = $group_id";
 
-            $group_id = $result['group_id'];
-            $g_sql = "SELECT * FROM `groups` WHERE id = $group_id";
-            $g_query = $this->db->query($g_sql, array($group_id));
+			 $g_query = $this->db->query($g_sql, array($group_id));
+			
             $q_result = $g_query->row_array();
+			// print_r($q_result);
+			
             return $q_result;
         }
     }
@@ -47,6 +54,7 @@ class Model_users extends CI_Model
 				'user_id' => $user_id,
 				'group_id' => $group_id
 			);
+
 
 			$group_data = $this->db->insert('user_group', $group_data);
 

@@ -51,7 +51,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel">Mobile No.</p>
-                            <input type="text" name="phone" class="form-style" autocomplete="off" />
+                            <input type="text" name="phone" class="form-style" autocomplete="off" maxlength="10" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
