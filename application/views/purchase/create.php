@@ -489,8 +489,8 @@
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <p class="formLabel">Insurance Expiry Date</p>
-                                    <input type="text" name="insurance_expiry_date" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                    <p class="formLabel"style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Insurance Expiry Date</p>
+                                    <input type="date" name="insurance_expiry_date" class="Date form-style"  />
                                 </div>
                             </div>
 
@@ -523,8 +523,8 @@
 
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                <div class="form-item">
-                                   <p class="formLabel">Warranty Expiry Date</p>
-                                   <input type="text" name="Warranty_exp_date" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
+                                   <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Warranty Expiry Date</p>
+                                   <input type="date" name="Warranty_exp_date" value="0" class="form-style"/>
                                </div>
                            </div>
 

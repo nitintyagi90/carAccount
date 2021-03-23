@@ -50,14 +50,14 @@
                 $('#submodel').val('');
                 $('#color').val('');
                 $('#purchase_date').val('');
-                $('#purchase_price').val('');
+                $('#total_purchase_price').val('');
 
                 $('.make').show();
                 $('.model').show();
                 $('.submodel').show();
                 $('.color').show();
                 $('.purchase_date').show();
-                $('.purchase_price').show();
+                $('.total_purchase_price').show();
             }else{
                 $.ajax({
                     type:"POST",
@@ -72,21 +72,21 @@
                             $('.submodel').hide();
                             $('.color').hide();
                             $('.purchase_date').hide();
-                            $('.purchase_price').hide();
+                            $('.total_purchase_price').hide();
 
                             var make = json.data.car_brand;
                             var model = json.data.car_model;
                             var submodel = json.data.car_submodel;
                             var color = json.data.car_color;
                             var purchase_date = json.data.purchase_date;
-                            var purchase_price = json.data.purchase_price;
+                            var total_purchase_price = json.data.total_purchase_price;
 
                             $('#make').val(make);
                             $('#model').val(model);
                             $('#submodel').val(submodel);
                             $('#color').val(color);
                             $('#purchase_date').val(purchase_date);
-                            $('#purchase_price').val(purchase_price);
+                            $('#total_purchase_price').val(total_purchase_price);
                         }else{
                             alert('somthing went wrong!')
                         }
