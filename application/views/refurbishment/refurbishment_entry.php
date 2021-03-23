@@ -101,14 +101,14 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <p class="formLabel purchase_date  style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p>
+                                        <p class="formLabel purchase_date"  style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p>
                                         <input type="date" disabled="" id="purchase_date" name="purchase_date" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <p class="formLabel purchase_price">Total Purchase Price</p>
-                                        <input type="text" disabled="" id="purchase_price" name="purchase_price" class="form-style" autocomplete="off" />
+                                        <p class="formLabel total_purchase_price">Total Purchase Price</p>
+                                        <input type="text" disabled="" id="total_purchase_price" name="total_purchase_price" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="row">
