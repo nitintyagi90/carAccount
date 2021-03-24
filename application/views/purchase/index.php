@@ -46,7 +46,7 @@
                                         <td><?php echo $v->car_color ?></td>
 
                                         <td>
-                                            <a href="<?php echo base_url('purchase/manage/'.$v->purchase_id)?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
+                                            <a href="<?php echo base_url('purchase/edit/'.$v->purchase_id)?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
                                             
                                             <a href="<?php echo base_url('purchase/delete/'.$this->atri->en($v->purchase_id))?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                             
