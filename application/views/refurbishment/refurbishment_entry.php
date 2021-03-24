@@ -369,8 +369,12 @@
                             <label class="mt-20">Total Purchase Price</label>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
+                            <!-- <div class="form-item">
                                 <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
+                            </div> -->
+                            <div class="form-item select_reg">
+                              <p class="formLabel total_purchase_price">Total Purchase Price</p>
+                              <input type="text" disabled=""value="" id="total_purchase_price_ref" name="total_purchase_price" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
