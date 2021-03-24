@@ -70,6 +70,7 @@ class Purchase extends Admin_Controller
                 'rc_name' => $this->input->post('rc_name'),
                 'rc_mobile' => $this->input->post('rc_mobile'),
                 'rc_email' => $this->input->post('rc_email'),
+                
                 'rc_pan' => $this->input->post('rc_pan'),
                 'rc_address' => $this->input->post('rc_address'),
                 'rc_state' => $this->input->post('rc_state'),
@@ -460,6 +461,7 @@ class Purchase extends Admin_Controller
 
         }
     }
+    
 
     public function sale(){
         $groups_data = $this->model_groups->getGroupData();

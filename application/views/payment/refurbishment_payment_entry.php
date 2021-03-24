@@ -61,37 +61,44 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
+                        <div class="form-item">
+                                        <select class="form-style js-example-basic-single select_reg" name="registration_no" required>
+                                            <option value="0">Search Registration No.</option>
+                                            <?php foreach ($registration_no as $data){ ?>
+                                                <option value="<?php echo $data->purchase_id ?>"><?php echo $data->registration_no ?></option>
+                                            <?php }?>
+                                        </select>
+                            <!-- 
                                 <p class="formLabel">Reg. No</p>
                                 <input type="text" name="username" class="form-style" autocomplete="off" />
-                            </div>
+                           --> </div> 
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Make</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Model</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Sub Model</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Color</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel make">Make</p>
+                                        <input type="text" disabled="" id="make" name="make" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel model">Model</p>
+                                        <input type="text" disabled="" id="model" name="model" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel submodel">Sub Model</p>
+                                        <input type="text" disabled="" id="submodel" name="submodel" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel color">Color</p>
+                                        <input type="text" disabled="" id="color" name="color" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">

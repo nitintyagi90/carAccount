@@ -19,15 +19,26 @@ class Users extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
 		$user_data = $this->model_users->getUserData();
+        
+       
 		$result = array();
-		foreach ($user_data as $k => $v) {
+        
+        foreach ($user_data as $k => $v) {
 
 			$result[$k]['user_info'] = $v;
-			$group = $this->model_users->getUserGroup($v['user_id']);
-			$result[$k]['user_group'] = $group;
+		    $group = $this->model_users->getUserGroup($v['user_id']);
+         	$result[$k]['user_group'] = $group; 
+
+            //  print_r($result);
+            //   die(); 
+   
 		}
 
-		$this->data['user_data'] = $result;
+       
+        
+       $this->data['user_data'] = $result;
+
+        
 
 		$this->render_template('users/index', $this->data);
 	}
@@ -58,7 +69,9 @@ class Users extends Admin_Controller
                 'user_role' => 2,
             );
 
-            $create = $this->model_users->create($data, $this->input->post('groups'));
+            $create = $this->model_users->create($data, $this->input->post('groups')); 
+            
+            
             if($create == true) {
                 $this->session->set_flashdata('success', 'Successfully created');
                 redirect('users/', 'refresh');

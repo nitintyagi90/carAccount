@@ -27,8 +27,10 @@
                 </div>
             <?php } ?>
             <div class="row">
+            
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
                     <div class="section-body">
 
                         <table id="datatable-zero" class="display table datatable-default">
@@ -47,6 +49,7 @@
                             </tr>
                             </thead>
                             <tbody>
+
                             <?php if($user_data): ?>
                                 <?php foreach ($user_data as $k => $v): ?>
                                     <tr>

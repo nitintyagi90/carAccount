@@ -83,29 +83,29 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Make</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Model</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Sub Model</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel">Color</p>
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div>
-                        </div>
+                                    <div class="form-item">
+                                        <p class="formLabel make">Make</p>
+                                        <input type="text" disabled="" id="make" name="make" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel model">Model</p>
+                                        <input type="text" disabled="" id="model" name="model" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel submodel">Sub Model</p>
+                                        <input type="text" disabled="" id="submodel" name="submodel" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel color">Color</p>
+                                        <input type="text" disabled="" id="color" name="color" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Price</p>
