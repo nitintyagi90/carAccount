@@ -87,7 +87,7 @@
                     </li>
                     <li><a class="waves-effect waves-light"><i class="fa fa-file"></i>Invoice <span class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
-                            <li> <a class="waves-effect waves-light" href="invoice-entry.php">Invoice Entry</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('Invoice/invoice_entry');?>">Invoice Entry</a></li>
                         </ul>
                     </li>
 

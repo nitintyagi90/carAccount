@@ -96,9 +96,9 @@
 
           <!-- about us section start-->
           <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/member1.jfif" alt="">
+                <img class="img-responsive" src="assets/img/team/member3.jfif" alt="">
               </div>
               <div class="bio">
                 <h4>R. P. SHARAN</h4>
@@ -128,7 +128,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
                 <img class="img-responsive" src="assets/img/team/memeber2.jfif" alt="">
               </div>
@@ -155,9 +155,9 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/member3.jfif" alt="">
+                <img class="img-responsive" src="assets/img/team/member1.jfif" alt="">
               </div>
               <div class="bio">
                 <h4>Raj SINHA</h4>

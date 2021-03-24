@@ -57,6 +57,8 @@
                                 <input type="text"  name="location_dealer" disabled="" class="form-style user_location" autocomplete="off" />
                             </div>
                         </div>
+                       
+
 
                     </div>
                     <div class="row">
@@ -68,10 +70,16 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Address</p> -->
-                                <select class="form-style js-example-basic-single">
+                                <!-- <select class="form-style js-example-basic-single">
                                     <option>Reg. No.</option>
                                     <option>9857854852</option>
-                                </select>
+                                </select> -->
+                                <select class="form-style js-example-basic-single select_reg" name="registration_no" required>
+                                            <option value="0">Search Registration No.</option>
+                                            <?php foreach ($registration_no as $data){ ?>
+                                                <option value="<?php echo $data->purchase_id ?>"><?php echo $data->registration_no ?></option>
+                                            <?php }?>
+                                        </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -564,3 +572,4 @@
 
     </div>
     <!-- End Contain Section -->    
+    <?php include('js.php');?>

@@ -7,6 +7,7 @@ class Payment extends Admin_Controller
         parent::__construct();
         $this->not_logged_in();
         $this->data['page_title'] = 'Payment';
+        $this->load->model('model_pymententry');
         $this->load->model('model_groups');
 
     }
@@ -14,6 +15,17 @@ class Payment extends Admin_Controller
     public function payment_entry(){
         $group_data = $this->model_groups->getGroupData();
         $this->data['group_data'] = $group_data;
+        $userData = $this->model_groups->userInfo();
+        $this->data['user_list'] = $userData;
+    
+        $this->db->select('registration_no,purchase_id');
+        $query_purchase = $this->db->get('purchase');
+        $result_purchase = $query_purchase->result();
+
+       
+        $this->data['registration_no'] = $result_purchase;
+
+
         $this->render_template('payment/purchase_payment_entry',$this->data);
 
     }
