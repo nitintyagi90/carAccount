@@ -5,7 +5,7 @@
         <!--  Breadcrumb -->
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li class="active">Purchase Entry</li>
+            <li class="active">Purchase Entry Edit</li>
         </ol>
     </div>
 
@@ -74,7 +74,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Reg. No*</p>
-                                <input type="text" name="registration_no" required id="registration_no" class="form-style" autocomplete="off" />
+                                <input type="text" name="registration_no"  value="<?php echo $purchase_data['registration_no'];?>" required id="registration_no" class="form-style" autocomplete="off" />
                            
                             </div>
                            
@@ -85,20 +85,20 @@
                             <div class="form-item">
                                 <p class="formLabel">RC Name</p>
                                 
-                                <input type="text" name="rc_name" id="rc_name" required class="form-style" autocomplete="off"  />
+                                <input type="text" name="rc_name" id="rc_name"value="<?php echo $purchase_data['rc_name'];?>" required class="form-style" autocomplete="off"  />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mobile</p>
-                                <input name="rc_mobile" required id="rc_mobile" class="form-style" autocomplete="off" 
+                                <input name="rc_mobile" required id="rc_mobile" class="form-style" value="<?php echo $purchase_data['rc_mobile'];?>" autocomplete="off" 
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "10"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Email ID</p>
-                                <input type="email" name="rc_email" id = 'rc_email' class="form-style" autocomplete="off" />
+                                <input type="email" name="rc_email" value="<?php echo $purchase_data['rc_email'];?>" id = 'rc_email' class="form-style" autocomplete="off" />
                             </div>
                         </div>
 
@@ -106,7 +106,7 @@
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
                                 <input type="text" name="rc_pan" required minlength="10"  id="rc_pan" class="form-style" autocomplete="off" 
-                                value="<?php if (isset($_POST['rc_name'])) echo $_POST['rc_name']; else echo "FORM16"?>" maxlength="10"style="text-transform:uppercase;" />
+                                value="<?php echo $purchase_data['rc_pan'];?>" maxlength="10"style="text-transform:uppercase;" />
                             </div>
                         </div>
 
@@ -115,14 +115,14 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
-                                    <textarea class="form-style" required name="rc_address" id="rc_address" autocomplete="off" rows="4" style="height: auto;"></textarea>
+                                    <textarea class="form-style" required name="rc_address" id="rc_address" value="" autocomplete="off" rows="4" style="height: auto;"><?php echo $purchase_data['rc_address'];?></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0;">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <select class="form-style js-example-basic-single state1" name="rc_state" required>
-                                            <option value="" selected disabled hidden>--Select State--</option>
+                                            <option value="" selected disabled hidden><?php echo $purchase_data['rc_state'];?></option>
                                             <?php foreach ($states as $list){ ?>
                                                 <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                             <?php  }?>
@@ -132,20 +132,20 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <select name="rc_city" class="form-style js-example-basic-single citydata2" required>
-                                            <option value="" selected disabled hidden>--Select City--</option>
+                                            <option value="" selected disabled hidden><?php echo $purchase_data['rc_city'];?></option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Landmark</p>
-                                        <input type="text" name="rc_ladmark" id="rc_landmark" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_ladmark" value="<?php echo $purchase_data['rc_ladmark'];?>" id="rc_landmark" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Pincode</p>
-                                        <input type="text" name="rc_pincode" required minlength="6" id="rc_pincode" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_pincode" value="<?php echo $purchase_data['rc_pincode'];?>" required minlength="6" id="rc_pincode" class="form-style" autocomplete="off" />
 
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload RC</label>
-                                    <input type="file" name="rc_image" class="form-style" autocomplete="off"  value="<?php if (isset($_POST['rc_image'])) echo $_POST['rc_name']; else echo "http://localhost/carAccount/upload/purchase/no-image.jpg"?>"/>
+                                    <input type="file" name="rc_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -263,7 +263,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single" name="color" required>
-                                    <option value="" selected disabled hidden>--Select Color--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_color'];?></option>
                                     <?php foreach ($color_list as $color){ ?>
                                         <option value="<?php echo $color->name ?>"><?php echo $color->name ?></option>
                                     <?php  }?>
@@ -273,32 +273,32 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Chassis No</p>
-                                <input type="text" name="chassis_no" required class="form-style" autocomplete="off" />
+                                <input type="text"  value="<?php echo $purchase_data['car_chassis_no'];?>" name="chassis_no" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Engine No</p>
-                                <input type="text" name="engine_no" required class="form-style" autocomplete="off" />
+                                <input type="text" name="engine_no" value="<?php echo $purchase_data['car_engine_no'];?>" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Manuf. Year</p>
-                                <input type="number"   required name="manuf_year" class="form-style" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4"/> 
+                                <input type="number"  value="<?php echo $purchase_data['car_manuf_year'];?>" required name="manuf_year" class="form-style" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4"/> 
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mileage</p>
-                                <input type="text" name="mileage" required class="form-style" autocomplete="off" />
+                                <input type="text" name="mileage" value="<?php echo $purchase_data['rc_pincode'];?>" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
 
                                 <select class="form-style js-example-basic-single" name="Fuel_type" required>
-                                    <option value="" selected disabled hidden>--Select Fuel Type--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_fuel_type'];?></option>
                                     <?php foreach ($fuel_list as $fuel){ ?>
                                         <option value="<?php echo $fuel->name ?>"><?php echo $fuel->name ?></option>
                                     <?php  }?>
@@ -308,7 +308,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style" name="serial_number" required>
-                                    <option value="" selected disabled hidden>--Select Owner Serial No--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_serial_number'];?></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -325,7 +325,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single" name="Transmission" required>
-                                    <option value="" selected disabled hidden>--Select Transmission--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_transmission'];?></option>
 
                                     <?php foreach ($transmission_list as $transmission){ ?>
                                         <option value="<?php echo $transmission->name ?>"><?php echo $transmission->name ?></option>
@@ -337,7 +337,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single" name="emission" required>
-                                    <option value="" selected disabled hidden>--Select Emission--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_emission'];?></option>
                                     <?php foreach ($emission_list as $emission){ ?>
                                         <option value="<?php echo $emission->name ?>"><?php echo $emission->name ?></option>
                                     <?php  }?>
@@ -347,28 +347,29 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Registration Date</p>
-                                <input type="date" name="registration_date"  required class="form-style current_date" >
+                                <input type="date" name="registration_date" value="<?php echo date($purchase_data['registration_date']); ?>"  required class="form-style"  >
+                                
                                 <!--<input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">RC Expiry Date</p>
-                                <input type="date" name="rc_expiry_date"  required class="form-style current_date" >
+                                <input type="date" name="rc_expiry_date" value="<?php echo date($purchase_data['rc_expiry_date']); ?>"  required class="form-style current_date" >
                                  <!-- <input type="text" name="rc_expiry_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Cubic Capacity</p>
-                                <input type="number" name="cubic_capicity" required class="form-style" autocomplete="off" />
+                                <input type="number" name="cubic_capicity" value="<?php echo $purchase_data['cubic_capicity']; ?>" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
                   
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" >
                             <div class="form-item">
                                 <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;padding: 0;">Purchase Date</p>
-                                <input type="date" name="purchase_date" id="" required class="form-style current_date" >
+                                <input type="date" name="purchase_date" id="" value="<?php echo date($purchase_data['purchase_date']); ?>" required class="form-style current_date" >
                                   <!--<input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
@@ -376,25 +377,25 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Time</p>
-                                <input type="text" name="purchase_time" required id="timepicker" class="time form-style" autocomplete="off" />
+                                <input type="text" name="purchase_time" required id="timepicker" value="<?php echo $purchase_data['purchase_time']; ?>" class="time form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Purchase Price</p>
-                                <input type="number" name="purchase_price" required class="form-style purchase-price" autocomplete="off" />
+                                <input type="number" name="purchase_price" value="<?php echo $purchase_data['purchase_price']; ?>" required class="form-style purchase-price" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Commission</p>
-                                <input type="number" name="commission" class="form-style commission" autocomplete="off" />
+                                <input type="number" name="commission" value="<?php echo $purchase_data['commission']; ?>" class="form-style commission" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item ">
                                 <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629;; padding: 0; background-color: #fff;">Total Purchase Price</p>
-                                <input type="text" readonly name="total_purchase_price" required class="form-style total-price" autocomplete="off" />
+                                <input type="text" readonly name="total_purchase_price" required class="form-style total-price" autocomplete="off" value="<?php echo $purchase_data['total_purchase_price']; ?>" />
                             </div>
                         </div>
                     </div>
@@ -410,7 +411,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style finance-option">
-                                    <option value="" selected disabled hidden>Car Financed</option>
+                                    <option value="" selected disabled hidden></option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
