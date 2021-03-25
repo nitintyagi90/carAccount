@@ -76,6 +76,15 @@
                                 <input type="text" name="text" class="form-style" autocomplete="off" />-->
                             </div> 
                         </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6">
+    
+                           </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                    <div class="form-item">
+                                        <p class="formLabel purchase_date">Purchase Date</p>
+                                        <input type="text" disabled="" id="purchase_date" name="purchase_date" class="form-style" autocomplete="off" />
+                                    </div>
+                                </div>
                        </div>
                        
                         <div class="row">
@@ -106,12 +115,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                                    <div class="form-item">
-                                        <p class="formLabel purchase_date">Purchase Date</p>
-                                        <input type="text" disabled="" id="purchase_date" name="purchase_date" class="form-style" autocomplete="off" />
-                                    </div>
-                                </div>
+                               
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel purchase_price">Total Purchase Price</p>
@@ -131,14 +135,15 @@
                                 <input type="text" disabled="" name="purchase_commission"  id="purchase_commission" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        </div>
-                        <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Total Cost</p>
                                 <input type="text" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
+                        </div>
+                        <div class="row">
+                        
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Sale Price</p>
@@ -183,7 +188,7 @@
                                 <!-- <label class="formLabel">Upload Delivery Note</label> -->
                                 <select class="form-style">
                                     <option>Customer</option>
-                                    <option>Dealer/Third Party Name</option>
+                                    <option>Dealer</option>
                                 </select>
                             </div>
                         </div>
