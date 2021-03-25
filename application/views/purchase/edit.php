@@ -155,39 +155,46 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload RC</label>
-                                    <input type="file" name="rc_image" class="form-style" autocomplete="off" />
+                                    <input type="file" name="rc_image"  id="imgInprc" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['rc_image'];?>"  id="rc_image" alt="no image" class="img-rounded">
+
+
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Insurance</label>
-                                    <input type="file"  name="insurance_image" class="form-style" autocomplete="off" />
+                                    <input type="file"  name="insurance_image" class="form-style"   id="imgInpins" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['insurance_image'];?>"  id="insurance_image" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Bank NOC</label>
                                     <input type="file" name="bank_noc_image" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['bank_noc_image'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Pan Card</label>
                                     <input type="file" name="pan_card_image" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['pan_card_image'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4" style="margin-top: 0px; padding: 0;">
 
-                            <div style="display: none"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 showupload">
-                                <button class="btn btn-danger hidePreview btn-xs pull-right" style="  border-radius:0px; margin-bottom: 5px;">x</button>
-                                <img id="blah" src="#" alt="your image" />
-                            </div>
-
+        
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Car Photo  With Number Palet</label>
                                     <input type="file" id="imgInp" name="car_image" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['car_image'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                         </div>
@@ -196,24 +203,32 @@
                                 <div class="form-item">
                                     <label class="formLabel">Upload Address Proof 1</label>
                                     <input type="file" name="add_proof_img1" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['add_proof_img'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Address Proof 2</label>
                                     <input type="file" name="add_proof_img2" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['add_proof_img2'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Sell Letter</label>
                                     <input type="file" name="sell_ltr_img" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['sell_ltr_img'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload Delivery Note</label>
                                     <input type="file" name="delivery_note_img" class="form-style" autocomplete="off" />
+                                    <img src="<?php echo $purchase_data['delivery_note_img'];?>"  id="" alt="no image" class="img-rounded">
+
                                 </div>
                             </div>
                         </div>
@@ -229,7 +244,7 @@
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single brandListss" name="make" required>
                                     <?php if($models): ?>
-                                        <option value="" selected disabled hidden>--Select Make--</option>
+                                        <option value="" selected disabled hidden><?php echo $purchase_data['car_brand']; ?></option>
                                         <?php foreach ($models as $k => $v): ?>
                                             <?php if($v->type=='brand'){ ?>
                                                 <option data-id="<?php echo $v->id ?>" value="<?php echo $v->name ?>" ><?php echo $v->name ?></option>
@@ -247,7 +262,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single modelsLists" name="model" required>
-                                    <option value="" selected disabled hidden>--Select Model--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_model']; ?></option>
 
                                 </select>
                             </div>
@@ -255,7 +270,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <select class="form-style js-example-basic-single submodeldata" name="submodel" required>
-                                    <option value="" selected disabled hidden>--Select Submodel--</option>
+                                    <option value="" selected disabled hidden><?php echo $purchase_data['car_model']; ?></option>
 
                                 </select>
                             </div>
@@ -669,7 +684,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">GST No.</p>
-                                    <input type="text" name="gst" class="form-style" autocomplete="off" />
+                                    <input type="text" name="gst" class="form-style" value="<?php echo $purchase_data['gst']; ?>" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -678,14 +693,14 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">In the Name Of</p>
-                                    <input type="text" name="in_the_name_of" class="form-style" autocomplete="off" />
+                                    <input type="text" name="in_the_name_of" value="<?php echo $purchase_data['in_the_name_of']; ?>" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
 
                                     <select class="form-style js-example-basic-single" name="bank_name">
-                                        <option value="" selected disabled hidden>--Select Bank Name--</option>
+                                        <option value="" selected disabled hidden><?php echo $purchase_data['bank_name']; ?></option>
 
                                         <?php foreach ($bank_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
@@ -697,13 +712,13 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Account Number</p>
-                                    <input type="text" name="account_number" class="form-style" autocomplete="off" />
+                                    <input type="text" name="account_number" class="form-style" value="<?php echo $purchase_data['account_number']; ?>" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">IFSC Code</p>
-                                    <input type="text" name="ifsc_code" class="form-style" autocomplete="off" />
+                                    <input type="text" name="ifsc_code" class="form-style" value="<?php echo $purchase_data['ifsc_code']; ?>" autocomplete="off" />
                                 </div>
                             </div>
                         </div>

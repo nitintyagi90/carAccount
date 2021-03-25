@@ -525,6 +525,10 @@ class Purchase extends Admin_Controller
             $Finance_data = $query_Finance->result();
             $this->data['Finance_list'] = $Finance_data;
 
+            $this->db->order_by('id', 'ASC');
+            $query_brand = $this->db->get_where('brandmodels',array('type' => 'brand'));
+            $result_brand = $query_brand->result();
+            $this->data['models'] = $result_brand;
 
            
 
