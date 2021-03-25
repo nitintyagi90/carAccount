@@ -198,19 +198,21 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mobile</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                
+                                <input type="text" name="text" class="form-style" autocomplete="off"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "10"/>
+                            
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Email ID</p>
-                                <input type="text" name="text" class="form-style" autocomplete="off" />
+                                <input type="email" name="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">PAN Number</p>
-                                <input type="text" name="" class="form-style" autocomplete="off" />
+                                <input type="text" name="" class="form-style" autocomplete="off" maxlength="10"style="text-transform:uppercase;" />
                             </div>
                         </div>
                     </div>
@@ -234,8 +236,8 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Adhar Number</p>
-                                <input type="text" name="" class="form-style" autocomplete="off" />
+                                <p class="formLabel">AAdhar Number</p>
+                                <input type="text" name="" class="form-style" autocomplete="off"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "12" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -259,21 +261,23 @@
                                     <!-- <select class="form-style">
                                         <option>Select State</option>
                                     </select> -->
-                                    <select class="form-style js-example-basic-single state1" name="rc_state" required>
+                                       <select class="form-style js-example-basic-single state1" name="rc_state" required>
                                             <option value="" selected disabled hidden>--Select State--</option>
                                             <?php foreach ($states as $list){ ?>
-                                            
                                                 <option data-id="<?php echo $list->id ?>" value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
                                             <?php  }?>
-                                    </select>
+                                        </select>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <!-- <p class="formLabel">Address</p> -->
-                                    <select class="form-style">
+                                   
+                                    <select name="rc_city" class="form-style js-example-basic-single citydata2" required>
+                                            <option value="" selected disabled hidden>--Select City--</option>
+                                        </select> <!-- <select class="form-style">
                                         <option>Select City</option>
-                                    </select>
+                                    </select> -->
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -285,7 +289,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Pincode</p>
-                                    <input type="text" name="text" class="form-style" autocomplete="off" />
+                                    <input type="number" name="text" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
