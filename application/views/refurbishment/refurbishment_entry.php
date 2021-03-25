@@ -399,6 +399,7 @@
                                 <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
                             </div>
                         </div>
+                        
                     </div>
 
                     <div class="row">
