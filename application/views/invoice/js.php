@@ -21,14 +21,14 @@
                     success : function(data) {
                         var json = $.parseJSON(data);
                         if(json.status==200){
-                            $('.dealer_comapny_lebel').hide();
+                           $('.dealer_comapny_lebel').hide();
                             $('.dealer_name_lebel').hide();
                             $('.user_location_label').hide();
                             var user_company = json.data.user_company;
                             var user_name = json.data.user_name;
                             var user_location = json.data.user_location;
                             $('.dealer_name').val(user_name);
-                            $('.dealer_company').val(user_company);
+                             $('.dealer_company').val(user_company);
                             $('.user_location').val(user_location);
                             $('.reb_entry').show();
                         }else{
@@ -50,6 +50,8 @@
                 $('#submodel').val('');
                 $('#color').val('');
                 $('#purchase_date').val('');
+                $('#purchase_price').val('');
+                $('#purchase_commission').val('');
                 $('#total_purchase_price').val('');
 
                 $('.make').show();
@@ -57,7 +59,9 @@
                 $('.submodel').show();
                 $('.color').show();
                 $('.purchase_date').show();
-                $('.total_purchase_price').show();
+                $('.purchase_price').show();
+                $('.purchase_commission').show();
+                $('.total_purchase_price').val('');
             }else{
                 $.ajax({
                     type:"POST",
@@ -72,13 +76,16 @@
                             $('.submodel').hide();
                             $('.color').hide();
                             $('.purchase_date').hide();
+                            $('.purchase_price').hide();
+                            $('.purchase_commission').hide();
                             $('.total_purchase_price').hide();
-
                             var make = json.data.car_brand;
                             var model = json.data.car_model;
                             var submodel = json.data.car_submodel;
                             var color = json.data.car_color;
                             var purchase_date = json.data.purchase_date;
+                            var purchase_price = json.data.purchase_price;
+                            var  purchase_commission = json.data.commission;
                             var total_purchase_price = json.data.total_purchase_price;
 
                             $('#make').val(make);
@@ -86,11 +93,11 @@
                             $('#submodel').val(submodel);
                             $('#color').val(color);
                             $('#purchase_date').val(purchase_date);
+                            $('#purchase_price').val(purchase_price);
+                            $('#purchase_commission').val(purchase_commission);
                             $('#total_purchase_price').val(total_purchase_price);
-                            $('#total_purchase_price_ref').val(total_purchase_price);
-                            
                         }else{
-                            alert('somthing went wrong!')
+                            alert('something went wrong!')
                         }
                     }
                 });
@@ -404,7 +411,15 @@
             '<div class="col-md-12">' +
             '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">' +
             '<div class="form-item"> <select class="form-style js-example-basic-single select_reg" name="registration_no" required> ' +
-            '<option>Repairing Details</option><?php foreach ($repaier as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option> <?php }?></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="text" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            '<option>Repairing Details</option></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
+
+
+
+
+
+
+
+
 
 
 
@@ -429,17 +444,17 @@
             }
         });
         $(add_button_expenses).click(function(e){
-            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"><p class="formLabel">Details</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="text" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"> <option>Details</option> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
             e.preventDefault();
             if(x < max_fields){
                 x++; //text box increment
-                $(wrapper_expenses).append(html); //add input box
+                $(wrapper_expenses).append(html_2); //add input box
             }else{
                 alert('No More fields added')
             }
         });
         $(add_accessiores).click(function(e){
-            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"><option>Accessories Details</option><?php foreach ($accessories as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option><?php }?> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div></div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="text" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"> <option>Details</option> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
             e.preventDefault();
             if(x < max_fields){
                 x++; //text box increment
@@ -449,7 +464,7 @@
             }
         });
         $(add_other_expenses).click(function(e){
-            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item">  <p class="formLabel">Details</p> <input type="text" name="text" class="form-style" autocomplete="off" /></div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item" > <p class="formLabel"style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="text" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select class="form-style"> <option>Details</option> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
             e.preventDefault();
             if(x < max_fields){
                 x++; //text box increment

@@ -66,7 +66,7 @@
                     <li><a class="waves-effect waves-light"><i class="fa fa-shopping-cart"></i>Sale <span class="fa fa-chevron-right"></span></a>
                         <ul class="nav child_menu">
                             <li> <a class="waves-effect waves-light" href="<?php echo base_url('sale/sale_entry');?>">Sale Entry</a></li>
-                            <li> <a class="waves-effect waves-light" href="#">Sale Car</a></li>
+                            <li> <a class="waves-effect waves-light" href="<?php echo base_url('sale/sale_car');?>">Sale Car</a></li>
                         </ul>
                     </li>
                     <li><a class="waves-effect waves-light"><i class="fa fa-money"></i>Payment <span

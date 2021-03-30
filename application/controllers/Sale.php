@@ -11,6 +11,12 @@ class Sale extends Admin_Controller
         $this->load->model('model_sale');
 
     }
+    public function sale_car(){
+        $group_data = $this->model_groups->getGroupData();
+        $this->data['group_data'] = $group_data;
+        $this->render_template('sale/sale_car',$this->data);
+
+    }
     public function sale_entry(){
         $group_data = $this->model_groups->getGroupData();
         $this->data['group_data'] = $group_data;

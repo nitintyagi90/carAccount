@@ -131,8 +131,8 @@
                               </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel purchase_commission">Sale Comission</p>
-                                <input type="text" disabled="" name="purchase_commission"  id="purchase_commission" class="form-style" autocomplete="off" />
+                                <p class="formLabel">Sale Comission</p>
+                                <input type="text" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
