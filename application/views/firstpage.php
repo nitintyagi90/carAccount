@@ -211,7 +211,7 @@
                 </ul>
               </div>
             </div>
-          </div>        <!-- aboutus end-->
+          </div>         abou tus end-->
       </div>
      
     </section>
@@ -388,13 +388,13 @@
                   <h3>Basic</h3>
                 </div>
                 <div class="panel-body">
-                  <h3 class="panel-title price">RS 4100<span class="price-cents"></span><span class="price-month">mo.</span></h3>
+                  <h3 class="panel-title price"><i class="fa fa-inr" style="font-size:36px;color:red"></i> 4100<span class="price-cents"></span><span class="price-month">mo.</span></h3>
                 </div>
                 <ul class="list-group">
-                  <li class="list-group-item">Activation charge  Rs 3000/-</li>
-                  <li class="list-group-item">Monitering charge Rs 500/-</li>
-                  <li class="list-group-item">Fix Service Charge Rs 500/-</li>
-                  <li class="list-group-item">Per Car Entry Rs 100/-</li>
+                  <li class="list-group-item">Activation charge  <i class="fa fa-rupee" style="font-size:14px"></i> 3000/-</li>
+                  <li class="list-group-item">Monitering charge <i class="fa fa-rupee" style="font-size:14px"></i> 500/-</li>
+                  <li class="list-group-item">Fix Service Charge <i class="fa fa-rupee" style="font-size:14px"></i> 500/-</li>
+                  <li class="list-group-item">Per Car Entry <i class="fa fa-rupee" style="font-size:14px"></i> 100/-</li>
                   <li class="list-group-item">Entry detail sales/purchase</li>
                   <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
                 </ul>
@@ -424,13 +424,13 @@
                   <h3>Premium</h3>
                 </div>
                 <div class="panel-body">
-                  <h3 class="panel-title price">Rs 5650<span class="price-cents"></span><span class="price-month">mo.</span></h3>
+                  <h3 class="panel-title price"><i class="fa fa-inr" style="font-size:36px;color:red"></i> 5650<span class="price-cents"></span><span class="price-month">mo.</span></h3>
                 </div>
                 <ul class="list-group">
                   <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">Activation charge  Rs 5000/-</li>
-                  <li class="list-group-item">Service charge Rs 500/- </li>
-                  <li class="list-group-item">per car entry RS 150/-</li>
+                  <li class="list-group-item">Activation charge <i class="fa fa-rupee" style="font-size:14px"></i>5000/-</li>
+                  <li class="list-group-item">Service charge <i class="fa fa-rupee" style="font-size:14px"></i>500/- </li>
+                  <li class="list-group-item">per car entry <i class="fa fa-rupee" style="font-size:14px"></i> 150/-</li>
                   <li class="list-group-item">Entry detail sales/purchase/ refurbishment</li>
                   <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a></li>
                 </ul>
@@ -442,12 +442,12 @@
                   <h3>Ultimate</h3>
                 </div>
                 <div class="panel-body">
-                  <h3 class="panel-title price">Rs 15000<span class="price-cents"></span><span class="price-month">mo.</span></h3>
+                  <h3 class="panel-title price"><i class="fa fa-inr" style="font-size:36px;color:red"></i> 15000<span class="price-cents"></span><span class="price-month">mo.</span></h3>
                 </div>
                 <ul class="list-group">
                   <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">Activation charge  RS 10000/-</li>
-                  <li class="list-group-item">Service charge Rs 5000/-</li>
+                  <li class="list-group-item">Activation charge  <i class="fa fa-rupee" style="font-size:14px"></i> 10000/-</li>
+                  <li class="list-group-item">Service charge <i class="fa fa-rupee" style="font-size:14px"></i> 5000/-</li>
                   <li class="list-group-item">Car Entry Unlimited</li>
                   <li class="list-group-item">3 entry per day</li>
                   <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
