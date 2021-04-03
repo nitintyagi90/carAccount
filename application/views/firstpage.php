@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    
+
+
     <link rel="shortcut icon" href="#">
     <title>MY CAR ACCOUNT</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600">
@@ -14,9 +19,11 @@
     <link rel="stylesheet" href="assets/css/style.css"> 
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    
   </head>
   <body> 
-          <div id="navbar-top">
+          <div id="navbar-fixed" style="position: fixed; width: -webkit-fill-available; z-index: 10000;">
       <nav class="navbar navbar-default navbar-static" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -26,7 +33,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand nav-external" href="index.php"><strong>MY CAR ACCOUNT</strong></a>
+            <a class="navbar-brand nav-external" href="#">
+             
+              <img src="assets/global/images/logo.png" alt="" width="100"/> 
+               <strong>MY CAR ACCOUNT</strong>
+            </a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -40,10 +51,13 @@
                 <a href="#services">SERVICES</a>
               </li>
               <li class="scroll-to-section">
+                <a href="#work">OUR WORK</a>
+              </li>
+              <li class="scroll-to-section">
                 <a href="#contact">CONTACT US</a>
               </li>
               <li >
-                <a href="http://localhost/mycaraccount/admin/Test/login"><i class="fa fa-user"></i> LOGIN</a>
+                <a href="admin/"><i class="fa fa-user"></i> LOGIN</a>
               </li>
               
             </ul>
@@ -63,8 +77,8 @@
           </div>
           	<div class="banner-content">
 			        <div class="heroText">
-              <h1 class="animated hiding" data-animation="fadeInDown" data-delay="300">Welcome to My Car Account</h1>
-              <h3 class="animated hiding" data-animation="fadeIn" data-delay="600">We Have Made A Lot Of Friends.</h3>
+              <h3 class="animated hiding" data-animation="fadeInDown" data-delay="300" style="font-size:28px;"><strong>MY CAR ACCOUNT</strong></h3>
+              <h1 class="animated hiding" data-animation="fadeIn" data-delay="600">LET THE HUNT BEGIN</h1>
                 <!-- <h2><span> MY CAR ACCOUNT </span><br> -->
                   <!-- <strong>One stop CAR solution</strong></h2> -->
               </div>
@@ -72,21 +86,79 @@
         </div>
       </div>
     </section>
-    <section id="about" class="page space">
+    <section id="about" class="page">
       <div class="container text-center"> 
           <div class="heading">
             <h2>About Us</h2>
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+            <p><strong>MY CAR ACCOUNT</strong> is a dealer centric, centralized Web based application developed for Automobile Dealer for automate all Over India locations. It takes care of all operations of  Pre-Owned Cars  i.e. Stock Management,  Purchases entry, repairing entry , Sales entry, dealer profit & loss a/c, Invoicing, Delivery Chillan, Gate Pass Generation etc. It increases the efficiency of users by automating the pre-owned dealer operations and keeps track of the inventory and approvals. The application provides business intelligence to dealers transactional and various reporting needs, which will be highly useful for Pre-Owned Dealers Management for monitoring their daily transactions across all Over India locations. We at <strong>MY CAR ACCOUNT</strong> appreciate your association and support from all users</p>
           </div>
+
+          <!-- about us section start-->
           <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
+          <div class="col-md-4 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
               <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/1.jpg" alt="">
+                <img class="img-responsive" src="assets/img/team/member3.jfif" alt="">
               </div>
               <div class="bio">
-                <h4>John Doe</h4>
-                <h5>Web Developer</h5>
+                <h4>Raj SINHA</h4>
+                <h5>CEO ,Chicago,USA</h5>
+                 
+                <ul class="list-inline">
+                  <li>
+                    <a href="http://www.twitter.com/" title="Twitter">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://developer.android.com/index.html" title="Android Developers">
+                      <i class="fa fa-android"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.stackoverflow.com/" title="Stack Overflow">
+                      <i class="fa fa-stack-overflow"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
+              <div class="profile-photo">
+                <img class="img-responsive" src="assets/img/team/memeber2.jfif" alt="">
+              </div>
+              <div class="bio">
+                <h4>S. P. SHARAN </h4>
+                <h5>Co Founder, New Delhi, INDIA</h5>
+                 
+                <ul class="list-inline">
+                  <li>
+                    <a href="http://www.dribbble.com/" title="Dribbble">
+                      <i class="fa fa-dribbble"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.pinterest.com/" title="Pinterest">
+                      <i class="fa fa-pinterest"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.instagram.com/" title="Instagram">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      
+            <div class="col-md-4 col-sm-6 col-xs-12 teammate" data-animation="fadeInLeft" data-delay="600">
+              <div class="profile-photo">
+                <img class="img-responsive" src="assets/img/team/member1.jfif" alt="">
+              </div>
+              <div class="bio">
+                <h4>R. P. SHARAN</h4>
+                <h5>Founder lllinois,USA</h5>
                  
                 <ul class="list-inline">
                   <li>
@@ -112,61 +184,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
-              <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/2.jpg" alt="">
-              </div>
-              <div class="bio">
-                <h4>Clarinda Gratia</h4>
-                <h5>Designer</h5>
-                 
-                <ul class="list-inline">
-                  <li>
-                    <a href="http://www.dribbble.com/" title="Dribbble">
-                      <i class="fa fa-dribbble"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.pinterest.com/" title="Pinterest">
-                      <i class="fa fa-pinterest"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.instagram.com/" title="Instagram">
-                      <i class="fa fa-instagram"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInUp" data-delay="300">
-              <div class="profile-photo">
-                <img class="img-responsive" src="assets/img/team/3.jpg" alt="">
-              </div>
-              <div class="bio">
-                <h4>Mandeep Eimear</h4>
-                <h5>Mobile Developer</h5>
-                 
-                <ul class="list-inline">
-                  <li>
-                    <a href="http://www.twitter.com/" title="Twitter">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://developer.android.com/index.html" title="Android Developers">
-                      <i class="fa fa-android"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.stackoverflow.com/" title="Stack Overflow">
-                      <i class="fa fa-stack-overflow"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInRight" data-delay="600">
+           <!-- <div class="col-md-3 col-sm-6 col-xs-12 teammate animated hiding" data-animation="fadeInRight" data-delay="600">
               <div class="profile-photo">
                 <img class="img-responsive" src="assets/img/team/4.jpg" alt="">
               </div>
@@ -193,18 +211,75 @@
                 </ul>
               </div>
             </div>
-          </div>        
+          </div>        <!-- aboutus end-->
       </div>
      
-    </section> 
+    </section>
 
-<section id="work" class="page space">
+    <section id="services" class="page" style="padding-bottom:50px;">
+      <div class="container text-center"> 
+          <div class="heading">
+            <h2>Our Services</h2>
+            
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, alias enim placeat earum quos ab.</p> -->
+          </div>
+         <div class="row services-list">
+					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp">
+						<div class="service-icon"> 
+          <img src="assets/img/car-modi.jpg" alt=""/> 
+						</div>
+						<h4 class="color-white">Car Sale Entry</h4>
+						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
+					</div><!-- END COLUMN 3 -->
+					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="200">
+						<div class="service-icon">
+							<img src="assets/img/car-service.jpg" alt=""/> 
+						</div>
+						<h4 class="color-white">Car Purchase Entry</h4>
+						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
+					</div><!-- END COLUMN 3 -->
+					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="400">
+						<div class="service-icon">
+							<img src="assets/img/2.jpg" alt=""/> 
+						</div>
+						<h4 class="color-white">Payment Entry</h4>
+						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
+					</div><!-- END COLUMN 3 -->
+					
+				</div>   
+        <hr>
+        <div class="row services-list">
+					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp">
+						<div class="service-icon"> 
+                            <img src="assets/img/car-wash.jpg" alt=""/> 
+						</div>
+						<h4 class="color-white">Profit and Loss</h4>
+						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
+					</div><!-- END COLUMN 3 -->
+					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="200">
+						<div class="service-icon">
+							<img src="assets/img/5.jpg" alt=""/> 
+						</div>
+						<h4 class="color-white">Daily Expenses</h4>
+						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
+					</div><!-- END COLUMN 3 -->
+					<div class="col-sm-6 col-md-4 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="400">
+						<div class="service-icon">
+							<img src="assets/img/Car-painting.jpg" alt=""/> 
+						</div>
+						<h4 class="color-white">Stock Monitoring</h4>
+						<!-- <p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p> -->
+					</div><!-- END COLUMN 3 -->
+				
+				</div>     
+      </div>
+    </section> 
+ 
+<section id="work" class="page" style="padding-bottom:30px;">
       <div class="container text-center">
           <div class="heading">
             <h2>Our Work</h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, alias enim placeat earum quos ab.</p>
-          </div>
+            </div>
           <div class="row">
             <div class="col-md-12">
               <div id="portfolio">
@@ -213,77 +288,83 @@
                     <a class="active" data-filter="*" href="#">All</a>
                   </li>
                   <li>
-                    <a data-filter=".photography" href="#">Wash</a>
+                    <a data-filter=".call" href="#"> Virtual Call Center</a>
                   </li>
                   <li>
-                    <a data-filter=".branding" href="#"> Servicing</a>
+                    <a data-filter=".app" href="#"> Mobile Apps</a>
                   </li>
                   <li>
-                    <a data-filter=".web" href="#">Painting</a>
+                    <a data-filter=".web" href="#">Webinars</a>
+                  </li>
+                  <li>
+                    <a data-filter=".serv" href="#">Quality Service</a>
+                  </li>
+                  <li>
+                    <a data-filter=".data" href="#">Store Data Service</a>
                   </li>
                 </ul>
                 <ul class="items list-unstyled clearfix animated hiding" data-animation="fadeInRight">
-                  <li class="item branding">
-                     <a href="assets/img/work/1.jpg" class="fancybox">
+                  <li class="item data">
+                     <a>
                       <img src="assets/img/work/1.jpg" alt="">
                       <div class="overlay">
-                        <span>Etiam porta</span>
+                        <span>Store Data Service</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/2.jpg" class="fancybox">
+                  <li class="item serv">
+                  <a>
                       <img src="assets/img/work/2.jpg" alt="">
                       <div class="overlay">
-                        <span>Lorem ipsum</span>
+                        <span>Quality Service</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item branding">
-                     <a href="assets/img/work/3.jpg" class="fancybox">
+                  <li class="item call">
+                  <a>
                       <img src="assets/img/work/3.jpg" alt="">
                       <div class="overlay">
-                        <span>Vivamus quis</span>
+                        <span>Vertual Call Center</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/4.jpg" class="fancybox">
+                  <li class="item web">
+                  <a>
                       <img src="assets/img/work/4.jpg" alt="">
                       <div class="overlay">
-                        <span>Donec ac tellus</span>
+                        <span>Webinars</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/5.jpg" class="fancybox">
+                  <li class="item web">
+                  <a>
                       <img src="assets/img/work/5.jpg" alt="">
                       <div class="overlay">
-                        <span>Etiam volutpat</span>
+                        <span>Webinars</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item web">
-                     <a href="assets/img/work/6.jpg" class="fancybox">
+                  <li class="item app">
+                  <a>
                       <img src="assets/img/work/6.jpg" alt="">
                       <div class="overlay">
-                        <span>Donec congue </span>
+                        <span>Mobile App</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item photography">
-                     <a href="assets/img/work/7.jpg" class="fancybox">
+                  <li class="item call">
+                  <a>
                       <img src="assets/img/work/7.jpg" alt="">
                       <div class="overlay">
-                        <span>Nullam a ullamcorper diam</span>
+                        <span>Vertual Call Center</span>
                       </div>
                     </a>
                   </li>
-                  <li class="item web">
-                    <a href="assets/img/work/8.jpg" class="fancybox">
+                  <li class="item app">
+                  <a>
                       <img src="assets/img/work/8.jpg" alt="">
                       <div class="overlay">
-                        <span>Etiam consequat</span>
+                        <span>Mobile App</span>
                       </div> 
                     </a>
                   </li>
@@ -292,10 +373,94 @@
             </div>
           </div>       
       </div>
+    </section> 
+    <section id="priceTable" class="page space">
+    	 <div class="container text-center"> 
+         <div class="heading">
+            <h2>Our Efforts</h2>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+          </div> 
+         	<div class="row"> 
+            <div class="col-sm-4">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h3>Basic</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">RS 4100<span class="price-cents"></span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">Activation charge  Rs 3000/-</li>
+                  <li class="list-group-item">Monitering charge Rs 500/-</li>
+                  <li class="list-group-item">Fix Service Charge Rs 500/-</li>
+                  <li class="list-group-item">Per Car Entry Rs 100/-</li>
+                  <li class="list-group-item">Entry detail sales/purchase</li>
+                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>
+            <!--<div class="col-sm-3">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h3>Plus</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">$19<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">10 Projects</li>
+                  <li class="list-group-item">10 GB of Storage</li>
+                  <li class="list-group-item">Up to 250 Users</li>
+                  <li class="list-group-item">25 GB Bandwidth</li>
+                  <li class="list-group-item">Security Suite</li>
+                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>-->
+            <div class="col-sm-4">
+              <div class="panel panel-danger text-center">
+                <div class="panel-heading">
+                  <h3>Premium</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">Rs 5650<span class="price-cents"></span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">Unlimited</li>
+                  <li class="list-group-item">Activation charge  Rs 5000/-</li>
+                  <li class="list-group-item">Service charge Rs 500/- </li>
+                  <li class="list-group-item">per car entry RS 150/-</li>
+                  <li class="list-group-item">Entry detail sales/purchase/ refurbishment</li>
+                  <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>
+            <div class="col-sm-4">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h3>Ultimate</h3>
+                </div>
+                <div class="panel-body">
+                  <h3 class="panel-title price">Rs 15000<span class="price-cents"></span><span class="price-month">mo.</span></h3>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">Unlimited</li>
+                  <li class="list-group-item">Activation charge  RS 10000/-</li>
+                  <li class="list-group-item">Service charge Rs 5000/-</li>
+                  <li class="list-group-item">Car Entry Unlimited</li>
+                  <li class="list-group-item">3 entry per day</li>
+                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
+                </ul>
+              </div>          
+            </div>
+     
+          </div>
+         </div>      
     </section>
     
     
-    <section id="clients" class="page space">
+    <!-- <section id="clients" class="page">
       <div class="container text-center"> 
           <div class="row">
             <div class="col-lg-12 animated hiding" data-animation="fadeInDown">
@@ -330,138 +495,17 @@
             </div>
           </div>      
       </div>
-    </section>
-    <section id="services" class="page space">
-      <div class="container text-center"> 
-          <div class="heading">
-            <h2>Our Services</h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, alias enim placeat earum quos ab.</p>
-          </div>
-         <div class="row services-list">
-					<div class="col-sm-6 col-md-3 text-center service animated fadeInUp visible" data-animation="fadeInUp">
-						<div class="service-icon"> 
-                            <img src="assets/img/car-wash.jpg" alt=""/> 
-						</div>
-						<h4 class="color-white">Car Wash</h4>
-						<p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p>
-					</div><!-- END COLUMN 3 -->
-					<div class="col-sm-6 col-md-3 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="200">
-						<div class="service-icon">
-							<img src="assets/img/car-service.jpg" alt=""/> 
-						</div>
-						<h4 class="color-white">Car Servicing</h4>
-						<p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p>
-					</div><!-- END COLUMN 3 -->
-					<div class="col-sm-6 col-md-3 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="400">
-						<div class="service-icon">
-							<img src="assets/img/Car-painting.jpg" alt=""/> 
-						</div>
-						<h4 class="color-white">Car Painting</h4>
-						<p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p>
-					</div><!-- END COLUMN 3 -->
-					<div class="col-sm-6 col-md-3 text-center service animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="600">
-						<div class="service-icon">
-							<img src="assets/img/car-modi.jpg" alt=""/> 
-						</div>
-						<h4 class="color-white">Car Modifying</h4>
-						<p>Lorem ipsum massa sed turpis ipsum dolor lorem luctus scelerisque gravida aliquet.</p>
-					</div><!-- END COLUMN 3 -->
-				</div>       
-      </div>
-    </section>
-   
-    <!-- <section id="priceTable" class="page space">
-    	 <div class="container text-center"> 
-         <div class="heading">
-            <h2>Our Efforts</h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-          </div> 
-         	<div class="row"> 
-            <div class="col-sm-3">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h3>Basic</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$9<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">5 Projects</li>
-                  <li class="list-group-item">5 GB of Storage</li>
-                  <li class="list-group-item">Up to 100 Users</li>
-                  <li class="list-group-item">10 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
-                </ul>
-              </div>          
-            </div>
-            <div class="col-sm-3">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h3>Plus</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$19<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">10 Projects</li>
-                  <li class="list-group-item">10 GB of Storage</li>
-                  <li class="list-group-item">Up to 250 Users</li>
-                  <li class="list-group-item">25 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
-                </ul>
-              </div>          
-            </div>
-            <div class="col-sm-3">
-              <div class="panel panel-danger text-center">
-                <div class="panel-heading">
-                  <h3>Premium</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$29<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">50 GB of Storage</li>
-                  <li class="list-group-item">Up to 1000 Users</li>
-                  <li class="list-group-item">100 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a></li>
-                </ul>
-              </div>          
-            </div>
-            <div class="col-sm-3">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h3>Ultimate</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$49<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">150 GB of Storage</li>
-                  <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">500 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
-                </ul>
-              </div>          
-            </div>
-     
-          </div>
-         </div>      
     </section> -->
-    <section id="contact" class="content-section form contact light space">
+    
+   
+   
+    <section id="contact" class="content-section form contact light">
     	<div class="container">
         	  <div class="content cover text-center">
               <div class="heading">
                 <h2>Contact Us</h2>
                 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/><br/></p>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/><br/></p> -->
               </div>
                <div class="row">
             <span id="message"></span><!-- remove #message to stop floating jQuery messages -->
@@ -474,11 +518,17 @@
                         <input type="text" name="contactName" id="contactName" class="lg" placeholder="Name">
                     </span><!-- .input-group -->
                     
+                    
+                    <span class="input-group">
+                        <i class="fa fa-mobile"></i>
+                        <input type="number" name="mobilenumber" id="mobilenumber" class="lg" placeholder=" Mobile Number">
+                    </span><!-- .input-group -->
+
                     <span class="input-group">
                         <i class="fa fa-envelope"></i>
                         <input type="text" name="contactEmail" id="contactAddress" class="lg" placeholder="Email Address">
                     </span><!-- .input-group -->
-                    
+
                    	<span class="input-group">
                         <i class="fa fa-book"></i>
                         <input type="text" name="contactSubject" id="contactSubject" class="lg" placeholder="Subject">
@@ -531,9 +581,10 @@
               </li>
             </ul>
             <p class="copyright"> 
-             <h3>My Car Account</h3>
+             <h3>37 GF, The Sapphire Mall Sector 49, Gurugram (Hr.)</h3>
+             <h4>Email: carmart.mfc@gmail.com</h4>
             </p>
-          </div>
+          </div
         </div>
       </div>
     </footer>

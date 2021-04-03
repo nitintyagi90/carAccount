@@ -12,13 +12,13 @@ START LOGIN V2
 
 ================================*/
 .login-background {
- /* background-image: url("../../../../assets/pages/login/images/bgimage.gif");
-  */
+  
   background-repeat: no-repeat;
-  background-position: top center;
+  /* background-position: top center; */
+  position: relative;
   background-size: cover;
   height: 100%;
-  opacity: 2;
+   opacity: 2;
   overflow: auto;
   position: fixed;
   width: 100%; }
@@ -39,8 +39,10 @@ START LOGIN V2
       
     }
   .login-background .login-page {
+    margin-right: 3%;
     display: table;
     height: 50%;
+
     margin-top: -40%;
     margin-bottom:15%;
     float: right;
@@ -52,7 +54,8 @@ START LOGIN V2
       text-decoration: none; }
   .login-background .main-login-contain {
     display: table-cell;
-    vertical-align: middle; }
+    vertical-align: middle;
+    background-color: #f9cfa47f; }
   .login-background .login-form {
     padding: 50px; }
     .login-background .login-form h4 {
@@ -60,16 +63,19 @@ START LOGIN V2
       margin-bottom: 5px;
       margin-top: 0px;
       text-transform: uppercase;
-      font-weight: 700; }
+      font-weight: 700;
+      background-color: white;
+      padding: 25px 3px; }
     .login-background .login-form .login-title-text {
-      font-size: 12px;
+      font-size: 14px;
+     text-align: center;
       margin-bottom: 30px; }
   .login-background .btn-login {
-    width: 130px;
+    width: 130px; 
     float: right;
     color: #fff;
-    background-color: #4390ff;
-    border-color: #4390ff; }
+    background-color: #d5432b;
+    border-color: #f7c1c4; }
     .login-background .btn-login:hover, .login-background .btn-login:focus {
       width: 130px;
       float: right;
@@ -104,8 +110,10 @@ START LOGIN V2
       color: #4390ff; }
   .login-background .login-left-section {
     position: absolute;
-    width: 700px;
-    padding: 50px;
+    /* width: 970px; */
+    height: 100vh;
+    /* padding: 50px; */
+    z-index: -1;
     color: #fff;
     bottom: 0;
     left: 0;
@@ -259,6 +267,10 @@ START LOGIN V2
   .login-background .login-form {
     padding: 15px 50px; } }
 @media (max-width: 479px) {
+  .login-background .login-page{
+    margin-right: 0%;
+    max-width: 95%;
+  }
   .login-background .login-page {
     max-width: 480px;
     min-width: 100%; }
@@ -271,6 +283,7 @@ START LOGIN V2
   .login-background .goto-login {
     margin: 20px 0px; }
   .login-background .login-form .login-title-text {
+    
     margin-bottom: 20px; }
   .login-background .login-form h4 {
     font-size: 18px; } }

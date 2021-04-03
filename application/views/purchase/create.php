@@ -40,11 +40,9 @@
                                 <?php foreach ($user_list as $dealer){ ?>
                                     <option value="<?php echo $dealer->user_id ?>"><?php echo $dealer->user_mobile ?></option>
                                 <?php }?>
-                               
                             </select>
                         </div>
                     </div>
-                    <?php echo "hello" ?>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <div class="form-item">
                             <p class="formLabel dealer_name_lebel">Dealer Name</p>
@@ -77,20 +75,24 @@
                             <div class="form-item">
                                 <p class="formLabel">Reg. No*</p>
                                 <input type="text" name="registration_no" required id="registration_no" class="form-style" autocomplete="off" />
+                           
                             </div>
+                           
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">RC Name</p>
-                                <input type="text" name="rc_name" id="rc_name" required class="form-style" autocomplete="off" />
+                                
+                                <input type="text" name="rc_name" id="rc_name" required class="form-style" autocomplete="off"  />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Mobile</p>
-                                <input type="number" name="rc_mobile" required id="rc_mobile" class="form-style" autocomplete="off" />
+                                <input name="rc_mobile" required id="rc_mobile" class="form-style" autocomplete="off" 
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "10"/>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -103,12 +105,13 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Pan Number</p>
-                                <input type="text" name="rc_pan" required minlength="10" id="rc_pan" class="form-style" autocomplete="off" />
+                                <input type="text" name="rc_pan" required minlength="10"  id="rc_pan" class="form-style" autocomplete="off" 
+                                value="<?php if (isset($_POST['rc_name'])) echo $_POST['rc_name']; else echo "FORM16"?>" maxlength="10"style="text-transform:uppercase;" />
                             </div>
                         </div>
 
 
-                        <div class="row" style="padding: 0 15px;">
+                        <div class="row" style="padding: 0 15panx;">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <p class="formLabel">Address</p>
@@ -142,7 +145,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel">Pincode</p>
-                                        <input type="text" name="rc_pincode" required minlength="6" id="purchase_pincode" class="form-style" autocomplete="off" />
+                                        <input type="text" name="rc_pincode" required minlength="6" id="rc_pincode" class="form-style" autocomplete="off" />
 
                                     </div>
                                 </div>
@@ -152,7 +155,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-item">
                                     <label class="formLabel">Upload RC</label>
-                                    <input type="file" name="rc_image" class="form-style" autocomplete="off" />
+                                    <input type="file" name="rc_image" class="form-style" autocomplete="off"  value="<?php if (isset($_POST['rc_image'])) echo $_POST['rc_name']; else echo "http://localhost/carAccount/upload/purchase/no-image.jpg"?>"/>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -181,9 +184,9 @@
                                 <img id="blah" src="#" alt="your image" />
                             </div>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hideupload">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                 <div class="form-item">
-                                    <label class="formLabel">Upload Car Photo F With Number Palet</label>
+                                    <label class="formLabel">Upload Car Photo  With Number Palet</label>
                                     <input type="file" id="imgInp" name="car_image" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
@@ -218,6 +221,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">
+                                
                                 <h2 class="header-text">Vehicle Details</h2>
                             </div>
                         </div>
@@ -281,7 +285,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Manuf. Year</p>
-                                <input type="text" required name="manuf_year" class="form-style" autocomplete="off" />
+                                <input type="number"   required name="manuf_year" class="form-style" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4"/> 
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -342,28 +346,33 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Registration Date</p>
-                                <input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Registration Date</p>
+                                <input type="date" name="registration_date"  required class="form-style current_date" >
+                                <!--<input type="text" name="registration_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">RC Expiry Date</p>
-                                <input type="text" name="rc_expiry_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">RC Expiry Date</p>
+                                <input type="date" name="rc_expiry_date"  required class="form-style current_date" >
+                                 <!-- <input type="text" name="rc_expiry_date" required class="form-style current_date" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Cubic Capacity</p>
-                                <input type="text" name="cubic_capicity" required class="form-style" autocomplete="off" />
+                                <input type="number" name="cubic_capicity" required class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                  
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" >
                             <div class="form-item">
-                                <p class="formLabel">Purchase Date</p>
-                                <input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;padding: 0;">Purchase Date</p>
+                                <input type="date" name="purchase_date" id="" required class="form-style current_date" >
+                                  <!--<input type="text" name="purchase_date" required  class="form-style current_date"  data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'"/>-->
                             </div>
                         </div>
+                     
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Time</p>
@@ -383,8 +392,8 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="form-item">
-                                <p class="formLabel purchase-label">Total Purchase Price</p>
+                            <div class="form-item ">
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629;; padding: 0; background-color: #fff;">Total Purchase Price</p>
                                 <input type="text" readonly name="total_purchase_price" required class="form-style total-price" autocomplete="off" />
                             </div>
                         </div>
@@ -413,7 +422,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
 
-                                    <select class="form-style js-example-basic-single" name="emission">
+                                    <select class="form-style js-example-basic-single" name="finance_comp">
                                         <option value="" selected disabled hidden>--Select Financer--</option>
                                         <?php foreach ($Finance_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
@@ -471,7 +480,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
 
-                                    <select class="form-style js-example-basic-single" name="emission">
+                                    <select class="form-style js-example-basic-single" name="insurance_comp">
                                         <option value="" selected disabled hidden>--Select Insurance Company--</option>
                                         <?php foreach ($Insurance_list as $list){ ?>
                                             <option value="<?php echo $list->name ?>"><?php echo $list->name ?></option>
@@ -483,10 +492,10 @@
                             </div>
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                                <div class="form-item">
-                                    <p class="formLabel">Insurance Expiry Date</p>
-                                    <input type="text" name="insurance_expiry_date" class="Date form-style" value="0" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
-                                </div>
+                            <div class="form-item">
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;padding: 0;">Insurance Expiry Date</p>
+                                <input type="date" name="insurance_expiry_date" id="" required class="form-style current_date" >
+                            </div>
                             </div>
 
                         </div>
@@ -517,10 +526,10 @@
                            </div>
 
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                               <div class="form-item">
-                                   <p class="formLabel">Warranty Expiry Date</p>
-                                   <input type="text" name="Warranty_exp_date" value="0" class="form-style" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-format="['DD','MM','YYYY'],separator:'/'" />
-                               </div>
+                           <div class="form-item">
+                                <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff;padding: 0;">Warrenty Expiry Date</p>
+                                <input type="date" name="Warranty_exp_date" id="" required class="form-style current_date" >
+                            </div>
                            </div>
 
                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -562,7 +571,10 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_mobile">Mobile</p>
-                                <input type="text" name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" />
+                              <!--  <input type="text" name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" />-->
+                                <input name="purchase_mobile" required id="purchase_mobile" class="form-style" autocomplete="off" 
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "10"/>
+                           
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -574,7 +586,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel purchase_pan">PAN Number</p>
-                                <input type="text" name="purchase_pan" id="purchase_pan"  minlength="10" class="form-style" autocomplete="off" />
+                                <input type="text" name="purchase_pan" id="purchase_pan"   minlength="10" class="form-style" autocomplete="off" style="text-transform:uppercase;" />
                             </div>
                         </div>
                         <div class="row" style="padding: 0 15px;">
@@ -647,7 +659,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel purchase_pincode">Pincode</p>
-                                        <input type="text" name="purchase_pincode" minlength="6" id="" class="form-style" autocomplete="off" />
+                                        <input type="text" name="purchase_pincode" minlength="6" id="purchase_pincode" class="form-style" autocomplete="off" />
                                     </div>
                                 </div>
                             </div>
@@ -671,7 +683,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <div class="form-item">
 
-                                    <select class="form-style js-example-basic-single" name="emission">
+                                    <select class="form-style js-example-basic-single" name="bank_name">
                                         <option value="" selected disabled hidden>--Select Bank Name--</option>
 
                                         <?php foreach ($bank_list as $list){ ?>

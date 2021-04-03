@@ -13,7 +13,7 @@
         <div class="contain-inner-section">
 
             <div class="row">
-                <?php if($this->session->flashdata('success')): ?>
+            <?php if($this->session->flashdata('success')): ?>
                     <div class="alert alert-success" role="alert">
                         <?php echo $this->session->flashdata('success'); ?>
                     </div>
@@ -46,8 +46,10 @@
                                         <td><?php echo $v->car_color ?></td>
 
                                         <td>
-                                            <a href="" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
-                                            <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                            <a href="<?php echo base_url('purchase/edit/'.$v->purchase_id)?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
+                                            
+                                            <a href="<?php echo base_url('purchase/delete/'.$this->atri->en($v->purchase_id))?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                            
                                             <a href="<?php echo base_url('purchase/detail/'.$this->atri->en($v->purchase_id)) ?>" class="btn btn-warning btn-xs"><i class="fa fa-external-link"></i></a>
                                         </td>
                                     </tr>

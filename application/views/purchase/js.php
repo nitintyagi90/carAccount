@@ -333,7 +333,7 @@
             var sum = 0;
             var n1 = 0;
             var n2 = 0;
-            n1 = parseInt($('.commission').val());
+           // n1 = parseInt($('.commission').val());
             n2 = parseInt($('.purchase-price').val());
             sum = n1 + n2;
             if(isNaN(sum)) {
@@ -347,7 +347,44 @@
     });
 
 
+  
+  
+   
+    function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            $('#rc_image').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInprc").change(function(){
+    readURL(this);
+});
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#insurance_image').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInpins").change(function(){
+    readURL(this);
+});
+      
+
+   
+
+   
 
 
 </script>

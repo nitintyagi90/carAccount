@@ -8,13 +8,14 @@ class Purchase extends Admin_Controller
         $this->not_logged_in();
         $this->data['page_title'] = 'Purchase';
         $this->load->model('model_groups');
+        $this->load->model('model_purchase');
 
     }
     public function index()
     {
         redirect('purchase/manage', 'refresh');
-    }
-
+    }   
+    
     public function manage(){
         if(!in_array('viewPurchase', $this->permission)) {
             redirect('dashboard', 'refresh');
@@ -31,8 +32,9 @@ class Purchase extends Admin_Controller
     public function create(){
         if(!in_array('createPurchase', $this->permission)) {
             redirect('dashboard', 'refresh');
+        
         }
-        $this->form_validation->set_rules('registration_no', 'registration_no', 'trim|required');
+        $this->form_validation->set_rules('registration_no', 'registration_no', 'trim|required|is_unique[purchase.registration_no]');
         $this->form_validation->set_rules('rc_name', 'rc_name', 'trim|required');
         $this->form_validation->set_rules('rc_mobile', 'rc_mobile', 'trim|required');
         $this->form_validation->set_rules('rc_address', 'rc_address', 'trim|required');
@@ -68,6 +70,7 @@ class Purchase extends Admin_Controller
                 'rc_name' => $this->input->post('rc_name'),
                 'rc_mobile' => $this->input->post('rc_mobile'),
                 'rc_email' => $this->input->post('rc_email'),
+                
                 'rc_pan' => $this->input->post('rc_pan'),
                 'rc_address' => $this->input->post('rc_address'),
                 'rc_state' => $this->input->post('rc_state'),
@@ -311,7 +314,8 @@ class Purchase extends Admin_Controller
                 }
             }
 
-
+            
+     
             $create = $this->db->insert('purchase', $data);
 
             if($create == true) {
@@ -326,6 +330,7 @@ class Purchase extends Admin_Controller
                 $this->session->set_flashdata('errors', 'Error occurred!!');
             }
             $group_data = $this->model_groups->getGroupData();
+            
             $this->data['group_data'] = $group_data;
 
 
@@ -458,6 +463,7 @@ class Purchase extends Admin_Controller
 
         }
     }
+    
 
     public function sale(){
         $groups_data = $this->model_groups->getGroupData();
@@ -466,7 +472,110 @@ class Purchase extends Admin_Controller
 
 
     }
+    
+    public function edit($id = null)
+    {
+        // if(!in_array('updatePurhase', $this->permission)) {
+        //     redirect('dashboard', 'refresh');
+        // }
+        if($id) {
 
+            $this->load->model('model_users');
+
+            $purchase=$this->model_purchase->getPurchaseData($id);
+            
+            $this->data['purchase_data'] = $purchase;
+            // print_r($purchase);
+
+            $query_user = $this->db->get_where('users', array('user_id' =>$purchase['dealer_id']));
+            $userData = $query_user->result();
+            $this->data['user_list'] = $userData;
+
+            $query_states = $this->db->get_where('states');
+            $states_data = $query_states->result();
+            $this->data['states'] = $states_data;
+            
+            $query_color = $this->db->get_where('car_utility', array('type' => 'color'));
+            $color_data = $query_color->result();
+            $this->data['color_list'] = $color_data;
+
+            $query_fuel = $this->db->get_where('car_utility', array('type' => 'fuel'));
+            $fuel_data = $query_fuel->result();
+            $this->data['fuel_list'] = $fuel_data;
+
+            $query_emission = $this->db->get_where('car_utility', array('type' => 'emission'));
+            $emission_data = $query_emission->result();
+            $this->data['emission_list'] = $emission_data;
+
+            $query_transmission = $this->db->get_where('car_utility', array('type' => 'transmission'));
+            $transmission_data = $query_transmission->result();
+            $this->data['transmission_list'] = $transmission_data;
+
+
+            $query_Bank = $this->db->get_where('car_utility', array('type' => 'Bank'));
+            $Bank_data = $query_Bank->result();
+            $this->data['bank_list'] = $Bank_data;
+
+
+            $query_Insurance = $this->db->get_where('car_utility', array('type' => 'Insurance'));
+            $Insurance_data = $query_Insurance->result();
+            $this->data['Insurance_list'] = $Insurance_data;
+
+            $query_Finance = $this->db->get_where('car_utility', array('type' => 'Finance'));
+            $Finance_data = $query_Finance->result();
+            $this->data['Finance_list'] = $Finance_data;
+
+            $this->db->order_by('id', 'ASC');
+            $query_brand = $this->db->get_where('brandmodels',array('type' => 'brand'));
+            $result_brand = $query_brand->result();
+            $this->data['models'] = $result_brand;
+
+           
+
+         
+            
+           $this->form_validation->set_rules('name','Name','required');
+            $this->form_validation->set_rules('email','Email','required|valid_email');
+        if ($this->form_validation->run() == false) {
+            $this->render_template('purchase/edit',$this->data);
+        //   $this->load->view('edit',$data);
+
+        }
+            
+        }
+    }
+
+
+
+
+
+  
+    public function delete($id)
+	{
+		// if(!in_array('deleteGroup', $this->permission)) {
+        //     redirect('dashboard', 'refresh');
+        // }
+        
+		if($id) {
+			if($this->input->post('confirm')) {
+				$id = $this->atri->de($id);
+				 	$delete = $this->model_purchase->deletePurchase($id);
+					if($delete == true) {
+		        		$this->session->set_flashdata('success', 'Successfully removed');
+		        		redirect('purchase/manage', 'refresh');
+		        	}
+		        	else {
+		        		$this->session->set_flashdata('error', 'Error occurred!!');
+		        		redirect('purchase/delete/'.$id, 'refresh');
+		        	}
+		
+			}	
+			else {
+				$this->data['id'] = $id;
+				$this->render_template('purchase/delete', $this->data);
+			}	
+		}
+	}
 
 
 }
