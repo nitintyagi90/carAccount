@@ -78,9 +78,9 @@ $db['default'] = array(
     'hostname' => 'localhost',
     'username' => 'root',
     //'username' => 'u780262359_nitin',
-    'password' => '',
+    'password' => 'Root@123',
     //'password' => 'Password@9045',
-    'database' => 'carAccount',
+    'database' => 'caraccount',
     //'database' => 'u780262359_mycaraccount',
 
     'dbdriver' => 'mysqli',

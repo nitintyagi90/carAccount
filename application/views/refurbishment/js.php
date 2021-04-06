@@ -14,12 +14,14 @@
                 $('.reb_entry').hide();
 
             }else{
+                
                 $.ajax({
                     type:"POST",
                     url : "<?php echo base_url('purchase/user_detail');?>",
                     data: {user_id : user_id},
                     success : function(data) {
                         var json = $.parseJSON(data);
+                        //console.log();
                         if(json.status==200){
                             $('.dealer_comapny_lebel').hide();
                             $('.dealer_name_lebel').hide();
@@ -403,8 +405,8 @@
         var html_2 = '<div class="row multi-field" id="row">' +
             '<div class="col-md-12">' +
             '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">' +
-            '<div class="form-item"> <select class="form-style js-example-basic-single select_reg" name="registration_no" required> ' +
-            '<option>Repairing Details</option><?php foreach ($repaier as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option> <?php }?></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="text" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            '<div class="form-item"> <select class="form-style js-example-basic-single select_reg" name="Refurbishment_details_registration_no[]" required> ' +
+            '<option>Repairing Details</option><?php foreach ($repaier as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option> <?php }?></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="ref_details_job_date[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="ref_details_bill_no[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="ref_details_amount[]" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="files[]" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
 
 
 
@@ -429,7 +431,8 @@
             }
         });
         $(add_button_expenses).click(function(e){
-            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"><p class="formLabel">Details</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="text" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            //alert('hii');
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"><p class="formLabel">Details</p> <input type="text" name="ref_other_exp_details[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="ref_other_exp_jobDate[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="ref_other_exp_bill_no[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="ref_other_exp_amount[]" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="ref_other_exp_files[]" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
             e.preventDefault();
             if(x < max_fields){
                 x++; //text box increment

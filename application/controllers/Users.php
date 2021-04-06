@@ -11,15 +11,16 @@ class Users extends Admin_Controller
 		$this->load->model('model_groups');
 	}
 	public function index(){
+        
 		redirect('users/manage', 'refresh');
 	}
 	public function manage()
 	{
+        
 		if(!in_array('viewUser', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
 		$user_data = $this->model_users->getUserData();
-        
        
 		$result = array();
         
@@ -29,23 +30,15 @@ class Users extends Admin_Controller
 		    $group = $this->model_users->getUserGroup($v['user_id']);
          	$result[$k]['user_group'] = $group; 
 
-            //  print_r($result);
-            //   die(); 
-   
 		}
 
-       
-        
        $this->data['user_data'] = $result;
-
-        
-
-		$this->render_template('users/index', $this->data);
+       $this->render_template('users/index', $this->data);
 	}
 
     public function create()
     {
-
+       
         if(!in_array('createUser', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
@@ -58,6 +51,7 @@ class Users extends Admin_Controller
         $this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|required|matches[password]');
 
         if ($this->form_validation->run() == TRUE) {
+            
             $password = $this->password_hash($this->input->post('password'));
             $data = array(
                 'user_name' => $this->input->post('username'),
@@ -70,7 +64,7 @@ class Users extends Admin_Controller
             );
 
             $create = $this->model_users->create($data, $this->input->post('groups')); 
-            
+          
             
             if($create == true) {
                 $this->session->set_flashdata('success', 'Successfully created');
@@ -81,13 +75,12 @@ class Users extends Admin_Controller
                 redirect('users/create', 'refresh');
             }
         }else {
+            
             if($_SERVER['REQUEST_METHOD']=='POST'){
                 $this->session->set_flashdata('errors', 'Error occurred!!');
             }
             $group_data = $this->model_groups->getGroupData();
             $this->data['group_data'] = $group_data;
-
-
             $query_city = $this->db->get_where('cities');
             $city_data = $query_city->result();
             $this->data['city'] = $city_data;
@@ -108,6 +101,7 @@ class Users extends Admin_Controller
 
     public function edit($id = null)
     {
+        
         if(!in_array('updateUser', $this->permission)) {
             redirect('dashboard', 'refresh');
         }

@@ -51,14 +51,18 @@
                             <tbody>
 
                             <?php if($user_data): ?>
-                                <?php foreach ($user_data as $k => $v): ?>
+                                <?php foreach ($user_data as $k => $v): 
+                                        //echo"<pre>";
+                                        //print_r($v);
+                                        //die();
+                                    ?>
                                     <tr>
                                         <td><?php echo $v['user_info']['user_name']; ?></td>
                                         <td><?php echo $v['user_info']['user_mobile']; ?></td>
                                         <td><?php echo $v['user_info']['user_company']; ?></td>
                                         <td><?php echo $v['user_info']['user_email']; ?></td>
                                         <td><?php echo $v['user_info']['user_location']; ?></td>
-                                        <td><?php echo $v['user_group']['group_name']; ?></td>
+                                        <td><?php echo @$v['user_group']['group_name']; ?></td>
 
                                         <?php if(in_array('updateUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
 

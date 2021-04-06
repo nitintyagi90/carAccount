@@ -30,6 +30,7 @@ class Purchase extends Admin_Controller
         $this->render_template('purchase/index',$this->data);
     }
     public function create(){
+     
         if(!in_array('createPurchase', $this->permission)) {
             redirect('dashboard', 'refresh');
         
