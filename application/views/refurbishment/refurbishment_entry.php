@@ -278,7 +278,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Bill No.</p>
-                                    <input type="text" name="acces_details_bill_date[]" class="form-style" autocomplete="off" />
+                                    <input type="text" name="acces_details_bill_no[]" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -290,7 +290,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <!-- <p class="formLabel">Amount</p> -->
-                                    <input type="file" name="img3[]" class="form-style" autocomplete="off" />
+                                    <input type="file" name="acces_details_files[]" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 pull-right">
@@ -316,25 +316,25 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel"  style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p>
-                                    <input type="date" name="car_accessories_perches_date[]" class="form-style" autocomplete="off" />
+                                    <input type="date" name="car_accessories_other_perches_date[]" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Bill No.</p>
-                                    <input type="text" name="car_accessories_bill[]" class="form-style" autocomplete="off" />
+                                    <input type="text" name="car_accessories_other_bill[]" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Amount</p>
-                                    <input type="text" name="car_accessories_amount[]" class="form-style" autocomplete="off" />
+                                    <input type="text" name="car_accessories_other_amount[]" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <!-- <p class="formLabel">Amount</p> -->
-                                    <input type="file" name="img4[]" class="form-style" autocomplete="off" />
+                                    <input type="file" name="acces_acc_other_files[]" class="form-style" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 pull-right">
@@ -346,7 +346,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Total Accessories Cost</p>
-                                <input type="text" name="car_accessories_total_accs_cost[]" class="form-style" autocomplete="off" />
+                                <input type="text" name="car_accessories_total_accs_cost" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -374,7 +374,7 @@
                             </div> -->
                             <div class="form-item select_reg">
                               <p class="formLabel total_purchase_price">Total Purchase Price</p>
-                              <input type="text" disabled=""value="" id="total_purchase_price_ref" name="total_purchase_price[]" class="form-style" autocomplete="off" />
+                              <input type="text"  id="total_purchase_price_ref" name="total_purchase_price" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -385,7 +385,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Car Accessories Cost</p> -->
-                                <input type="text" disabled="" value="0" name="total_cost_ref[]" class="form-style" autocomplete="off" />
+                                <input type="text"   name="total_cost_ref" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -396,7 +396,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Warranty Cost</p> -->
-                                <input type="text" disabled="" value="0" name="total_car_acc_ref[]" class="form-style" autocomplete="off" />
+                                <input type="text"  name="total_car_acc_ref" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         
@@ -409,7 +409,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Cost</p> -->
-                                <input type="text" disabled="" value="0" name="total_vic_ref[]" class="form-style" autocomplete="off" />
+                                <input type="text"   name="total_vic_ref" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
