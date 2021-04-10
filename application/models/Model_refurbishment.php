@@ -86,16 +86,62 @@ class Model_refurbishment extends CI_Model
      * @date 07-04-2021
     */
 	public function getRefCarData(){
+
 		$query = $this->db
 				->select('*')
 				->from('refurbishment')
-				->join('refurbishment_details', 'refurbishment.id=tblsavesection.refurbishment_id', 'inner')
-				->join('tblmastersecmolecular', 'tblsavesection.test_id = tblmastersecmolecular.test_id', 'inner')
-				->join('tblmastersecparasitology', 'tblsavesection.test_id = tblmastersecparasitology.test_id', 'inner')
-				->join('tblmastersecpathology', 'tblsavesection.test_id = tblmastersecpathology.test_id', 'inner')
+				->join('purchase', 'refurbishment.registration_no=purchase.purchase_id', 'inner')
+				//->join('refurbishment_other_expense', 'refurbishment.id = refurbishment_other_expense.refurbishment_id', 'inner')
+				//->join('refurbishment_car_accessories_details', 'refurbishment.id = refurbishment_car_accessories_details.refurbishment_id', 'inner')
+				//->join('refurbishment_accessories_other_exp', 'refurbishment.id = refurbishment_accessories_other_exp.refurbishment_id', 'inner')
+				//->join('refurbishment_total_vehicle_cost', 'refurbishment.id = refurbishment_total_vehicle_cost.refurbishment_id', 'inner')
 				->get();
+		// echo $this->db->last_query();
+		// die();
+		return $query->result();
+		
+	}
 
-return $query->result();
+	public function deleteRefurbishment($id){
+
+	// 	  $sql="DELETE refurbishment,refurbishment_accessories_other_exp, refurbishment_car_accessories_details, refurbishment_details,refurbishment_other_expense,refurbishment_total_vehicle_cost 
+	// 	  FROM refurbishment INNER JOIN refurbishment_accessories_other_exp ON refurbishment.id = refurbishment_accessories_other_exp.refurbishment_id INNER JOIN refurbishment_car_accessories_details ON refurbishment.id = refurbishment_car_accessories_details.refurbishment_id
+	// 	   INNER JOIN refurbishment_details ON refurbishment.id = refurbishment_details.refurbishment_id INNER JOIN refurbishment_other_expense ON refurbishment.id = refurbishment_other_expense.refurbishment_id INNER JOIN refurbishment_total_vehicle_cost ON refurbishment.id = refurbishment_total_vehicle_cost.refurbishment_id WHERE refurbishment.id=$id;";
+	//   $query=$this->db->query($sql);
+	//   echo $this->db->last_query();
+	//   die();
+	//   if($query){
+	// 	  return true;
+	//   }else{
+	// 	  return false;
+	//   }
+		$this->db->where(array("id"=>$id));
+		$this->db->delete("refurbishment");
+		if($this->db->affected_rows()>0)
+		return $id;
+		else
+		return false;
+	}
+
+	//get refurbishment_details table data
+
+	public function gettableData($table,$id){
+
+		$query = $this->db->get_where($table, array('refurbishment_id' => $id));
+		$result = $query->result();
+		return $result;
+	}
+
+	public function deletetableData($table,$id){
+	
+		//$query = $this->db->delete_where($table,array('refurbishment_id' => $id));
+		$query = $this->db->delete($table, array('refurbishment_id' => $id));
+		
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 

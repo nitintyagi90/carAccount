@@ -25,6 +25,7 @@ class Refurbishment extends Admin_Controller
         $this->db->select('registration_no,purchase_id');
         $query_purchase = $this->db->get('purchase');
         $result_purchase = $query_purchase->result();
+        
 
         $query_access = $this->db->get_where('car_utility', array('type' => 'Accessories'));
         $query_reparing = $this->db->get_where('car_utility', array('type' => 'Repairing'));
@@ -107,7 +108,7 @@ class Refurbishment extends Admin_Controller
                 'sub_model'=>$this->input->post('submodel'),
                 'color'=>$this->input->post('color'),
                 'purchase_date'=>$this->input->post('purchase_date'),
-                'total_Purchase_price'=>$this->input->post('total_purchase_price'),
+                'total_Purchase_price'=>$this->input->post('total_purchase_price_accso_cast'),
             );
         $save= $this->model_refurbishment->saveRefurbishment($data);
         //Add Refurbishment Details Section.
@@ -353,7 +354,7 @@ class Refurbishment extends Admin_Controller
                 $saveCarAccOtherExp=$this->model_refurbishment->saveTotalVehicleCost($data);
             }
               
-                   
+            $this->session->set_flashdata('success', 'Successfully created');   
              redirect('refurbishment/refurbishment_list');
             
         }
@@ -372,9 +373,10 @@ class Refurbishment extends Admin_Controller
                     'sub_model'=>$this->input->post('submodel'),
                     'color'=>$this->input->post('color'),
                     'purchase_date'=>$this->input->post('purchase_date'),
-                    'total_Purchase_price'=>$this->input->post('total_purchase_price'),
+                    'total_Purchase_price'=>$this->input->post('total_purchase_price_accso_cast'),
                         
                         );
+                     
                $result = $this->model_refurbishment->saveRefurbishment($data);
               if($result){
                     $this->session->set_flashdata('success', 'Successfully created');
@@ -382,6 +384,54 @@ class Refurbishment extends Admin_Controller
               }
             }
         }       
+    }
+     /**
+     * Delete refurbishment entry.
+     * @return true
+     * @method POST
+     * @Mob 9958168472
+     * @author Sandeep Sharma 
+     * @date 05-04-2021
+    */
+
+
+    public function delete_refurbishment($id){
+        if(!empty($id)){
+            $delete = $this->model_refurbishment->deleteRefurbishment($id);
+           
+            if($delete){
+                
+                $deletr1 = $this->model_refurbishment->gettableData('refurbishment_details',$delete);
+                $deletr2 = $this->model_refurbishment->gettableData('refurbishment_other_expense',$delete);
+                $deletr3 = $this->model_refurbishment->gettableData('refurbishment_car_accessories_details',$delete);
+                $deletr4 = $this->model_refurbishment->gettableData(' refurbishment_accessories_other_exp',$delete);
+                $deletr5 = $this->model_refurbishment->gettableData(' refurbishment_total_vehicle_cost',$delete);
+                if($deletr1){
+                    $deletrData = $this->model_refurbishment->deletetableData('refurbishment_details',$delete);
+                }
+
+                if($deletr2){
+                    $deletrData = $this->model_refurbishment->deletetableData('refurbishment_other_expense',$delete);
+                }
+
+                if($deletr3){
+                    $deletrData = $this->model_refurbishment->deletetableData('refurbishment_car_accessories_details',$delete);
+                }
+
+                if($deletr4){
+                    $deletrData = $this->model_refurbishment->deletetableData('refurbishment_accessories_other_exp',$delete);
+                }
+
+                if($deletr5){
+                    $deletrData = $this->model_refurbishment->deletetableData('refurbishment_total_vehicle_cost',$delete);
+                }
+
+                $this->session->set_flashdata('success', 'Delete Sucssesfully..');
+                redirect('refurbishment/refurbishment_list');
+
+            }
+           
+        }
     }
 
     public function purchaseDetails (){
@@ -418,10 +468,11 @@ class Refurbishment extends Admin_Controller
         
         $group_data = $this->model_groups->getGroupData();
         $refListData = $this->model_refurbishment->getRefCarData();
-        //echo"<pre>";
-        //print_r($group_data);
-        //die();
+        // echo"<pre>";
+        // print_r($refListData);
+        // die();
         $this->data['group_data'] = $group_data;
+        $this->data['ref_list_data'] = $refListData;
         $this->render_template('refurbishment/refurbishment_car',$this->data);
 
     }

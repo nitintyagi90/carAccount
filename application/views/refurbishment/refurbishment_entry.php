@@ -108,7 +108,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel total_purchase_price">Total Purchase Price</p>
-                                        <input type="text"  id="total_purchase_price" name="total_purchase_price" class="form-style" autocomplete="off" readonly/>
+                                        <input type="text"  id="total_purchase_price_accso_cast" name="total_purchase_price_accso_cast" class="form-style" autocomplete="off" readonly/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -356,7 +356,7 @@
                             </div>
                         </div> -->
                     </div>
-
+        <!------------------sandeep sharma------------------>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-header">
@@ -369,12 +369,8 @@
                             <label class="mt-20">Total Purchase Price</label>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <!-- <div class="form-item">
-                                <input type="text" disabled="" value="0" name="username" class="form-style" autocomplete="off" />
-                            </div> -->
-                            <div class="form-item select_reg">
-                              <p class="formLabel total_purchase_price">Total Purchase Price</p>
-                              <input type="text"  id="total_purchase_price_ref" name="total_purchase_price" class="form-style" autocomplete="off" />
+                            <div class="form-item">
+                                <input type="text" disabled="" value="0" name="total_purchase_price" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -385,7 +381,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Car Accessories Cost</p> -->
-                                <input type="text"   name="total_cost_ref" class="form-style" autocomplete="off" />
+                                <input type="text" disabled="" value="0" name="total_cost_ref" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -396,10 +392,9 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Warranty Cost</p> -->
-                                <input type="text"  name="total_car_acc_ref" class="form-style" autocomplete="off" />
+                                <input type="text" disabled="" value="0" name="total_car_acc_ref" class="form-style" autocomplete="off" />
                             </div>
                         </div>
-                        
                     </div>
 
                     <div class="row">
@@ -409,7 +404,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Cost</p> -->
-                                <input type="text"   name="total_vic_ref" class="form-style" autocomplete="off" />
+                                <input type="text" disabled="" value="0" name="total_vic_ref" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                     </div>
@@ -417,13 +412,14 @@
                         <div class="col-lg-12">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
-                                    <input type="submit" name="submit" class="btn btn-success btn-block" value="Save">
+                                <input type="submit" name="submit" class="btn btn-success btn-block" value="Save">
                                 </div>
                                 <!-- <button type="button" class="btn btn-danger btn-outline float-button-light waves-effect waves-button waves-float waves-light">Submit</button> -->
                             </div>
                         </div>
 
                     </div>
+                    <!-------sandeep sharma----->
                 </form>
 
             </div>
