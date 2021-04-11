@@ -28,7 +28,7 @@
                             var user_name = json.data.user_name;
                             var user_location = json.data.user_location;
                             $('.dealer_name').val(user_name);
-                             $('.dealer_company').val(user_company);
+                            $('.dealer_company').val(user_company);
                             $('.user_location').val(user_location);
                             $('.reb_entry').show();
                         }else{
@@ -41,8 +41,10 @@
 
 
         $('.select_reg').change(function() {
+            //alert('joo');
             var $this = $(this);
             var purchase_id = $this.val();
+            //alert(purchase_id);
             if(purchase_id==='0'){
                 $('.purchase_entry').hide();
                 $('#make').val('');
@@ -70,7 +72,7 @@
                     success : function(data) {
                         var json = $.parseJSON(data);
                         if(json.status==200){
-
+                            //console.log();
                             $('.make').hide();
                             $('.model').hide();
                             $('.submodel').hide();
@@ -377,8 +379,32 @@
 
         });
 
+        /**
+         * get value on keyup os sale comission.
+         * @Mob 9958168472
+         * @author Sandeep Sharma 
+         * @date 05-04-2021
+        */
+
+        //$("#sale_comission").key
+        $('#sale_comission').keyup(function() {
+           
+            var sum = 0;
+            var n1 = 0;
+            var n2 = 0;
+            n1 = parseInt($('#total_vehicle_cost').val());
+            n2 = parseInt($('#sale_comission').val());
+            sum = n1 + n2;
+            if(isNaN(sum)) {
+                sum = 0
+            }
+            $('.total_cost').remove();
+            $('#total_cost').val(sum);
+        });
+
 
         $('.commission').keyup(function() {
+           // alert('hii');
             var sum = 0;
             var n1 = 0;
             var n2 = 0;
@@ -412,16 +438,6 @@
             '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">' +
             '<div class="form-item"> <select class="form-style js-example-basic-single select_reg" name="registration_no" required> ' +
             '<option>Repairing Details</option></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Job Date</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="text" class="form-style" autocomplete="off" /> </div> </div><a href="#" class="remove_field">Remove</a> </div></div>';
-
-
-
-
-
-
-
-
-
-
 
         var max_fields      = 10;
         var wrapper   		= $(".multi-fields");

@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['delete-banner/(:any)'] = 'refurbishment/delete_refurbishment/$1';
+$route['delete-selCar/(:any)'] = 'sale/delete_saleCar/$1';
