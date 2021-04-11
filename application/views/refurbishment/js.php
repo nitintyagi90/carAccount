@@ -74,7 +74,7 @@
                             $('.submodel').hide();
                             $('.color').hide();
                             $('.purchase_date').hide();
-                            $('.total_purchase_price').hide();
+                            $('.total_purchase_price_accso_cast').hide();
 
                             var make = json.data.car_brand;
                             var model = json.data.car_model;
@@ -88,9 +88,10 @@
                             $('#submodel').val(submodel);
                             $('#color').val(color);
                             $('#purchase_date').val(purchase_date);
+                            $('#total_purchase_price_accso_cast').val(total_purchase_price);
                             $('#total_purchase_price').val(total_purchase_price);
-                            $('#total_purchase_price_ref').val(total_purchase_price);
-                            
+                            //alert($("input[name=total_cost_ref]").val());
+                            finalSumVehicleCost(total_cost_ref=$("input[name=total_cost_ref]").val(), total_car_acc_ref=$("input[name=total_car_acc_ref]").val());
                         }else{
                             alert('somthing went wrong!')
                         }
@@ -98,6 +99,8 @@
                 });
             }
         });
+
+     
 
         $('.state1').change(function () {
             var id = $("option:selected", this).attr("data-id");
@@ -371,8 +374,49 @@
 
 
         });
+        
+        /**
+         * Function to add total amount 
+         * Initially we need to call by default on
+         */
+        function finalSumVehicleCost(total_cost_ref=0,total_car_acc_ref = 0){
+            var total_purchase_price = $("input[name=total_purchase_price]").val();
+            var total_purchase_price = (isNaN(parseInt(total_purchase_price))) ? 0 : parseInt(total_purchase_price);
+            var total_cost_ref = (isNaN(parseInt(total_cost_ref))) ? 0 : parseInt(total_cost_ref);
+            var total_car_acc_ref = (isNaN(parseInt(total_car_acc_ref))) ? 0 : parseInt(total_car_acc_ref);
+            var final_amount  = total_purchase_price+total_cost_ref+total_car_acc_ref;
+            $("input[name=total_vic_ref]").val(final_amount);
+            return true;
+        }
 
+        
+        //add Add Refurbishment Details amount
+        $('.addition').on('keyup', '.price', function() {        
+            var total = 0
+            $('.price').each(function() {                
+                var currentValue = parseInt($(this).val(), 10);
+                if (!isNaN(currentValue)) {
+                    total += currentValue;
+                }
+            });            
+            $("input[name=total_cost_ref]").val(total);
+            finalSumVehicleCost(total_cost_ref=total,total_car_acc_ref=$("input[name=total_car_acc_ref]").val());
+        });
 
+        //add Add car accessiories Details amount
+        $('.car-addition').on('keyup', '.car-amount', function() {        
+            var total = 0
+            
+            $('.car-amount').each(function() {                
+                var currentValue = parseInt($(this).val(), 10);
+                if (!isNaN(currentValue)) {
+                    total += currentValue;
+                }
+            });
+            $("input[name=total_car_acc_ref]").prop('disabled', true);
+            $("input[name=total_car_acc_ref]").val(total);
+            finalSumVehicleCost(total_cost_ref=$("input[name=total_cost_ref]").val(),total_car_acc_ref=total);
+        });
         $('.commission').keyup(function() {
             var sum = 0;
             var n1 = 0;
@@ -402,11 +446,13 @@
 
 
 
+
+
         var html_2 = '<div class="row multi-field" id="row">' +
             '<div class="col-md-12">' +
             '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">' +
             '<div class="form-item"> <select class="form-style js-example-basic-single select_reg" name="Refurbishment_details_registration_no[]" required> ' +
-            '<option>Repairing Details</option><?php foreach ($repaier as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option> <?php }?></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="ref_details_job_date[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="ref_details_bill_no[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="ref_details_amount[]" class="form-style" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="files[]" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            '<option>Repairing Details</option><?php foreach ($repaier as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option> <?php }?></option></select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Job Date</p> <input type="date" name="ref_details_job_date[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="ref_details_bill_no[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="ref_details_amount[]" class="form-style price" autocomplete="off" /> </div> </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="files[]" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
 
 
 
@@ -443,7 +489,7 @@
         });
         $(add_accessiores).click(function(e){
             //alert('sandeep');
-            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select name="acces_details_registration_no[]" class="form-style"><option>Accessories Details</option><?php foreach ($accessories as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option><?php }?> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p> <input type="date" name="acces_details_perches_date[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="acces_details_bill_no[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="acces_details_amount[]" class="form-style" autocomplete="off" /> </div></div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="acces_details_files[]" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
+            var html = '<div class="row multi-field" id="row"><div class="col-md-12"><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <select name="acces_details_registration_no[]" class="form-style"><option>Accessories Details</option><?php foreach ($accessories as $data){ ?><option value="<?php echo $data->name ?>"><?php echo $data->name ?></option><?php }?> </select> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p> <input type="date" name="acces_details_perches_date[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Bill No.</p> <input type="text" name="acces_details_bill_no[]" class="form-style" autocomplete="off" /> </div> </div> <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"> <div class="form-item"> <p class="formLabel">Amount</p> <input type="text" name="acces_details_amount[]" class="form-style car-amount" autocomplete="off" /> </div></div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><div class="form-item"><input type="file" name="acces_details_files[]" class="form-style" autocomplete="off" /></div></div><a href="#" class="remove_field" style="float:right;color:red;"><strong>Remove</strong></a> </div></div>';
             e.preventDefault();
             if(x < max_fields){
                 x++; //text box increment

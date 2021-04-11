@@ -102,12 +102,12 @@
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="form-item">
                                         <p class="formLabel purchase_date"  style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p>
-                                        <input type="date"  id="purchase_date" name="purchase_date" class="form-style" autocomplete="off" />
+                                        <input type="text"  id="purchase_date" name="purchase_date" class="form-style" autocomplete="off" readonly/>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="form-item">
-                                        <p class="formLabel total_purchase_price">Total Purchase Price</p>
+                                        <p class="formLabel total_purchase_price_accso_cast">Total Purchase Price</p>
                                         <input type="text"  id="total_purchase_price_accso_cast" name="total_purchase_price_accso_cast" class="form-style" autocomplete="off" readonly/>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                     </div>
 
                     <div class="multi-field-wrapper">
-                        <div class="multi-fields">
+                        <div class="multi-fields addition">
                             <div class="row multi-field" id="row">
                                 <div class="col-md-12">
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -166,7 +166,7 @@
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                         <div class="form-item">
                                             <p class="formLabel">Amount</p>
-                                            <input type="text" id="ref_details_amount" name="ref_details_amount[]" class="form-style" autocomplete="off" />
+                                            <input type="text" id="ref_details_amount" name="ref_details_amount[]" class="form-style price my-amount" autocomplete="off" />
                                         </div>
                                     </div>
 
@@ -237,7 +237,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <p class="formLabel">Total Refurbishment Cost</p>
-                                <input type="text" name="ref_other_exp_totalRefur_cost" class="form-style" autocomplete="off" />
+                                <input type="text" name="ref_other_exp_totalRefur_cost" class="form-style total_ref_cost" autocomplete="off" />
                             </div>
                         </div>
                         <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -268,7 +268,7 @@
 
                             </div>
                         </div>
-                        <div class="accessiores">
+                        <div class="accessiores car-addition">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel" style="top:-14px; position: absolute; left: 15px;  color:#d12629; background-color: #fff; padding: 0;">Purchase Date</p>
@@ -284,7 +284,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                 <div class="form-item">
                                     <p class="formLabel">Amount</p>
-                                    <input type="text" name="acces_details_amount[]" class="form-style" autocomplete="off" />
+                                    <input type="text" name="acces_details_amount[]" class="form-style car-amount" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -370,7 +370,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <input type="text" disabled="" value="0" name="total_purchase_price" class="form-style" autocomplete="off" />
+                                <input type="text" id="total_purchase_price" name="total_purchase_price" class="form-style" autocomplete="off" readonly/>
                             </div>
                         </div>
                     </div>
@@ -381,7 +381,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Car Accessories Cost</p> -->
-                                <input type="text" disabled="" value="0" name="total_cost_ref" class="form-style" autocomplete="off" />
+                                <input type="text" name="total_cost_ref" class="form-style" autocomplete="off" readonly/>
                             </div>
                         </div>
                     </div>
@@ -392,7 +392,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Warranty Cost</p> -->
-                                <input type="text" disabled="" value="0" name="total_car_acc_ref" class="form-style" autocomplete="off" />
+                                <input type="text" disabled="" name="total_car_acc_ref" class="form-style" autocomplete="off" readonly/>
                             </div>
                         </div>
                     </div>
@@ -404,7 +404,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Cost</p> -->
-                                <input type="text" disabled="" value="0" name="total_vic_ref" class="form-style" autocomplete="off" />
+                                <input type="text" name="total_vic_ref" class="form-style" autocomplete="off" readonly/>
                             </div>
                         </div>
                     </div>
