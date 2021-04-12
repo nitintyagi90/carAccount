@@ -55,7 +55,9 @@ class Refurbishment extends Admin_Controller
         if(isset($_POST['submit'])){
          
             if(!empty($_POST['ref_details_bill_no'][0])){
-              
+                // echo"<pre>";
+                // print_r($this->input->post('total_cost_ref'));
+                // die();
                
                  /**
                  * Upload Multiple File of Refurbishment Details
@@ -342,9 +344,16 @@ class Refurbishment extends Admin_Controller
             }
 
             //total vicle cast save
-
+            $total_purchase_price = $this->input->post('total_purchase_price');
+            $total_cost_ref = $this->input->post('total_cost_ref');
+            $total_car_acc_ref = $this->input->post('total_car_acc_ref');
+            $total_vic_ref = $this->input->post('total_vic_ref');
+            
+          
+            
 
             if(!empty($this->input->post('total_purchase_price')) && !empty($this->input->post('total_cost_ref')) && !empty($this->input->post('total_car_acc_ref')) && !empty($this->input->post('total_vic_ref'))){
+              
                 $data=array(
                     'refurbishment_id'=>$save,
                     'total_purchase_price'=>$this->input->post('total_purchase_price'),
@@ -355,8 +364,10 @@ class Refurbishment extends Admin_Controller
                     );
 
                 $saveCarAccOtherExp=$this->model_refurbishment->saveTotalVehicleCost($data);
+            }else{
+                echo"working2";
             }
-              
+          
             $this->session->set_flashdata('success', 'Successfully created');   
              redirect('refurbishment/refurbishment_list');
             

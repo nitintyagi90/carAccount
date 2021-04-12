@@ -436,7 +436,7 @@
                     total += currentValue;
                 }
             });
-            $("input[name=total_car_acc_ref]").prop('disabled', true);
+            //$("input[name=total_car_acc_ref]").prop('disabled', true);
             $("input[name=total_car_acc_ref]").val(total);
             finalSumVehicleCost(total_cost_ref=$("input[name=total_cost_ref]").val(),total_car_acc_ref=total);
         });
