@@ -236,8 +236,8 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Total Refurbishment Cost</p>
-                                <input type="text" name="ref_other_exp_totalRefur_cost" class="form-style total_ref_cost" autocomplete="off" />
+                                <p class="formLabel">Total Refurbishment Cost 1111</p>
+                                <input type="text" id="ref_other_exp_totalRefur_cost" name="ref_other_exp_totalRefur_cost" class="form-style total_ref_cost" autocomplete="off" />
                             </div>
                         </div>
                         <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -345,8 +345,8 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
-                                <p class="formLabel">Total Accessories Cost</p>
-                                <input type="text" name="car_accessories_total_accs_cost" class="form-style" autocomplete="off" />
+                                <p class="formLabel">Total Accessories Cost222</p>
+                                <input type="text" id ="car_accessories_total_accs_cost" name="car_accessories_total_accs_cost" class="form-style" autocomplete="off" />
                             </div>
                         </div>
                         <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -392,7 +392,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-item">
                                 <!-- <p class="formLabel">Total Warranty Cost</p> -->
-                                <input type="text" disabled="" name="total_car_acc_ref" class="form-style" autocomplete="off" readonly/>
+                                <input type="text"  name="total_car_acc_ref" class="form-style" autocomplete="off" readonly/>
                             </div>
                         </div>
                     </div>
@@ -408,6 +408,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-----------Total Cost Add By Sandeep------------------------------------------>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                            <label class="mt-20">Total Cost</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="form-item">
+                                <!-- <p class="formLabel">Total Cost</p> -->
+                                <input type="text" id="total_add_cost" name="total_add_cost" class="form-style" autocomplete="off" readonly/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----------End----------------------------------------------------------------->
+
+
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">

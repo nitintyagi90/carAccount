@@ -374,10 +374,33 @@
 
 
         });
+
+        /**
+         * Add value on keyup of total cost.
+         * @Mob 9958168472
+         * @author Sandeep Sharma 
+         * @date 05-04-2021
+        */
+
+        //$("#sale_comission").key
+        $('#car_accessories_total_accs_cost').keyup(function() {
+           
+           var sum = 0;
+           var n1 = 0;
+           var n2 = 0;
+           n1 = parseInt($('#ref_other_exp_totalRefur_cost').val());
+           n2 = parseInt($('#car_accessories_total_accs_cost').val());
+           sum = n1 + n2;
+           if(isNaN(sum)) {
+               sum = 0
+           }
+           $('#total_add_cost').val(sum);
+       });
         
         /**
          * Function to add total amount 
          * Initially we need to call by default on
+         * @Author Sandeep Sharma
          */
         function finalSumVehicleCost(total_cost_ref=0,total_car_acc_ref = 0){
             var total_purchase_price = $("input[name=total_purchase_price]").val();
@@ -417,6 +440,9 @@
             $("input[name=total_car_acc_ref]").val(total);
             finalSumVehicleCost(total_cost_ref=$("input[name=total_cost_ref]").val(),total_car_acc_ref=total);
         });
+
+        //add total add cost
+
         $('.commission').keyup(function() {
             var sum = 0;
             var n1 = 0;
@@ -443,9 +469,6 @@
             $('.purchase-label').remove();
             $('.total-price').val(sum);
         });
-
-
-
 
 
         var html_2 = '<div class="row multi-field" id="row">' +

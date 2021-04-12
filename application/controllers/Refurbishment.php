@@ -55,6 +55,7 @@ class Refurbishment extends Admin_Controller
         if(isset($_POST['submit'])){
          
             if(!empty($_POST['ref_details_bill_no'][0])){
+              
                
                  /**
                  * Upload Multiple File of Refurbishment Details
@@ -109,6 +110,7 @@ class Refurbishment extends Admin_Controller
                 'color'=>$this->input->post('color'),
                 'purchase_date'=>$this->input->post('purchase_date'),
                 'total_Purchase_price'=>$this->input->post('total_purchase_price_accso_cast'),
+                'total_cost'=>$this->input->post('total_add_cost'),
             );
         $save= $this->model_refurbishment->saveRefurbishment($data);
         //Add Refurbishment Details Section.
@@ -340,6 +342,7 @@ class Refurbishment extends Admin_Controller
             }
 
             //total vicle cast save
+
 
             if(!empty($this->input->post('total_purchase_price')) && !empty($this->input->post('total_cost_ref')) && !empty($this->input->post('total_car_acc_ref')) && !empty($this->input->post('total_vic_ref'))){
                 $data=array(
